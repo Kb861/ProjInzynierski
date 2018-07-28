@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.flMain,new HomeFragment());
+        ft.commit();
+        navigationView.setCheckedItem(R.id.nav_home);
     }
 
     @Override
