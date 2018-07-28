@@ -23,14 +23,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -80,13 +72,18 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_home) {
+            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.flMain,new HomeFragment());
+            ft.commit();
+        } else if (id == R.id.nav_exam) {
+            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.flMain,new ExamFragment());
+            ft.commit();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_exercise) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_sport) {
 
         } else if (id == R.id.nav_share) {
 
