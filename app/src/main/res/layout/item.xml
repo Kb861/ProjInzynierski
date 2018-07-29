@@ -16,19 +16,12 @@
         android:layout_height="fill_parent">
         <ImageView
             android:id="@+id/img"
-            android:layout_width="128dp"
-            android:layout_height="120dp"
-            android:layout_weight="1.0"
-            android:scaleType="centerCrop"
+            style="@style/ImageViewEx"
             />
+
         <TextView
             android:id="@+id/txt_defect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:text="Defect Name"
-            android:textSize="20dp"
-            android:textStyle="bold"
+            style="@style/TextViewEx"
             />
 
     </LinearLayout>

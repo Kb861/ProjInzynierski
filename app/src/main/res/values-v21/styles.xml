@@ -1,8 +1,26 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="ImageViewEx">
+        <item name="android:layout_height">120dp</item>
+        <item name="android:layout_width">128dp</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+    <style name="TextViewEx">
+        <item name="android:layout_height">68dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:text">Defect Name</item>
+        <item name="android:textSize">24dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+
 </resources>
