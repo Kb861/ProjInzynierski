@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Exercises.DefectActivity"></activity>
+        <activity android:name=".Exercises.DefectActivity" />
+        <activity android:name=".Exercises.activities.ExerciseActivity"></activity>
     </application>
 
 </manifest>
