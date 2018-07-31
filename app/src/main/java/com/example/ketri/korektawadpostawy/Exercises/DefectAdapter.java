@@ -2,6 +2,7 @@ package com.example.ketri.korektawadpostawy.Exercises;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -60,11 +61,21 @@ public class DefectAdapter extends RecyclerView.Adapter<DefectAdapter.ViewHolder
             @Override
 
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, DefectActivity.class);
-                  intent.putExtra("Name", mData.get(position).getName());
-                  mContext.startActivity(intent);
+                Intent intent = new Intent(mContext, Main2Activity.class);
+               intent.putExtra("Name", mData.get(position).getName());
 
-//
+
+
+                Bundle bundle = new Bundle();
+               // if(position==0) {
+                   // String wpisanyTekst = txt_defect.getText().toString();
+
+                  //  bundle.putString("KEY", wpisanyTekst);
+
+                   // intent.putExtras(bundle);
+                intent.putExtra("KEY", mData.get(position).getName());
+                    mContext.startActivity(intent);
+            //    }
 //                if(position==0) {
 //                    Intent intent = new Intent(mContext, DefectActivity.class);
 //                    intent.putExtra("Name", mData.get(position).getName());
