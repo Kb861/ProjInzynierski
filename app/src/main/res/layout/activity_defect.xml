@@ -7,7 +7,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.ketri.korektawadpostawy.Exercises.DefectActivity">
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler"
-        style="@style/Recycler">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerV"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp">
     </android.support.v7.widget.RecyclerView>
 </LinearLayout>

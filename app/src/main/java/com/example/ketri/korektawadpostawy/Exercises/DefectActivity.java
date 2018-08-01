@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -23,21 +25,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DefectActivity extends AppCompatActivity {
-    private String URL_JSON = "https://gist.githubusercontent.com/Kb861/a47274b3277c424b8dc989a3966bb8ae/raw/33da4425da976ae236410350719ec5863374e98f/ex.json";
 
-    private JsonArrayRequest ArrayRequest ;
+    private final String URL_JSON = "https://gist.githubusercontent.com/Kb861/a47274b3277c424b8dc989a3966bb8ae/raw/33da4425da976ae236410350719ec5863374e98f/ex.json";
+
+    private JsonArrayRequest request ;
 
     private RequestQueue requestQueue ;
 
-    private List<ExerciseModel> lstAnime = new ArrayList<>();
+    private List<ExerciseModel> lstAnime;
 
     private RecyclerView recyclerView ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_defect);
-        recyclerView = findViewById(R.id.recycler);
 
+        recyclerView = findViewById(R.id.recyclerV);
+        Bundle przekazanedane = getIntent().getExtras();
+        String przekazanytekst = przekazanedane.getString("KEY");
+      //  nowyTXT.setText(przekazanytekst);
+        lstAnime=new ArrayList<>();
         jsoncall();
     }
     public void jsoncall() {
@@ -46,7 +53,7 @@ public class DefectActivity extends AppCompatActivity {
 
 
 
-        ArrayRequest = new JsonArrayRequest(URL_JSON, new Response.Listener<JSONArray>() {
+       request = new JsonArrayRequest(URL_JSON, new Response.Listener<JSONArray>() {
 
             @Override
 
@@ -133,16 +140,21 @@ public class DefectActivity extends AppCompatActivity {
 
         requestQueue = Volley.newRequestQueue(DefectActivity.this);
 
-        requestQueue.add(ArrayRequest);
+        requestQueue.add(request);
 
     }
 
-    private void setRecyclerViewAdapter(List<ExerciseModel> lstAnime) {
+    public void setRecyclerViewAdapter(List<ExerciseModel> lstAnime) {
         RecyclerViewAdapter myAdapter = new  RecyclerViewAdapter(this,lstAnime) ;
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerView.setAdapter(myAdapter);
     }
+
+
+
+
+
 
 }

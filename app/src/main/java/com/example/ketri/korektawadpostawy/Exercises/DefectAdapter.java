@@ -61,7 +61,7 @@ public class DefectAdapter extends RecyclerView.Adapter<DefectAdapter.ViewHolder
             @Override
 
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, Main2Activity.class);
+                Intent intent = new Intent(mContext, DefectActivity.class);
                intent.putExtra("Name", mData.get(position).getName());
 
 

@@ -29,17 +29,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private Context mContext ;
     private List<ExerciseModel> mData ;
 
-    public RecyclerViewAdapter(Context mContext, List lst) {
+    public RecyclerViewAdapter(Context mContext, List<ExerciseModel>mData) {
 
         this.mContext = mContext;
         this.mData = mData;
-        options = new RequestOptions()
-
-                .centerCrop()
-
-                .placeholder(R.drawable.spine)
-
-                .error(R.drawable.spine);
+        options=new RequestOptions().centerCrop().placeholder(R.drawable.spine).error(R.drawable.spine);
+//        options = new RequestOptions()
+//
+//                .centerCrop()
+//
+//                .placeholder(R.drawable.spine)
+//
+//                .error(R.drawable.spine);
     }
 
 
@@ -51,34 +52,35 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         LayoutInflater mInflater = LayoutInflater.from(mContext);
 
         view = mInflater.inflate(R.layout.ex_defect_item,parent,false);
-        final MyViewHolder viewHolder=new MyViewHolder(view);
-        viewHolder.view_container.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(mContext, ExerciseActivity.class);
-
-                // sending data process
-
-
-                i.putExtra("anime_name",mData.get(viewHolder.getAdapterPosition()).getName());
-                i.putExtra("anime_description",mData.get(viewHolder.getAdapterPosition()).getDescription());
-
-
-                i.putExtra("anime_category",mData.get(viewHolder.getAdapterPosition()).getCategorie());
-
-
-                i.putExtra("anime_rating",mData.get(viewHolder.getAdapterPosition()).getRating());
-
-
-
-
-
-                mContext.startActivity(i);
-            }
-        });
+//        final MyViewHolder viewHolder=new MyViewHolder(view);
+//        viewHolder.view_container.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(mContext, ExerciseActivity.class);
+//
+//                // sending data process
+//
+//
+//                i.putExtra("anime_name",mData.get(viewHolder.getAdapterPosition()).getName());
+//                i.putExtra("anime_description",mData.get(viewHolder.getAdapterPosition()).getDescription());
+//
+//
+//                i.putExtra("anime_category",mData.get(viewHolder.getAdapterPosition()).getCategorie());
+//
+//
+//                i.putExtra("anime_rating",mData.get(viewHolder.getAdapterPosition()).getRating());
+//
+//
+//
+//
+//
+//                mContext.startActivity(i);
+//            }
+//        });
         // click listener here
 
-        return viewHolder;
+        //return viewHolder;
+        return new MyViewHolder(view);
     }
 
     @Override
@@ -99,7 +101,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tvname,tv_rate,tvcat;
-        LinearLayout view_container;
+       // LinearLayout view_container;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -110,7 +112,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             tv_rate = itemView.findViewById(R.id.rating);
 
             tvcat = itemView.findViewById(R.id.categorie);
-            view_container=itemView.findViewById(R.id.container);
+            //view_container=itemView.findViewById(R.id.container);
         }
     }
 }

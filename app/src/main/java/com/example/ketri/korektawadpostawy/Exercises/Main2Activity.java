@@ -21,15 +21,16 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         ButterKnife.bind(this);
-String napis="hej";
-        Bundle przekazanedane = getIntent().getExtras();
-        String przekazanytekst = przekazanedane.getString("KEY");
-        nowyTXT.setText(przekazanytekst);
-
-        if(nowyTXT.getText().toString().contains("Skolioza"))
-        {
-            innyTXT.setText(napis);
-        }
+//
+//        String napis="hej";
+//        Bundle przekazanedane = getIntent().getExtras();
+//        String przekazanytekst = przekazanedane.getString("KEY");
+//        nowyTXT.setText(przekazanytekst);
+//
+//        if(nowyTXT.getText().toString().contains("Skolioza"))
+//        {
+//            innyTXT.setText(napis);
+//        }
 
     }
 }

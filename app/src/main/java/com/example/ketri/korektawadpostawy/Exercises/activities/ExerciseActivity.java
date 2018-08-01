@@ -27,7 +27,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         String category = getIntent().getExtras().getString("anime_category");
 
-        int nb_episode = getIntent().getExtras().getInt("anime_nb_episode") ;
+
 
         String rating = getIntent().getExtras().getString("anime_rating") ;
 
