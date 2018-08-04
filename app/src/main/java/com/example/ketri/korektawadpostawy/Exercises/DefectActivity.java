@@ -26,7 +26,7 @@ import java.util.List;
 
 public class DefectActivity extends AppCompatActivity {
 
-    private final String URL_JSON = "https://gist.githubusercontent.com/Kb861/a47274b3277c424b8dc989a3966bb8ae/raw/33da4425da976ae236410350719ec5863374e98f/ex.json";
+    private final String URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/40f9283f96735e9d197345c470fefde841ba89ef/skoliosis.json";
 
     private JsonArrayRequest request ;
 
@@ -87,7 +87,9 @@ public class DefectActivity extends AppCompatActivity {
                         anime.setDescription(jsonObject.getString("description"));
                         anime.setRating(jsonObject.getString("Rating"));
                         anime.setCategorie(jsonObject.getString("categorie"));
-
+                        anime.setNb_episode(jsonObject.getInt("episode"));
+                        anime.setStudio(jsonObject.getString("studio"));
+                        anime.setImage_url(jsonObject.getString("img"));
 
 
 

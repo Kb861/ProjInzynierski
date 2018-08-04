@@ -11,15 +11,25 @@ public class ExerciseModel {
 
     private String rating ;
 
+    private int nb_episode;
+
+    private String image_url;
 
     private String categorie;
+
+    private String studio;
+
+
     public ExerciseModel(){};
 
-    public ExerciseModel(String name, String description, String rating, String categorie) {
+    public ExerciseModel(String name, String description, String rating, int nb_episode, String image_url, String categorie, String studio) {
         this.name = name;
         this.description = description;
         this.rating = rating;
+        this.nb_episode = nb_episode;
+        this.image_url = image_url;
         this.categorie = categorie;
+        this.studio = studio;
     }
 
     public String getName() {
@@ -46,11 +56,35 @@ public class ExerciseModel {
         this.rating = rating;
     }
 
+    public int getNb_episode() {
+        return nb_episode;
+    }
+
+    public void setNb_episode(int nb_episode) {
+        this.nb_episode = nb_episode;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
+    }
+
     public String getCategorie() {
         return categorie;
     }
 
     public void setCategorie(String categorie) {
         this.categorie = categorie;
+    }
+
+    public String getStudio() {
+        return studio;
+    }
+
+    public void setStudio(String studio) {
+        this.studio = studio;
     }
 }

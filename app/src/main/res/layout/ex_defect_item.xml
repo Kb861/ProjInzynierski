@@ -8,6 +8,11 @@
     android:orientation="horizontal"
     android:id="@+id/container"
     android:layout_height="150dp">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/loading_shape"
+        android:id="@+id/thumbnail"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +21,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/rowname"
+            android:id="@+id/exercise_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Exercise 1"
@@ -42,9 +47,22 @@
             android:textColor="#fff"
             android:textSize="15sp"
             android:textStyle="bold" />
+        <TextView
+
+            android:id="@+id/studio"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+
+            android:text="Studio" />
 
 
 
 
-</LinearLayout>
+
+
+    </LinearLayout>
 </LinearLayout>

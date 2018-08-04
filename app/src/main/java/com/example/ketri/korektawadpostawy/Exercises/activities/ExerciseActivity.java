@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.ketri.korektawadpostawy.R;
 
@@ -19,19 +20,20 @@ public class ExerciseActivity extends AppCompatActivity {
 
 
         // Recieve data
-        String name  = getIntent().getExtras().getString("anime_name");
+        String name  = getIntent().getExtras().getString("exercise_name");
+
 
         String description = getIntent().getExtras().getString("anime_description");
 
-
+        String studio = getIntent().getExtras().getString("anime_studio") ;
 
         String category = getIntent().getExtras().getString("anime_category");
 
-
+        int nb_episode = getIntent().getExtras().getInt("anime_nb_episode") ;
 
         String rating = getIntent().getExtras().getString("anime_rating") ;
 
-
+        String image_url = getIntent().getExtras().getString("anime_img") ;
         CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsingtoolbar_id);
 
         collapsingToolbarLayout.setTitleEnabled(true);
@@ -40,7 +42,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         TextView tv_name = findViewById(R.id.aa_anime_name);
 
-
+        TextView tv_studio = findViewById(R.id.aa_studio);
 
         TextView tv_categorie = findViewById(R.id.aa_categorie) ;
 
@@ -48,7 +50,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         TextView tv_rating  = findViewById(R.id.aa_rating) ;
 
-
+        ImageView img = findViewById(R.id.aa_thumbnail);
 
 
 
@@ -64,7 +66,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         tv_rating.setText(rating);
 
-
+        tv_studio.setText(studio);
 
 
 
@@ -74,6 +76,15 @@ public class ExerciseActivity extends AppCompatActivity {
 
 
 
-        RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.spine).error(R.drawable.spine);
+        RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);
+
+
+
+
+
+        // set image using Glide
+
+        Glide.with(this).load(image_url).apply(requestOptions).into(img);
+
     }
 }
