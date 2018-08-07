@@ -59,6 +59,15 @@ public class DefectActivity extends AppCompatActivity {
           jsoncall();
 
       }
+        if(nazwa.getText().toString().contains("Kifoza"))
+        {
+
+            //innyTXT.setText(napis);
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/88fc23e1e50bf92048cb3004e5e9a473/raw/3058707395ceeaf261bc205dc517bf8208143d9f/kyphosis.json";
+            lstAnime=new ArrayList<>();
+            jsoncall();
+
+        }
 
 
 
