@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -26,7 +27,7 @@ import java.util.List;
 
 public class DefectActivity extends AppCompatActivity {
 
-    private final String URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/40f9283f96735e9d197345c470fefde841ba89ef/skoliosis.json";
+    public String URL_JSON;
 
     private JsonArrayRequest request ;
 
@@ -35,17 +36,35 @@ public class DefectActivity extends AppCompatActivity {
     private List<ExerciseModel> lstAnime;
 
     private RecyclerView recyclerView ;
+    TextView nazwa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_defect);
-
         recyclerView = findViewById(R.id.recyclerV);
+       nazwa=findViewById(R.id.nazwa);
+
         Bundle przekazanedane = getIntent().getExtras();
         String przekazanytekst = przekazanedane.getString("KEY");
-      //  nowyTXT.setText(przekazanytekst);
-        lstAnime=new ArrayList<>();
-        jsoncall();
+        nazwa.setText(przekazanytekst);
+
+
+        if(nazwa.getText().toString().contains("Skolioza"))
+      {
+
+          //innyTXT.setText(napis);
+         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/40f9283f96735e9d197345c470fefde841ba89ef/skoliosis.json";
+          lstAnime=new ArrayList<>();
+          jsoncall();
+
+      }
+
+
+
+
+
+
     }
     public void jsoncall() {
 
