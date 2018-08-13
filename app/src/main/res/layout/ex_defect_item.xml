@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_marginTop="5dp"
-    android:padding="8dp"
-    android:background="@color/colorAccent"
-    android:orientation="horizontal"
+    style="@style/LinearL_item"
     android:id="@+id/container"
-    android:layout_height="150dp">
+>
     <ImageView
         style="@style/ImageViewListEx"
         android:id="@+id/thumbnail"/>

@@ -2,8 +2,7 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    style="@style/Match">
     <android.support.design.widget.AppBarLayout
 
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -50,10 +49,6 @@
 
             </android.support.v7.widget.Toolbar>
 
-
-
-
-
             <LinearLayout
 
                 android:orientation="horizontal"
@@ -65,34 +60,23 @@
                 android:padding="50dp"
 
                 >
-
-
-
-
-
                 <ImageView
                     style="@style/ImageViewListEx"
                     android:id="@+id/thumbnail_view"/>
-
-
-
                 <LinearLayout
                     style="@style/LinearL">
                     <TextView
-                        android:id="@+id/aa_anime_name"
+                        android:id="@+id/ex_name_view"
                         style="@style/TextViewListEX"/>
-
                     <TextView
                         android:layout_marginTop="5dp"
                         style="@style/Wrap"
                         android:text="Category"
-                        android:id="@+id/aa_categorie"/>
+                        android:id="@+id/categorie_view"/>
                     <TextView
-                        android:id="@+id/aa_rating"
+                        android:id="@+id/rating_view"
                         style="@style/TextViewRating"
                     />
-
-
 
                     <TextView
 
@@ -106,70 +90,20 @@
 
                         android:id="@+id/aa_studio"/>
 
-
-
-
-
-
-
                 </LinearLayout>
-
-
-
-
-
             </LinearLayout>
-
-
-
-
-
         </android.support.design.widget.CollapsingToolbarLayout>
-
-
-
-
 
     </android.support.design.widget.AppBarLayout>
 
-
-
-
-
     <android.support.v4.widget.NestedScrollView
-
-        android:layout_width="match_parent"
-
-        android:layout_height="match_parent"
-
+        style="@style/Match"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-
-        android:padding="16dp"        >
-
-
-
-
+        android:padding="16dp" >
 
         <TextView
-
-
-
-            android:text="Anime Description"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="match_parent"
-
-            android:id="@+id/aa_description"/>
-
-
-
-
-
-
-
+            android:text="Description"
+            style="@style/Match"
+            android:id="@+id/description_view"/>
     </android.support.v4.widget.NestedScrollView>
-
-
-
 </android.support.design.widget.CoordinatorLayout>

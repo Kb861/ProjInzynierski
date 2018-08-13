@@ -21,7 +21,6 @@
         </activity>
         <activity android:name=".Exercises.DefectActivity" />
         <activity android:name=".Exercises.activities.ExerciseActivity" />
-        <activity android:name=".Exercises.Main2Activity"></activity>
     </application>
 
 </manifest>
