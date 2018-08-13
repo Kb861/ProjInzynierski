@@ -63,16 +63,16 @@ RequestOptions options ;
 
 
                 i.putExtra("exercise_name",mData.get(viewHolder.getAdapterPosition()).getName());
-                i.putExtra("anime_description",mData.get(viewHolder.getAdapterPosition()).getDescription());
-                i.putExtra("anime_studio",mData.get(viewHolder.getAdapterPosition()).getStudio());
+                i.putExtra("ex_description",mData.get(viewHolder.getAdapterPosition()).getDescription());
+                i.putExtra("ex_studio",mData.get(viewHolder.getAdapterPosition()).getStudio());
 
-                i.putExtra("anime_category",mData.get(viewHolder.getAdapterPosition()).getCategorie());
+                i.putExtra("ex_category",mData.get(viewHolder.getAdapterPosition()).getCategorie());
 
-                i.putExtra("anime_nb_episode",mData.get(viewHolder.getAdapterPosition()).getNb_episode());
+                i.putExtra("ex_nb_episode",mData.get(viewHolder.getAdapterPosition()).getNb_episode());
 
-                i.putExtra("anime_rating",mData.get(viewHolder.getAdapterPosition()).getRating());
+                i.putExtra("ex_rating",mData.get(viewHolder.getAdapterPosition()).getRating());
 
-                i.putExtra("anime_img",mData.get(viewHolder.getAdapterPosition()).getImage_url());
+                i.putExtra("ex_img",mData.get(viewHolder.getAdapterPosition()).getImage_url());
 
 
 

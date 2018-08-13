@@ -40,7 +40,7 @@ public class ExerciseActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         // Recieve data
-        String name  = getIntent().getExtras().getString("ex_name");
+        String name  = getIntent().getExtras().getString("exercise_name");
         String description = getIntent().getExtras().getString("ex_description");
         String studio = getIntent().getExtras().getString("ex_studio") ;
         String category = getIntent().getExtras().getString("ex_category");
