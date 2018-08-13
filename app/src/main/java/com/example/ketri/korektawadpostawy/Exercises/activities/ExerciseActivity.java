@@ -50,7 +50,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         TextView tv_rating  = findViewById(R.id.aa_rating) ;
 
-        ImageView img = findViewById(R.id.aa_thumbnail);
+        ImageView img = findViewById(R.id.thumbnail_view);
 
 
 

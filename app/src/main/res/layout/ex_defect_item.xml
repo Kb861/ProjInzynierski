@@ -4,54 +4,34 @@
     android:layout_width="match_parent"
     android:layout_marginTop="5dp"
     android:padding="8dp"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorAccent"
     android:orientation="horizontal"
     android:id="@+id/container"
     android:layout_height="150dp">
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:background="@drawable/loading_shape"
+        style="@style/ImageViewListEx"
         android:id="@+id/thumbnail"/>
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="131dp"
-        android:layout_margin="8dp"
-        android:orientation="vertical">
+        style="@style/LinearL">
 
         <TextView
             android:id="@+id/exercise_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Exercise 1"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            style="@style/TextViewListEX" />
 
         <TextView
             android:id="@+id/categorie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Wrap"
             android:text="Category" />
+
         <TextView
             android:id="@+id/rating"
             style="@style/TextViewRating"/>
+
         <TextView
-
             android:id="@+id/studio"
-
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-
+            style="@style/Wrap"
             android:layout_marginTop="5dp"
-
             android:text="Studio" />
-
-
-
-
-
 
     </LinearLayout>
 </LinearLayout>

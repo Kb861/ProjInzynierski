@@ -5,41 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+
     tools:context="com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
+
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme">
 
 
-
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimaryDark"
             app:expandedTitleTextAppearance="@android:color/transparent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
             >
 
+        >
 
 
-
-            <ImageButton
-                android:background="@android:color/white"
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:src="@drawable/spine"
+                android:layout_height="150dp"
+                android:background="@android:color/black"
                 android:contentDescription="@string/app_name"
                 android:fitsSystemWindows="true"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/spine" />
 
 
         </android.support.design.widget.CollapsingToolbarLayout>
-
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -54,10 +55,4 @@
             android:scrollbars="vertical"
             android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
     </android.support.v4.widget.NestedScrollView>
-
-
-
-
-
-
 </android.support.design.widget.CoordinatorLayout>

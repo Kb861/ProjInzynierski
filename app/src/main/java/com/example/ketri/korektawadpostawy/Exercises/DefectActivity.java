@@ -28,29 +28,25 @@ import java.util.List;
 public class DefectActivity extends AppCompatActivity {
 
     public String URL_JSON;
-
     private JsonArrayRequest request ;
-
     private RequestQueue requestQueue ;
-
     private List<ExerciseModel> lstAnime;
-
     private RecyclerView recyclerView ;
-    TextView nazwa;
+    TextView name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_defect);
         recyclerView = findViewById(R.id.recyclerV);
-       nazwa=findViewById(R.id.nazwa);
+       name=findViewById(R.id.name);
 
         Bundle przekazanedane = getIntent().getExtras();
         String przekazanytekst = przekazanedane.getString("KEY");
-        nazwa.setText(przekazanytekst);
+        name.setText(przekazanytekst);
 
 
-        if(nazwa.getText().toString().contains("Skolioza"))
+        if(name.getText().toString().contains("Skolioza"))
       {
 
           //innyTXT.setText(napis);
@@ -59,7 +55,7 @@ public class DefectActivity extends AppCompatActivity {
           jsoncall();
 
       }
-        if(nazwa.getText().toString().contains("Kifoza"))
+        if(name.getText().toString().contains("Kifoza"))
         {
 
             //innyTXT.setText(napis);

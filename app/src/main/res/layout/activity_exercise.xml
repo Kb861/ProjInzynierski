@@ -71,52 +71,22 @@
 
 
                 <ImageView
-
-                    android:layout_width="100dp"
-
-                    android:layout_height="match_parent"
-
-                    android:background="@drawable/loading_shape"
-
-                    android:id="@+id/aa_thumbnail"/>
+                    style="@style/ImageViewListEx"
+                    android:id="@+id/thumbnail_view"/>
 
 
 
                 <LinearLayout
-
-                    android:layout_width="match_parent"
-
-                    android:layout_height="130dp"
-
-                    android:orientation="vertical"
-
-                    android:layout_margin="8dp">
-
-
-
-
-
+                    style="@style/LinearL">
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/aa_anime_name"
-                        android:text="Exercise Title"
-                        android:textStyle="bold"
-                        android:textSize="18sp"/>
-
-
+                        style="@style/TextViewListEX"/>
 
                     <TextView
                         android:layout_marginTop="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/Wrap"
                         android:text="Category"
                         android:id="@+id/aa_categorie"/>
-
-
-
-
-
                     <TextView
                         android:id="@+id/aa_rating"
                         style="@style/TextViewRating"

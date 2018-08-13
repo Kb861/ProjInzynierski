@@ -27,14 +27,6 @@ public class DefectAdapter extends RecyclerView.Adapter<DefectAdapter.ViewHolder
     private Context mContext ;
     private List<Defect> mData ;
 
-    @BindView(R.id.txt_defect)
-    TextView txt_defect;
-
-    @BindView(R.id.img)
-    ImageView img;
-
-
-
     public DefectAdapter(Context mContext, List<Defect> mData) {
         this.mContext = mContext;
         this.mData = mData;
@@ -43,9 +35,7 @@ public class DefectAdapter extends RecyclerView.Adapter<DefectAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view ;
-
         LayoutInflater mInflater = LayoutInflater.from(mContext);
-
         view = mInflater.inflate(R.layout.item,parent,false);
         ButterKnife.bind(this,view);
         return new ViewHolder(view);
@@ -62,49 +52,8 @@ public class DefectAdapter extends RecyclerView.Adapter<DefectAdapter.ViewHolder
 
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, DefectActivity.class);
-               intent.putExtra("Name", mData.get(position).getName());
-
-
-
-                Bundle bundle = new Bundle();
-               // if(position==0) {
-                   // String wpisanyTekst = txt_defect.getText().toString();
-
-                  //  bundle.putString("KEY", wpisanyTekst);
-
-                   // intent.putExtras(bundle);
                 intent.putExtra("KEY", mData.get(position).getName());
-                    mContext.startActivity(intent);
-            //    }
-//                if(position==0) {
-//                    Intent intent = new Intent(mContext, DefectActivity.class);
-//                    intent.putExtra("Name", mData.get(position).getName());
-//                    mContext.startActivity(intent);
-//                }
-//
-//                if(position==1) {
-//                    Intent intent = new Intent(mContext, DefectActivity.class);
-//                    intent.putExtra("Name", mData.get(position).getName());
-//                    mContext.startActivity(intent);
-//                }
-//
-//                if(position==2) {
-//                    Intent intent = new Intent(mContext, DefectActivity.class);
-//                    intent.putExtra("Name", mData.get(position).getName());
-//                    mContext.startActivity(intent);
-//                }
-//
-//                if(position==3) {
-//                    Intent intent = new Intent(mContext, DefectActivity.class);
-//                    intent.putExtra("Name", mData.get(position).getName());
-//                    mContext.startActivity(intent);
-//                }
-//                if(position==4) {
-//                    Intent intent = new Intent(mContext, DefectActivity.class);
-//                    intent.putExtra("Name", mData.get(position).getName());
-//                    mContext.startActivity(intent);
-//                }
-
+                mContext.startActivity(intent);
             }
 
         });
@@ -116,14 +65,18 @@ public class DefectAdapter extends RecyclerView.Adapter<DefectAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.txt_defect)
         TextView txt_defect;
+
+        @BindView(R.id.img)
         ImageView img;
+
+        @BindView(R.id.card_view)
         CardView cardView;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            txt_defect = (TextView) itemView.findViewById(R.id.txt_defect) ;
-            img = (ImageView) itemView.findViewById(R.id.img);
-            cardView = (CardView) itemView.findViewById(R.id.card_view);
+            ButterKnife.bind(this, itemView);
         }
     }
 }
