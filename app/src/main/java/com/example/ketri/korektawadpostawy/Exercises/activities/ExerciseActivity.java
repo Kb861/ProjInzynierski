@@ -1,10 +1,13 @@
 package com.example.ketri.korektawadpostawy.Exercises.activities;
 
+import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -31,6 +34,8 @@ public class ExerciseActivity extends AppCompatActivity {
 
     @BindView(R.id.thumbnail_view)
     ImageView img;
+    @BindView(R.id.videoView)
+    VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,7 @@ public class ExerciseActivity extends AppCompatActivity {
         int nb_episode = getIntent().getExtras().getInt("ex_nb_episode") ;
         String rating = getIntent().getExtras().getString("ex_rating") ;
         String image_url = getIntent().getExtras().getString("ex_img") ;
+        String video = getIntent().getExtras().getString("ex_video") ;
 
         CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsingtoolbar_id);
         collapsingToolbarLayout.setTitleEnabled(true);
@@ -56,6 +62,14 @@ public class ExerciseActivity extends AppCompatActivity {
         tv_description.setText(description);
         tv_rating.setText(rating);
         tv_studio.setText(studio);
+
+       String videoPath = "android.resource://" + getPackageName() + "/" + video;
+       Uri uri = Uri.parse(videoPath);
+        videoView.setVideoURI(uri);
+        MediaController mediaController = new MediaController(this);
+        videoView.setMediaController(mediaController);
+        mediaController.setAnchorView(videoView);
+        videoView.start();
 
         collapsingToolbarLayout.setTitle(name);
         RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);

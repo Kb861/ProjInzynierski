@@ -14,6 +14,7 @@ public class ExerciseModel {
     private int nb_episode;
 
     private String image_url;
+    private String video;
 
     private String categorie;
 
@@ -22,7 +23,7 @@ public class ExerciseModel {
 
     public ExerciseModel(){};
 
-    public ExerciseModel(String name, String description, String rating, int nb_episode, String image_url, String categorie, String studio) {
+    public ExerciseModel(String name, String description, String rating, int nb_episode, String image_url, String categorie, String studio, String video) {
         this.name = name;
         this.description = description;
         this.rating = rating;
@@ -30,6 +31,7 @@ public class ExerciseModel {
         this.image_url = image_url;
         this.categorie = categorie;
         this.studio = studio;
+        this.video = video;
     }
 
     public String getName() {
@@ -86,5 +88,13 @@ public class ExerciseModel {
 
     public void setStudio(String studio) {
         this.studio = studio;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
     }
 }

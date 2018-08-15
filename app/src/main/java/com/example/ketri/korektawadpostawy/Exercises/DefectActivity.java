@@ -1,13 +1,16 @@
 package com.example.ketri.korektawadpostawy.Exercises;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -33,6 +36,7 @@ public class DefectActivity extends AppCompatActivity {
     private List<ExerciseModel> lstAnime;
     private RecyclerView recyclerView ;
     TextView name;
+    VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,7 @@ public class DefectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_defect);
         recyclerView = findViewById(R.id.recyclerV);
        name=findViewById(R.id.name);
-
+        videoView=findViewById(R.id.videoView);
         Bundle przekazanedane = getIntent().getExtras();
         String przekazanytekst = przekazanedane.getString("KEY");
         name.setText(przekazanytekst);
@@ -65,6 +69,17 @@ public class DefectActivity extends AppCompatActivity {
 
         }
 
+        if(name.getText().toString().contains("Lordoza"))
+        {
+
+            //innyTXT.setText(napis);
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/68e5f88eb6a6a797c277d7795c2300d6/raw/2f8c5beeecf61b152f2943b2d5b45f58e40363c8/lordosis.json";
+            lstAnime=new ArrayList<>();
+            jsoncall();
+
+
+        }
+
 
 
 
@@ -75,54 +90,38 @@ public class DefectActivity extends AppCompatActivity {
 
 
 
-
-
        request = new JsonArrayRequest(URL_JSON, new Response.Listener<JSONArray>() {
 
             @Override
 
             public void onResponse(JSONArray response) {
 
-
-
                 JSONObject jsonObject = null;
-
-
 
 
 
                 for (int i = 0 ; i<response.length();i++) {
 
-
-
                     //Toast.makeText(getApplicationContext(),String.valueOf(i),Toast.LENGTH_SHORT).show();
-
 
 
                     try {
 
-
-
                         jsonObject = response.getJSONObject(i);
+                        ExerciseModel ex = new ExerciseModel();
 
-                        ExerciseModel anime = new ExerciseModel();
-
-                        anime.setName(jsonObject.getString("name"));
-                        anime.setDescription(jsonObject.getString("description"));
-                        anime.setRating(jsonObject.getString("Rating"));
-                        anime.setCategorie(jsonObject.getString("categorie"));
-                        anime.setNb_episode(jsonObject.getInt("episode"));
-                        anime.setStudio(jsonObject.getString("studio"));
-                        anime.setImage_url(jsonObject.getString("img"));
-
-
-
-
-
+                        ex.setName(jsonObject.getString("name"));
+                        ex.setDescription(jsonObject.getString("description"));
+                        ex.setRating(jsonObject.getString("Rating"));
+                        ex.setCategorie(jsonObject.getString("categorie"));
+                        ex.setNb_episode(jsonObject.getInt("episode"));
+                        ex.setStudio(jsonObject.getString("studio"));
+                        ex.setImage_url(jsonObject.getString("img"));
+                        ex.setVideo(jsonObject.getString("video"));
 
                         //Toast.makeText(MainActivity.this,anime.toString(),Toast.LENGTH_SHORT).show();
 
-                        lstAnime.add(anime);
+                        lstAnime.add(ex);
 
                     }
 
