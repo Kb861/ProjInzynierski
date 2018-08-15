@@ -5,10 +5,9 @@ package com.example.ketri.korektawadpostawy.Exercises.model;
  */
 
 public class ExerciseModel {
+
     private String name ;
-
     private String description;
-
     private String rating ;
 
     private int nb_episode;
@@ -23,11 +22,11 @@ public class ExerciseModel {
 
     public ExerciseModel(){};
 
-    public ExerciseModel(String name, String description, String rating, int nb_episode, String image_url, String categorie, String studio, String video) {
+    public ExerciseModel(String name, String description, String rating, String image_url, String categorie, String studio, String video) {
         this.name = name;
         this.description = description;
         this.rating = rating;
-        this.nb_episode = nb_episode;
+
         this.image_url = image_url;
         this.categorie = categorie;
         this.studio = studio;
@@ -58,13 +57,7 @@ public class ExerciseModel {
         this.rating = rating;
     }
 
-    public int getNb_episode() {
-        return nb_episode;
-    }
 
-    public void setNb_episode(int nb_episode) {
-        this.nb_episode = nb_episode;
-    }
 
     public String getImage_url() {
         return image_url;
@@ -82,13 +75,7 @@ public class ExerciseModel {
         this.categorie = categorie;
     }
 
-    public String getStudio() {
-        return studio;
-    }
 
-    public void setStudio(String studio) {
-        this.studio = studio;
-    }
 
     public String getVideo() {
         return video;

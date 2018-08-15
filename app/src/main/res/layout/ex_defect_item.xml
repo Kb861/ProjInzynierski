@@ -23,11 +23,7 @@
             android:id="@+id/rating"
             style="@style/TextViewRating"/>
 
-        <TextView
-            android:id="@+id/studio"
-            style="@style/Wrap"
-            android:layout_marginTop="5dp"
-            android:text="Studio" />
+
 
     </LinearLayout>
 </LinearLayout>

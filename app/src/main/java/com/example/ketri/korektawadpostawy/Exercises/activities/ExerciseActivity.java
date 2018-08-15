@@ -26,8 +26,7 @@ public class ExerciseActivity extends AppCompatActivity {
     @BindView(R.id.rating_view)
     TextView tv_rating;
 
-    @BindView(R.id.aa_studio)
-    TextView tv_studio;
+
 
     @BindView(R.id.description_view)
     TextView tv_description;
@@ -44,15 +43,14 @@ public class ExerciseActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         ButterKnife.bind(this);
 
-        // Recieve data
         String name  = getIntent().getExtras().getString("exercise_name");
         String description = getIntent().getExtras().getString("ex_description");
-        String studio = getIntent().getExtras().getString("ex_studio") ;
+
         String category = getIntent().getExtras().getString("ex_category");
-        int nb_episode = getIntent().getExtras().getInt("ex_nb_episode") ;
+
         String rating = getIntent().getExtras().getString("ex_rating") ;
         String image_url = getIntent().getExtras().getString("ex_img") ;
-        String video = getIntent().getExtras().getString("ex_video") ;
+        //String video = getIntent().getExtras().getString("ex_video") ;
 
         CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsingtoolbar_id);
         collapsingToolbarLayout.setTitleEnabled(true);
@@ -61,15 +59,15 @@ public class ExerciseActivity extends AppCompatActivity {
         tv_categorie.setText(category);
         tv_description.setText(description);
         tv_rating.setText(rating);
-        tv_studio.setText(studio);
 
-       String videoPath = "android.resource://" + getPackageName() + "/" + video;
-       Uri uri = Uri.parse(videoPath);
-        videoView.setVideoURI(uri);
-        MediaController mediaController = new MediaController(this);
-        videoView.setMediaController(mediaController);
-        mediaController.setAnchorView(videoView);
-        videoView.start();
+
+//       String videoPath = "android.resource://" + getPackageName() + "/" + video;
+//       Uri uri = Uri.parse(videoPath);
+//        videoView.setVideoURI(uri);
+//        MediaController mediaController = new MediaController(this);
+//        videoView.setMediaController(mediaController);
+//        mediaController.setAnchorView(videoView);
+//        videoView.start();
 
         collapsingToolbarLayout.setTitle(name);
         RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);

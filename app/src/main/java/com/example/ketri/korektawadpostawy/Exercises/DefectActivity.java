@@ -54,7 +54,7 @@ public class DefectActivity extends AppCompatActivity {
       {
 
           //innyTXT.setText(napis);
-         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/40f9283f96735e9d197345c470fefde841ba89ef/skoliosis.json";
+         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/07bb218b6dfaa0f42250e9348250a51a1ec9bf37/skoliosis.json";
           lstAnime=new ArrayList<>();
           jsoncall();
 
@@ -69,16 +69,16 @@ public class DefectActivity extends AppCompatActivity {
 
         }
 
-        if(name.getText().toString().contains("Lordoza"))
-        {
-
-            //innyTXT.setText(napis);
-            URL_JSON = "https://gist.githubusercontent.com/Kb861/68e5f88eb6a6a797c277d7795c2300d6/raw/2f8c5beeecf61b152f2943b2d5b45f58e40363c8/lordosis.json";
-            lstAnime=new ArrayList<>();
-            jsoncall();
-
-
-        }
+//        if(name.getText().toString().contains("Lordoza"))
+//        {
+//
+//            //innyTXT.setText(napis);
+//            URL_JSON = "https://gist.githubusercontent.com/Kb861/68e5f88eb6a6a797c277d7795c2300d6/raw/2f8c5beeecf61b152f2943b2d5b45f58e40363c8/lordosis.json";
+//            lstAnime=new ArrayList<>();
+//            jsoncall();
+//
+//
+//        }
 
 
 
@@ -114,10 +114,10 @@ public class DefectActivity extends AppCompatActivity {
                         ex.setDescription(jsonObject.getString("description"));
                         ex.setRating(jsonObject.getString("Rating"));
                         ex.setCategorie(jsonObject.getString("categorie"));
-                        ex.setNb_episode(jsonObject.getInt("episode"));
-                        ex.setStudio(jsonObject.getString("studio"));
+
+
                         ex.setImage_url(jsonObject.getString("img"));
-                        ex.setVideo(jsonObject.getString("video"));
+                      //  ex.setVideo(jsonObject.getString("video"));
 
                         //Toast.makeText(MainActivity.this,anime.toString(),Toast.LENGTH_SHORT).show();
 
