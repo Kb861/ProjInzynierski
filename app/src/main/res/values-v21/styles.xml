@@ -36,7 +36,7 @@
         <item name="android:text">0.0</item>
         <item name="android:background">@drawable/rating_background</item>
         <item name="android:paddingRight">5dp</item>
-        <item name="android:drawableLeft">@drawable/ic_star_black_24dp</item>
+        <item name="android:drawableLeft">@drawable/ic_accessibility_black_24dp</item>
         <item name="android:textColor">#fff</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -70,10 +70,42 @@
         <item name="android:background">@color/colorAccent</item>
         <item name="android:padding">8dp</item>
     </style>
+    <style name="LinearL_ExA">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">50dp</item>
+    </style>
+    <style name="LinearLayout">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
     <style name="ImageViewListEx">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">100dp</item>
         <item name="android:background">@drawable/loading_shape</item>
     </style>
+    <style name="Heading">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="VideoViewEx">
+        <item name="android:layout_width">350dp</item>
+        <item name="android:layout_height">300dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+<style name="CardViewDefects">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_margin">10dp</item>
+</style>
+
+
 
 </resources>

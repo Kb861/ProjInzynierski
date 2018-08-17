@@ -2,12 +2,9 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp"
     android:id="@+id/card_view"
     card_view:cardCornerRadius="4dp"
-    >
+   style="@style/CardViewDefects">
     <LinearLayout
         android:weightSum="10"
         android:padding="10dp"
@@ -16,14 +13,9 @@
         android:layout_height="fill_parent">
         <ImageView
             android:id="@+id/img"
-            style="@style/ImageViewEx"
-            />
-
+            style="@style/ImageViewEx" />
         <TextView
             android:id="@+id/txt_defect"
-            style="@style/TextViewEx"
-            />
-
+            style="@style/TextViewEx" />
     </LinearLayout>
-
 </android.support.v7.widget.CardView>
