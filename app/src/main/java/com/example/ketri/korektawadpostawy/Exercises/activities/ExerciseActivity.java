@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -26,13 +27,12 @@ public class ExerciseActivity extends AppCompatActivity {
     @BindView(R.id.rating_view)
     TextView tv_rating;
 
-
-
     @BindView(R.id.description_view)
     TextView tv_description;
 
     @BindView(R.id.thumbnail_view)
     ImageView img;
+
     @BindView(R.id.videoView)
     VideoView videoView;
 
@@ -45,12 +45,10 @@ public class ExerciseActivity extends AppCompatActivity {
 
         String name  = getIntent().getExtras().getString("exercise_name");
         String description = getIntent().getExtras().getString("ex_description");
-
         String category = getIntent().getExtras().getString("ex_category");
-
         String rating = getIntent().getExtras().getString("ex_rating") ;
         String image_url = getIntent().getExtras().getString("ex_img") ;
-        //String video = getIntent().getExtras().getString("ex_video") ;
+        String video = getIntent().getExtras().getString("ex_video") ;
 
         CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsingtoolbar_id);
         collapsingToolbarLayout.setTitleEnabled(true);
@@ -59,14 +57,18 @@ public class ExerciseActivity extends AppCompatActivity {
         tv_categorie.setText(category);
         tv_description.setText(description);
         tv_rating.setText(rating);
-
-
+       // videoView.setTag(1,video);
+        String videoPath="/Users/ketri/repozytorium/ProjInzynierski/korektawadpostawy/app/src/main/res/raw/"+video;
+        Uri uri = Uri.parse(videoPath);
+     videoView.setVideoURI(uri);
+        videoView.start();
 //       String videoPath = "android.resource://" + getPackageName() + "/" + video;
+
 //       Uri uri = Uri.parse(videoPath);
 //        videoView.setVideoURI(uri);
-//        MediaController mediaController = new MediaController(this);
-//        videoView.setMediaController(mediaController);
-//        mediaController.setAnchorView(videoView);
+     MediaController mediaController = new MediaController(this);
+     videoView.setMediaController(mediaController);
+      mediaController.setAnchorView(videoView);
 //        videoView.start();
 
         collapsingToolbarLayout.setTitle(name);
@@ -74,4 +76,7 @@ public class ExerciseActivity extends AppCompatActivity {
         Glide.with(this).load(image_url).apply(requestOptions).into(img);
 
     }
+
+
+
 }

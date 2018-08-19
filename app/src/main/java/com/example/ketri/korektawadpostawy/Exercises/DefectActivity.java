@@ -1,6 +1,7 @@
 package com.example.ketri.korektawadpostawy.Exercises;
 
 import android.net.Uri;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -28,43 +29,46 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class DefectActivity extends AppCompatActivity {
 
     public String URL_JSON;
     private JsonArrayRequest request ;
     private RequestQueue requestQueue ;
-    private List<ExerciseModel> lstAnime;
+    private List<ExerciseModel> lstEX;
     private RecyclerView recyclerView ;
+
+    @BindView(R.id.name)
     TextView name;
+
+    @Nullable
+    @BindView(R.id.videoView)
     VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_defect);
+        ButterKnife.bind(this);
         recyclerView = findViewById(R.id.recyclerV);
-       name=findViewById(R.id.name);
-        videoView=findViewById(R.id.videoView);
-        Bundle przekazanedane = getIntent().getExtras();
-        String przekazanytekst = przekazanedane.getString("KEY");
-        name.setText(przekazanytekst);
 
+        Bundle data = getIntent().getExtras();
+        String totext = data.getString("KEY");
+        name.setText(totext);
 
         if(name.getText().toString().contains("Skolioza"))
       {
-
-          //innyTXT.setText(napis);
-         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/07bb218b6dfaa0f42250e9348250a51a1ec9bf37/skoliosis.json";
-          lstAnime=new ArrayList<>();
+         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/9841aa18f4494faeb45e8b0cf46322b5715074c0/skoliosis.json";
+          lstEX=new ArrayList<>();
           jsoncall();
 
       }
         if(name.getText().toString().contains("Kifoza"))
         {
-
-            //innyTXT.setText(napis);
             URL_JSON = "https://gist.githubusercontent.com/Kb861/88fc23e1e50bf92048cb3004e5e9a473/raw/3058707395ceeaf261bc205dc517bf8208143d9f/kyphosis.json";
-            lstAnime=new ArrayList<>();
+            lstEX=new ArrayList<>();
             jsoncall();
 
         }
@@ -79,32 +83,16 @@ public class DefectActivity extends AppCompatActivity {
 //
 //
 //        }
-
-
-
-
-
-
     }
     public void jsoncall() {
-
-
 
        request = new JsonArrayRequest(URL_JSON, new Response.Listener<JSONArray>() {
 
             @Override
 
             public void onResponse(JSONArray response) {
-
                 JSONObject jsonObject = null;
-
-
-
                 for (int i = 0 ; i<response.length();i++) {
-
-                    //Toast.makeText(getApplicationContext(),String.valueOf(i),Toast.LENGTH_SHORT).show();
-
-
                     try {
 
                         jsonObject = response.getJSONObject(i);
@@ -114,66 +102,35 @@ public class DefectActivity extends AppCompatActivity {
                         ex.setDescription(jsonObject.getString("description"));
                         ex.setRating(jsonObject.getString("Rating"));
                         ex.setCategorie(jsonObject.getString("categorie"));
-
-
                         ex.setImage_url(jsonObject.getString("img"));
-                      //  ex.setVideo(jsonObject.getString("video"));
-
-                        //Toast.makeText(MainActivity.this,anime.toString(),Toast.LENGTH_SHORT).show();
-
-                        lstAnime.add(ex);
-
+                        ex.setVideo(jsonObject.getString("video"));
+                        lstEX.add(ex);
                     }
-
                     catch (JSONException e) {
 
                         e.printStackTrace();
 
                     }
-
                 }
-
-
-
-
-
-                Toast.makeText(DefectActivity.this,"Size of Liste "+String.valueOf(lstAnime.size()),Toast.LENGTH_SHORT).show();
-
-                Toast.makeText(DefectActivity.this,lstAnime.get(1).toString(),Toast.LENGTH_SHORT).show();
-
-
-
-                setRecyclerViewAdapter(lstAnime);
+                Toast.makeText(DefectActivity.this,"Size of Liste "+String.valueOf(lstEX.size()),Toast.LENGTH_SHORT).show();
+                Toast.makeText(DefectActivity.this,lstEX.get(1).toString(),Toast.LENGTH_SHORT).show();
+                setRecyclerViewAdapter(lstEX);
 
             }
 
         }, new Response.ErrorListener() {
 
             @Override
-
             public void onErrorResponse(VolleyError error) {
-
-
-
             }
-
         });
-
-
-
-
-
         requestQueue = Volley.newRequestQueue(DefectActivity.this);
-
         requestQueue.add(request);
 
     }
-
-    public void setRecyclerViewAdapter(List<ExerciseModel> lstAnime) {
-        RecyclerViewAdapter myAdapter = new  RecyclerViewAdapter(this,lstAnime) ;
-
+    public void setRecyclerViewAdapter(List<ExerciseModel> lstEX) {
+        RecyclerViewAdapter myAdapter = new  RecyclerViewAdapter(this,lstEX) ;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         recyclerView.setAdapter(myAdapter);
     }
 

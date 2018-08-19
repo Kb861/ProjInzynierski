@@ -55,12 +55,10 @@ RequestOptions options ;
                 Intent i = new Intent(mContext, ExerciseActivity.class);
                 i.putExtra("exercise_name",mData.get(viewHolder.getAdapterPosition()).getName());
                 i.putExtra("ex_description",mData.get(viewHolder.getAdapterPosition()).getDescription());
-
                 i.putExtra("ex_category",mData.get(viewHolder.getAdapterPosition()).getCategorie());
-
                 i.putExtra("ex_rating",mData.get(viewHolder.getAdapterPosition()).getRating());
                 i.putExtra("ex_img",mData.get(viewHolder.getAdapterPosition()).getImage_url());
-              //  i.putExtra("ex_video",mData.get(viewHolder.getAdapterPosition()).getVideo());
+                i.putExtra("ex_video",mData.get(viewHolder.getAdapterPosition()).getVideo());
                 mContext.startActivity(i);
             }
         });
@@ -72,8 +70,8 @@ RequestOptions options ;
        // Resources res = holder.itemView.getContext().getResources();
         holder.tvname.setText(mData.get(position).getName());
         holder.tv_rate.setText(mData.get(position).getRating());
-
         holder.tvcat.setText(mData.get(position).getCategorie());
+      //  holder.videoView.setTag(mData.get(position).getVideo());
 
 //        String videoPath = "android.resource://com.example.ketri.korektawadpostawy/" + mData.get(position).getVideo();
 //        Uri uri = Uri.parse(videoPath);
@@ -100,8 +98,6 @@ RequestOptions options ;
 
         @BindView(R.id.rating)
         TextView tv_rate;
-
-
 
         @BindView(R.id.thumbnail)
         ImageView img_thumb;

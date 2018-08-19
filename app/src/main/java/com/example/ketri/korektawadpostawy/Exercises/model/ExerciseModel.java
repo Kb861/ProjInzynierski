@@ -9,22 +9,19 @@ public class ExerciseModel {
     private String name ;
     private String description;
     private String rating ;
-    private int nb_episode;
     private String image_url;
     private String video;
     private String categorie;
-    private String studio;
 
 
     public ExerciseModel(){}
 
-    public ExerciseModel(String name, String description, String rating, String image_url, String categorie, String studio, String video) {
+    public ExerciseModel(String name, String description, String rating, String image_url, String categorie, String video) {
         this.name = name;
         this.description = description;
         this.rating = rating;
         this.image_url = image_url;
         this.categorie = categorie;
-        this.studio = studio;
         this.video = video;
     }
 
