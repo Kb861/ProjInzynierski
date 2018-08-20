@@ -56,29 +56,18 @@ public class DefectActivity extends AppCompatActivity {
 
         if(name.getText().toString().contains("Skolioza"))
       {
-         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/9841aa18f4494faeb45e8b0cf46322b5715074c0/skoliosis.json";
+         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/6be1dafd6b0e56199ce8105d1faff4bd29ada3fa/skoliosis.json";
           lstEX=new ArrayList<>();
           jsoncall();
 
       }
         if(name.getText().toString().contains("Kifoza"))
         {
-            URL_JSON = "https://gist.githubusercontent.com/Kb861/88fc23e1e50bf92048cb3004e5e9a473/raw/3058707395ceeaf261bc205dc517bf8208143d9f/kyphosis.json";
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/88fc23e1e50bf92048cb3004e5e9a473/raw/9ea737e753d76cee23bce75aa693df251bc81c1b/kyphosis.json";
             lstEX=new ArrayList<>();
             jsoncall();
 
         }
-
-//        if(name.getText().toString().contains("Lordoza"))
-//        {
-//
-//            //innyTXT.setText(napis);
-//            URL_JSON = "https://gist.githubusercontent.com/Kb861/68e5f88eb6a6a797c277d7795c2300d6/raw/2f8c5beeecf61b152f2943b2d5b45f58e40363c8/lordosis.json";
-//            lstAnime=new ArrayList<>();
-//            jsoncall();
-//
-//
-//        }
     }
     public void jsoncall() {
 

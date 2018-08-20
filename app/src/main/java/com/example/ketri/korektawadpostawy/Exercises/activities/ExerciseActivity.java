@@ -58,9 +58,12 @@ public class ExerciseActivity extends AppCompatActivity {
         tv_categorie.setText(category);
         tv_description.setText(description);
         tv_rating.setText(rating);
-        videoView.setTag(video);
 
-        String videoPath="/Users/ketri/repozytorium/ProjInzynierski/korektawadpostawy/app/src/main/res/raw/"+video;
+        collapsingToolbarLayout.setTitle(name);
+        RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);
+        Glide.with(this).load(image_url).apply(requestOptions).into(img);
+
+        String videoPath="/Users/ketri/repozytorium/ProjInzynierski/korektawadpostawy/app/src/main/res/raw/" + video;
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
         videoView.start();
@@ -68,9 +71,6 @@ public class ExerciseActivity extends AppCompatActivity {
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
 
-        collapsingToolbarLayout.setTitle(name);
-        RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);
-        Glide.with(this).load(image_url).apply(requestOptions).into(img);
 
     }
 
