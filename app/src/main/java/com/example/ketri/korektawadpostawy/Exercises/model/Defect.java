@@ -1,4 +1,4 @@
-package com.example.ketri.korektawadpostawy.Exercises;
+package com.example.ketri.korektawadpostawy.Exercises.model;
 
 /**
  * Created by ketri on 29.07.2018.

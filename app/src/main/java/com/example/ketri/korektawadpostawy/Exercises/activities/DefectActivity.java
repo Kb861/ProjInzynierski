@@ -1,14 +1,10 @@
-package com.example.ketri.korektawadpostawy.Exercises;
+package com.example.ketri.korektawadpostawy.Exercises.activities;
 
-import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -112,8 +108,6 @@ public class DefectActivity extends AppCompatActivity {
 
                     }
                 }
-                Toast.makeText(DefectActivity.this,"Size of Liste "+String.valueOf(lstEX.size()),Toast.LENGTH_SHORT).show();
-                Toast.makeText(DefectActivity.this,lstEX.get(1).toString(),Toast.LENGTH_SHORT).show();
                 setRecyclerViewAdapter(lstEX);
 
             }

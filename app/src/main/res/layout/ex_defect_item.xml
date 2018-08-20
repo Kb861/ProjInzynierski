@@ -23,7 +23,5 @@
             android:id="@+id/rating"
             style="@style/TextViewRating"/>
 
-
-
     </LinearLayout>
 </LinearLayout>

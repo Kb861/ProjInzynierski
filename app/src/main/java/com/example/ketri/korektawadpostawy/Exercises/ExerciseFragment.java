@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ketri.korektawadpostawy.Exercises.adapters.DefectAdapter;
+import com.example.ketri.korektawadpostawy.Exercises.model.Defect;
 import com.example.ketri.korektawadpostawy.R;
 
 import java.util.ArrayList;

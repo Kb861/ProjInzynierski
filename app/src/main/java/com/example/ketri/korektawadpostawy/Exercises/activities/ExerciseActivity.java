@@ -1,10 +1,11 @@
 package com.example.ketri.korektawadpostawy.Exercises.activities;
 
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -57,19 +58,15 @@ public class ExerciseActivity extends AppCompatActivity {
         tv_categorie.setText(category);
         tv_description.setText(description);
         tv_rating.setText(rating);
-       // videoView.setTag(1,video);
+        videoView.setTag(video);
+
         String videoPath="/Users/ketri/repozytorium/ProjInzynierski/korektawadpostawy/app/src/main/res/raw/"+video;
         Uri uri = Uri.parse(videoPath);
-     videoView.setVideoURI(uri);
+        videoView.setVideoURI(uri);
         videoView.start();
-//       String videoPath = "android.resource://" + getPackageName() + "/" + video;
-
-//       Uri uri = Uri.parse(videoPath);
-//        videoView.setVideoURI(uri);
-     MediaController mediaController = new MediaController(this);
-     videoView.setMediaController(mediaController);
-      mediaController.setAnchorView(videoView);
-//        videoView.start();
+        MediaController mediaController = new MediaController(this);
+        videoView.setMediaController(mediaController);
+        mediaController.setAnchorView(videoView);
 
         collapsingToolbarLayout.setTitle(name);
         RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);
