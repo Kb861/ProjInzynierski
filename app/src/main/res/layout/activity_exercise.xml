@@ -62,6 +62,19 @@
     <VideoView
         android:id="@+id/videoView"
         style="@style/VideoViewEx"/>
+    <TextView
+        style="@style/TextViewToUser"
+        android:text="Oceń swoje samopoczucie:"/>
+    <RatingBar
+
+        android:id="@+id/ratingBar"
+        style="@style/RatingBarView"/>
+
+    <TextView
+        android:id="@+id/tvRatingScale"
+        style="@style/TextViewForUser"
+ />
+
 </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>

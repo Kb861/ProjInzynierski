@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.MediaController;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -24,6 +25,12 @@ public class ExerciseActivity extends AppCompatActivity {
 
     @BindView(R.id.categorie_view)
     TextView tv_categorie;
+
+    @BindView(R.id.ratingBar)
+    RatingBar ratingBar;
+
+    @BindView(R.id.tvRatingScale)
+    TextView tvRatingScale;
 
     @BindView(R.id.rating_view)
     TextView tv_rating;
@@ -71,7 +78,28 @@ public class ExerciseActivity extends AppCompatActivity {
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
 
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                tvRatingScale.setText(String.valueOf(v));
+                switch ((int) ratingBar.getRating()) {
+                    case 1:
+                        tvRatingScale.setText("Złe");
+                        break;
+                    case 2:
+                        tvRatingScale.setText("Dobre");
+                        break;
+                    case 3:
+                        tvRatingScale.setText("Świetne");
+                        break;
+                    default:
+                        tvRatingScale.setText("");
 
+                }
+
+            }
+
+        });
     }
 
 

@@ -105,7 +105,34 @@
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_margin">10dp</item>
 </style>
-
+    <style name="TextViewToUser">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <style name="TextViewForUser">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <style name="RatingBarView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:numStars">3</item>
+        <item name="android:rating">3</item>
+        <item name="android:stepSize">1</item>
+    </style>
 
 
 </resources>
