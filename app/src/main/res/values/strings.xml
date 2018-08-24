@@ -8,5 +8,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="bad">Złe</string>
+    <string name="good">Dobre</string>
+    <string name="great">Świetne</string>
 </resources>

@@ -84,13 +84,13 @@ public class ExerciseActivity extends AppCompatActivity {
                 tvRatingScale.setText(String.valueOf(v));
                 switch ((int) ratingBar.getRating()) {
                     case 1:
-                        tvRatingScale.setText("Złe");
+                        tvRatingScale.setText(R.string.bad);
                         break;
                     case 2:
-                        tvRatingScale.setText("Dobre");
+                        tvRatingScale.setText(R.string.good);
                         break;
                     case 3:
-                        tvRatingScale.setText("Świetne");
+                        tvRatingScale.setText(R.string.great);
                         break;
                     default:
                         tvRatingScale.setText("");
