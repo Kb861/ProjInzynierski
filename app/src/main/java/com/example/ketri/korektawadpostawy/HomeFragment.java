@@ -20,8 +20,8 @@ import butterknife.ButterKnife;
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
-    @BindView(R.id.buttonsub)
-    Button buttonsub;
+    @BindView(R.id.btnMain)
+    Button btnMain;
 
     @BindView(R.id.l1)
     LinearLayout l1;
@@ -32,21 +32,18 @@ public class HomeFragment extends Fragment {
     Animation uptodown,downtoup;
 
     public HomeFragment() {
-        // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, view);
 
         uptodown= AnimationUtils.loadAnimation(this.getActivity(), R.anim.uptodown);
         downtoup= AnimationUtils.loadAnimation(this.getActivity(), R.anim.downtoup);
         l1.setAnimation(uptodown);
-       buttonsub.setAnimation(downtoup);
+        btnMain.setAnimation(downtoup);
         return view;
 
     }

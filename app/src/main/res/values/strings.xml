@@ -11,4 +11,7 @@
     <string name="bad">Złe</string>
     <string name="good">Dobre</string>
     <string name="great">Świetne</string>
+    <string name="INFO">INFO</string>
+    <string name="START">START</string>
+    <string name="mainText">JUŻ DZIŚ ZACZNIJ ZMIANĘ NA LEPSZE</string>
 </resources>

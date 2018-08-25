@@ -1,53 +1,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent"
+    style="@style/LinearLayout"
     android:background="@drawable/stars"
     tools:context="com.example.ketri.korektawadpostawy.HomeFragment">
 
     <LinearLayout
         android:id="@+id/l1"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:orientation="vertical">
+        style="@style/MainL1">
         <TextView
-            android:textColor="@color/lightorange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="START"
-            android:layout_gravity="center"
-            android:layout_marginTop="150dp"
-            android:textSize="40sp"
-            android:textStyle="bold"/>
+           style="@style/txvSTART"/>
         <TextView
-            android:textColor="@color/lightorangedark"
-            android:layout_width="398dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:text="JUŻ DZIŚ ZACZNIJ ZMIANĘ NA LEPSZE"
-            android:textAlignment="center"
-            android:textSize="25sp"
-            android:layout_marginTop="50dp"/>
+           style="@style/TextViewMain"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/l2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:layout_gravity="center"
-        android:orientation="vertical">
-
+        style="@style/MainL2">
         <Button
-            android:id="@+id/buttonsub"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-
-            android:background="@drawable/btn_oval"
-            android:text="INFO" />
+            android:id="@+id/btnMain"
+            style="@style/ButtonStyle"
+            android:text="@string/INFO" />
     </LinearLayout>
 
 </LinearLayout>
