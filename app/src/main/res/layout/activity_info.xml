@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sky"
+    android:background="@drawable/b"
     tools:context="com.example.ketri.korektawadpostawy.Home.activity.InfoActivity">
 <android.support.v4.view.ViewPager
     android:id="@+id/slideViewPager"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
+    style="@style/MatchWrap"></android.support.v4.view.ViewPager>
 
     <LinearLayout
         android:id="@+id/InfoLayout"

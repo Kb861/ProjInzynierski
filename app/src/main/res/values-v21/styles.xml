@@ -44,6 +44,10 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
     </style>
+    <style name="MatchWrap">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
     <style name="Match">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
@@ -160,17 +164,17 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:textColor">@color/lightorangedark</item>
+        <item name="android:textColor">@color/colorAccent</item>
         <item name="android:text">@string/mainText</item>
     </style>
 <style name="txvSTART">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
-    <item name="android:textSize">40sp</item>
+    <item name="android:textSize">60sp</item>
     <item name="android:layout_marginTop">150dp</item>
     <item name="android:layout_gravity">center</item>
     <item name="android:textStyle">bold</item>
-    <item name="android:textColor">@color/lightorange</item>
+    <item name="android:textColor">@color/colorPrimary</item>
     <item name="android:text">@string/START</item>
 </style>
     <style name="txvInfo">
@@ -178,7 +182,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">20sp</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:textColor">@color/lightorange</item>
+        <item name="android:textColor">@color/colorAccent</item>
         <item name="android:text">Zadbaj o swój kręgosłup</item>
     </style>
 </resources>
