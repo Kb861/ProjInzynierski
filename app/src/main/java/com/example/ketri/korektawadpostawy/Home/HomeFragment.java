@@ -1,4 +1,4 @@
-package com.example.ketri.korektawadpostawy;
+package com.example.ketri.korektawadpostawy.Home;
 
 
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.ketri.korektawadpostawy.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,7 +45,7 @@ public class HomeFragment extends Fragment {
         uptodown= AnimationUtils.loadAnimation(this.getActivity(), R.anim.uptodown);
         downtoup= AnimationUtils.loadAnimation(this.getActivity(), R.anim.downtoup);
         l1.setAnimation(uptodown);
-        btnMain.setAnimation(downtoup);
+        l2.setAnimation(downtoup);
         return view;
 
     }

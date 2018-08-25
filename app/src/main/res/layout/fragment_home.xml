@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/LinearLayout"
     android:background="@drawable/stars"
-    tools:context="com.example.ketri.korektawadpostawy.HomeFragment">
+    tools:context="com.example.ketri.korektawadpostawy.Home.HomeFragment">
 
     <LinearLayout
         android:id="@+id/l1"
@@ -20,6 +20,8 @@
             android:id="@+id/btnMain"
             style="@style/ButtonStyle"
             android:text="@string/INFO" />
+        <TextView
+           style="@style/txvInfo"/>
     </LinearLayout>
 
 </LinearLayout>

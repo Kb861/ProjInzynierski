@@ -173,5 +173,12 @@
     <item name="android:textColor">@color/lightorange</item>
     <item name="android:text">@string/START</item>
 </style>
-
+    <style name="txvInfo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/lightorange</item>
+        <item name="android:text">Zadbaj o swój kręgosłup</item>
+    </style>
 </resources>

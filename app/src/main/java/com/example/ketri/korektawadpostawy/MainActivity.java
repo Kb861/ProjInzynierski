@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
+import com.example.ketri.korektawadpostawy.Home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
