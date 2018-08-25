@@ -1,6 +1,7 @@
 package com.example.ketri.korektawadpostawy.Home;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,12 +11,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
+import com.example.ketri.korektawadpostawy.Home.activity.InfoActivity;
 import com.example.ketri.korektawadpostawy.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 /**
@@ -32,6 +34,13 @@ public class HomeFragment extends Fragment {
     LinearLayout l2;
 
     Animation uptodown,downtoup;
+
+    @OnClick(R.id.btnMain)
+    void onClick(View view){
+        Intent intent = new Intent(getActivity(),InfoActivity.class);
+        Bundle bundle = new Bundle();
+        intent.putExtras(bundle);
+        startActivity(intent);}
 
     public HomeFragment() {
     }
