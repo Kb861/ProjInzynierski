@@ -10,7 +10,8 @@
         <TextView
            style="@style/txvSTART"/>
         <TextView
-           style="@style/TextViewMain"/>
+           style="@style/TextViewMain"
+            android:text="@string/mainText"/>
     </LinearLayout>
 
     <LinearLayout

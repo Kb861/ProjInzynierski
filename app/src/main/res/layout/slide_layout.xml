@@ -2,8 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    style="@style/Match">
 
     <ImageView
         android:id="@+id/imageViewInfo"
@@ -16,17 +15,13 @@
 
     <TextView
         android:id="@+id/txtHeading"
-       style="@style/Heading"
-        android:text="TextView" />
+        style="@style/TextViewMain"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/txt_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageViewInfo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
-        android:textColor="@color/transparentWhite"
-        android:text="OOOOOOPPPPPIIIIIIIS" />
+        style="@style/txvHome"
+        android:textSize="20dp"
+        android:layout_below="@+id/imageViewInfo" />
 
 </RelativeLayout>

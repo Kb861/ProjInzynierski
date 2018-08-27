@@ -35,24 +35,29 @@ public class SliderAdapter extends PagerAdapter{
     public SliderAdapter(Context context) {
         this.context = context;
     }
-public int[] slide_images={
-        R.drawable.skolioza,
+
+    public int[] slide_images={
+        R.mipmap.ic_launcher_scol,
         R.drawable.kif,
         R.drawable.lo,
-        R.drawable.plaskie
+        R.drawable.plaskie,
+            R.drawable.okw
+
 };
     public String[] slide_headings={
             "SKOLIOZA",
             "KIFOZA",
             "LORDOZA",
-            "PŁASKIE"
+            "PŁASKIE",
+            "OKRĄGŁO-WKLĘSŁE"
     };
 
     public String[] slide_desc={
             "SKOLIOZApois",
             "KIFOZA opis",
             "LORDOZA opis",
-            "PŁASKIE opis"
+            "PŁASKIE opis",
+            "Okragło wklesle opis"
     };
     @Override
     public int getCount() {
@@ -60,8 +65,8 @@ public int[] slide_images={
     }
 
     @Override
-    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view==(RelativeLayout) object;
+    public boolean isViewFromObject( View view,  Object o) {
+        return view == (RelativeLayout) o;
     }
     @Override
     public Object instantiateItem(ViewGroup container,int position){
@@ -77,7 +82,7 @@ public int[] slide_images={
     }
 
     @Override
-    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+    public void destroyItem( ViewGroup container, int position, Object object) {
         container.removeView((RelativeLayout)object);
     }
 }

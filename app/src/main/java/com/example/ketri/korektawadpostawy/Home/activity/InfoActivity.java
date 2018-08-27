@@ -17,10 +17,13 @@ public class InfoActivity extends AppCompatActivity {
 
     @BindView(R.id.slideViewPager)
     ViewPager slideViewPager;
+
     @BindView(R.id.InfoLayout)
     LinearLayout InfoLayout;
+
     private SliderAdapter sliderAdapter;
     private TextView[] mDots;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +31,11 @@ public class InfoActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         sliderAdapter=new SliderAdapter(this);
         slideViewPager.setAdapter(sliderAdapter);
-        addDotsIndicator();
+        addDotsIndicator(0);
+
     }
-    public void addDotsIndicator(){
-        mDots=new TextView[4];
+    public void addDotsIndicator(int pos){
+        mDots=new TextView[5];
         for(int i=0;i<mDots.length;i++)
         {
             mDots[i]=new TextView(this);
@@ -39,9 +43,13 @@ public class InfoActivity extends AppCompatActivity {
             mDots[i].setTextSize(35);
             mDots[i].setTextColor(getResources().getColor(R.color.transparentWhite));
             InfoLayout.addView(mDots[i]);
+
         }
+        if(mDots.length > 0)
+        {
+            mDots[pos].setTextColor(getResources().getColor(R.color.white));
 
-
-
+        }
     }
+
 }
