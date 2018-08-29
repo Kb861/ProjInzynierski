@@ -28,7 +28,6 @@ public class ExerciseFragment extends Fragment {
     @BindView(R.id.recycler)
     RecyclerView recycler;
     public ExerciseFragment() {
-        // Required empty public constructor
     }
     List<Defect> lstDefect;
 
@@ -36,15 +35,14 @@ public class ExerciseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
       View view = inflater.inflate(R.layout.fragment_exercise, container, false);
         ButterKnife.bind(this, view);
         lstDefect = new ArrayList<>();
-        lstDefect.add(new Defect("Skolioza", R.drawable.skolioza));
-        lstDefect.add( new Defect("Kifoza", R.drawable.kif));
-        lstDefect.add( new Defect("Lordoza", R.drawable.lo));
-        lstDefect.add( new Defect("Plecy płaskie", R.drawable.plaskie));
-        lstDefect.add( new Defect("Plecy okrągło-wklęsłe", R.drawable.okw));
+        lstDefect.add(new Defect("Skolioza", R.drawable.scoliosis));
+        lstDefect.add( new Defect("Kifoza", R.drawable.kyphosis));
+        lstDefect.add( new Defect("Lordoza", R.drawable.lordosis));
+        lstDefect.add( new Defect("Plecy płaskie", R.drawable.flat));
+        lstDefect.add( new Defect("Okrągło-wklęsłe", R.drawable.round));
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recycler.setLayoutManager(layoutManager);
 

@@ -37,27 +37,27 @@ public class SliderAdapter extends PagerAdapter{
     }
 
     public int[] slide_images={
-        R.mipmap.ic_launcher_scol,
-        R.drawable.kif,
-        R.drawable.lo,
-        R.drawable.plaskie,
-            R.drawable.okw
+            R.drawable.scoliosis,
+            R.drawable.kyphosis,
+            R.drawable.lordosis,
+            R.drawable.flat,
+            R.drawable.round
 
 };
     public String[] slide_headings={
             "SKOLIOZA",
             "KIFOZA",
             "LORDOZA",
-            "PŁASKIE",
-            "OKRĄGŁO-WKLĘSŁE"
+            "PLECY PŁASKIE",
+            "PLECY OKRĄGŁO-WKLĘSŁE"
     };
 
     public String[] slide_desc={
-            "SKOLIOZApois",
-            "KIFOZA opis",
-            "LORDOZA opis",
-            "PŁASKIE opis",
-            "Okragło wklesle opis"
+            "Charakteryzuje się odchyleniem od osi anatomicznej kręgosłupa lub jego odcinka w płaszczyźnie czołowej.",
+            "Charakteryzuje się nadmiernym wygięciem jednego odcinka lub całęgo kręgosłupa ku tyłowi",
+            "Wada polega na pogłębieniu lordozy lędźwiowej czyli wygięcia ku przodowi w płaszczyźnie strzałkowej.",
+            "Wada charakteryzuje się spłaszczeniem lub brakiem fizjiologicznych wygięć kręgosłupa.",
+            "Charakterystyczną cechą tej wady jest zwiękoszona lordoza lędźwiowa i kifoza piersiowa. Zazwyczaj głowa jest pochylona ku przodowi, a klatka piersiowa spłaszczona."
     };
     @Override
     public int getCount() {

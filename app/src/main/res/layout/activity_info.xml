@@ -11,6 +11,5 @@
 
     <LinearLayout
         android:id="@+id/InfoLayout"
-
         style="@style/LLDots"></LinearLayout>
 </RelativeLayout>
