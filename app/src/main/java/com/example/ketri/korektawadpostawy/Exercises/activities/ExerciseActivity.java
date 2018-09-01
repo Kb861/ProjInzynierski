@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.RatingBar;
@@ -50,7 +51,6 @@ public class ExerciseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_exercise);
         getSupportActionBar().hide();
         ButterKnife.bind(this);
-
         String name  = getIntent().getExtras().getString("exercise_name");
         String description = getIntent().getExtras().getString("ex_description");
         String category = getIntent().getExtras().getString("ex_category");
@@ -101,7 +101,4 @@ public class ExerciseActivity extends AppCompatActivity {
 
         });
     }
-
-
-
 }

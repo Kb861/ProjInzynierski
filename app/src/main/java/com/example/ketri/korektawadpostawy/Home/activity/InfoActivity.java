@@ -4,9 +4,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.ketri.korektawadpostawy.Exercises.activities.DefectActivity;
 import com.example.ketri.korektawadpostawy.Home.adapter.SliderAdapter;
 import com.example.ketri.korektawadpostawy.R;
 
@@ -33,7 +35,16 @@ public class InfoActivity extends AppCompatActivity {
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndicator(0);
 
+        SupportActionBarBack();
+
     }
+
+    public void SupportActionBarBack() {
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+
     public void addDotsIndicator(int pos){
         mDots=new TextView[5];
         for(int i=0;i<mDots.length;i++)
@@ -50,6 +61,16 @@ public class InfoActivity extends AppCompatActivity {
             mDots[pos].setTextColor(getResources().getColor(R.color.white));
 
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == android.R.id.home)
+        {
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -68,7 +69,9 @@ public class DefectActivity extends AppCompatActivity {
             jsoncall();
 
         }
+     SupportActionBar();
     }
+
     public void jsoncall() {
 
        request = new JsonArrayRequest(URL_JSON, new Response.Listener<JSONArray>() {
@@ -117,9 +120,18 @@ public class DefectActivity extends AppCompatActivity {
         recyclerView.setAdapter(myAdapter);
     }
 
+    public void SupportActionBar() {
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
-
-
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }
