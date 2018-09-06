@@ -12,6 +12,7 @@ import android.view.MenuItem;
 
 import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
 import com.example.ketri.korektawadpostawy.Home.HomeFragment;
+import com.example.ketri.korektawadpostawy.Maps.RehabilitationFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -33,9 +34,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.flMain,new HomeFragment());
-        ft.commit();
+        openFragmentHome();
         navigationView.setCheckedItem(R.id.nav_home);
     }
 
@@ -68,24 +67,17 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         if (id == R.id.nav_home) {
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.flMain,new HomeFragment());
-            ft.commit();
+            openFragmentHome();
         } else if (id == R.id.nav_exam) {
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.flMain,new ExamFragment());
-            ft.commit();
+            openFragmentExam();
 
         } else if (id == R.id.nav_exercise) {
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.flMain,new ExerciseFragment());
-            ft.commit();
+            openFragmentExercise();
 
         } else if (id == R.id.nav_sport) {
+            openFragmentRehabilitation();
 
         } else if (id == R.id.nav_share) {
 
@@ -96,5 +88,29 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void openFragmentRehabilitation() {
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.flMain,new RehabilitationFragment());
+        ft.commit();
+    }
+
+    private void openFragmentExam() {
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.flMain,new ExamFragment());
+        ft.commit();
+    }
+
+    private void openFragmentExercise() {
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.flMain,new ExerciseFragment());
+        ft.commit();
+    }
+
+    private void openFragmentHome() {
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.flMain,new HomeFragment());
+        ft.commit();
     }
 }

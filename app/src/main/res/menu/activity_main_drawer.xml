@@ -18,8 +18,8 @@
             android:title="Ćwiczenia" />
         <item
             android:id="@+id/nav_sport"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Sport" />
+            android:icon="@drawable/ic_pool_black_24dp"
+            android:title="Rehabilitacja wodna" />
     </group>
 
     <item android:title="Communicate">

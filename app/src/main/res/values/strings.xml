@@ -14,4 +14,6 @@
     <string name="INFO">INFO</string>
     <string name="START">START</string>
     <string name="mainText">JUŻ DZIŚ ZACZNIJ ZMIANĘ NA LEPSZE</string>
+    <string name="WaterRehabilitation">Rehabilitacja w wodzie może wpłynąć na poprawę jakości życia u osób z dysfunkcją ruchową. Woda, ze względu na swoje właściwości wpływa na rozluźnienie mięśni.</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
