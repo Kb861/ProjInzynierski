@@ -35,7 +35,8 @@ public class HomeFragment extends Fragment {
 
     Animation uptodown,downtoup;
 
-    @OnClick(R.id.btnMain)
+    @OnClick(
+            R.id.btnMain)
     void onClick(View view){
         Intent intent = new Intent(getActivity(),InfoActivity.class);
         Bundle bundle = new Bundle();
