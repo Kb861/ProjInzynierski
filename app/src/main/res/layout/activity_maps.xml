@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+  style="@style/Match"
     tools:context="com.example.ketri.korektawadpostawy.Maps.MapsActivity">
+
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:elevation="10dp"
-
+        android:background="@color/transparentWhite"
         android:id="@+id/relLayout1">
 
         <ImageView
@@ -28,6 +28,7 @@
             android:id="@+id/ic_magnify"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_magnify"
            />
 
         <AutoCompleteTextView
@@ -39,7 +40,7 @@
             android:textColor="#000"
             android:id="@+id/input_search"
             android:background="@null"
-            android:hint="Enter Address, City or Zip Code"
+            android:hint="Wprowadź adres, miasto lub kod"
             android:imeOptions="actionSearch"/>
 
 
