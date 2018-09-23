@@ -55,6 +55,7 @@
         android:layout_marginTop="10dp"
         android:scaleType="centerCrop"
         android:id="@+id/ic_gps"
+        android:src="@drawable/ic_gps"
        />
 
     <ImageView
