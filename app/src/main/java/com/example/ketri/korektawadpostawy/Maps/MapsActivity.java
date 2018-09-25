@@ -69,12 +69,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private Boolean mLocationPermissionsGranted =false;
     private static final LatLngBounds LAT_LNG_BOUNDS = new LatLngBounds(
             new LatLng(-40, -168), new LatLng(71, 136));
- private PlaceAutocompleteAdapter mPlaceAutocompleteAdapter;
+    private PlaceAutocompleteAdapter mPlaceAutocompleteAdapter;
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationProviderClient;
-private GoogleApiClient mGoogleApiClient=null;
-
-    //private PlaceInfo mPlace;
+    private GoogleApiClient mGoogleApiClient=null;
     private Marker mMarker;
 
 
@@ -276,7 +274,7 @@ private void initMap(){
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Toast.makeText(this, "Map is Ready", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Mapy gotowe", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onMapReady: map is ready");
         mMap=googleMap;
 if(mLocationPermissionsGranted){getDeviceLocation();}
