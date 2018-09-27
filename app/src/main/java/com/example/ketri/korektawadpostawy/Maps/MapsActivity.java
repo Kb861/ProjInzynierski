@@ -274,7 +274,7 @@ private void initMap(){
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Toast.makeText(this, "Mapy gotowe", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.Mapy_gotowe, Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onMapReady: map is ready");
         mMap=googleMap;
 if(mLocationPermissionsGranted){getDeviceLocation();}

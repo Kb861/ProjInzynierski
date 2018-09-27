@@ -1,14 +1,15 @@
 package com.example.ketri.korektawadpostawy.Exercises.activities;
 
-import android.media.AudioManager;
-import android.media.MediaPlayer;
+import android.content.Context;
+import android.database.Cursor;
 import android.net.Uri;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.RatingBar;
@@ -18,7 +19,13 @@ import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
 import com.example.ketri.korektawadpostawy.R;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,6 +55,14 @@ public class ExerciseActivity extends AppCompatActivity {
     @BindView(R.id.videoView)
     VideoView videoView;
 
+    @BindView(R.id.et_repeat)
+    EditText et_repeat;
+
+    @BindView(R.id.btn_ok)
+    Button btn_done;
+    @BindView(R.id.btn_succes)
+    Button btn_mySuccess;
+    DataBaseHelper myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,5 +120,53 @@ public class ExerciseActivity extends AppCompatActivity {
             }
 
         });
+        myDb=new DataBaseHelper(this);
+
+        AddData();
+        viewAll();
+    }
+    public  void AddData() {
+        btn_done.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean isInserted = myDb.insertData(et_repeat.getText().toString(),tvRatingScale.getText().toString());  //spr typ
+                        if(isInserted == true)
+                            Toast.makeText(ExerciseActivity.this, R.string.Data_Inserted ,Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(ExerciseActivity.this,R.string.Data_not_Inserted,Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
+    }
+
+    public void viewAll() {
+        btn_mySuccess.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Cursor res = myDb.getAllData();
+                        if(res.getCount() == 0) {
+                            showMessage("Error","Nothing found");
+                            return;
+                        }
+                        StringBuffer buffer = new StringBuffer();
+                        while (res.moveToNext()) {
+                            buffer.append("Data: " + res.getString(1) +"\n");
+                            buffer.append("Punkty: " + res.getString(2)+"\n");
+                            buffer.append("Nasrój: " + res.getString(3)+"\n");
+
+                        }
+                        showMessage("Dane",buffer.toString());
+                    }
+                }
+        );
+    }
+    public void showMessage(String title,String Message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(Message);
+        builder.show();
     }
 }
