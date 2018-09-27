@@ -65,6 +65,7 @@ public class ExerciseActivity extends AppCompatActivity {
         tv_categorie.setText(category);
         tv_description.setText(description);
         tv_rating.setText(rating);
+        videoView.setTag(video);
 
         collapsingToolbarLayout.setTitle(name);
         RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);

@@ -57,14 +57,35 @@ public class DefectActivity extends AppCompatActivity {
 
         if(name.getText().toString().contains("Skolioza"))
       {
-         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/6be1dafd6b0e56199ce8105d1faff4bd29ada3fa/skoliosis.json";
+         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/38ab94ab429db94fdd5b70f4933dbcefcf3f974d/skoliosis.json";
           lstEX=new ArrayList<>();
           jsoncall();
 
       }
         if(name.getText().toString().contains("Kifoza"))
         {
-            URL_JSON = "https://gist.githubusercontent.com/Kb861/88fc23e1e50bf92048cb3004e5e9a473/raw/9ea737e753d76cee23bce75aa693df251bc81c1b/kyphosis.json";
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/88fc23e1e50bf92048cb3004e5e9a473/raw/a9efb8631956ed8b62021c1956d6fb21acd42bf0/kyphosis.json";
+            lstEX=new ArrayList<>();
+            jsoncall();
+
+        }
+        if(name.getText().toString().contains("Lordoza"))
+        {
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/12be04f9392f48885f325d60dc996afb/raw/832f58f1b8c45a1225657833f6b67007379b3bbf/lordosis.json";
+            lstEX=new ArrayList<>();
+            jsoncall();
+
+        }
+        if(name.getText().toString().contains("Plecy płaskie"))
+        {
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/055912258d7713697526f2df5310e975/raw/46b5010c283558a0b37e5807ec90b6d0786889dc/flat.json";
+            lstEX=new ArrayList<>();
+            jsoncall();
+
+        }
+        if(name.getText().toString().contains("Okrągło-wklęsłe"))
+        {
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/178543f5895cb31e99f11d273371423a/raw/d370b857201491ef8bcc1953866f5ee28c9c265e/round.json";
             lstEX=new ArrayList<>();
             jsoncall();
 
@@ -82,7 +103,6 @@ public class DefectActivity extends AppCompatActivity {
                 JSONObject jsonObject = null;
                 for (int i = 0 ; i<response.length();i++) {
                     try {
-
                         jsonObject = response.getJSONObject(i);
                         ExerciseModel ex = new ExerciseModel();
 

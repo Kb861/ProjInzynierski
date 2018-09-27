@@ -31,7 +31,6 @@ public class ExerciseFragment extends Fragment {
     }
     List<Defect> lstDefect;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
