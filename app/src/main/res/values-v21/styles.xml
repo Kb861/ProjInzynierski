@@ -224,6 +224,10 @@
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:background">@color/transparentWhite</item>
     </style>
+    <style name="RelativeL">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+    </style>
 <style name="AutoCompleteTXV">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">match_parent</item>
@@ -242,7 +246,13 @@
     <item name="android:layout_marginTop">12dp</item>
     <item name="android:scaleType">centerCrop</item>
 </style>
-
+    <style name="EditTextEx">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:text">Ilość powtórzeń</item>
+    </style>
 
 
 </resources>
