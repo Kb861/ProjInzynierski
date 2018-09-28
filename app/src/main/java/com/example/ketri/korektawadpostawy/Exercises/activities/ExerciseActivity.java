@@ -8,6 +8,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -133,11 +134,14 @@ public class ExerciseActivity extends AppCompatActivity {
                         boolean isInserted = myDb.insertData(et_repeat.getText().toString(),tvRatingScale.getText().toString());  //spr typ
                         if(isInserted == true)
                             Toast.makeText(ExerciseActivity.this, R.string.Data_Inserted ,Toast.LENGTH_LONG).show();
+
                         else
                             Toast.makeText(ExerciseActivity.this,R.string.Data_not_Inserted,Toast.LENGTH_LONG).show();
                     }
                 }
+
         );
+
     }
 
     public void viewAll() {

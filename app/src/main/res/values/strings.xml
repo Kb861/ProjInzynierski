@@ -14,9 +14,21 @@
     <string name="INFO">INFO</string>
     <string name="START">START</string>
     <string name="mainText">JUŻ DZIŚ ZACZNIJ ZMIANĘ NA LEPSZE</string>
+    <string name="MapActivity">MapActivity</string>
     <string name="Mapy_gotowe">Mapy gotowe</string>
+    <string name="init">init: initializing</string>
+    <string name="problem">Problem</string>
+    <string name="onClick">onClick: clicked gps icon</string>
+    <string name="geoLocate">geoLocate: geolocating</string>
+    <string name="geoLocate1">geoLocate: IOException: </string>
+    <string name="geoLocate2">geoLocate: found a location: </string>
+    <string name="isServicesOK">isServicesOK(): checking google services version</string>
+    <string name="isServicesOK1">isServicesOK: Google Play Services is working </string>
+    <string name="isServicesOK2">isServicesOK: an error occured but we can fix it</string>
+
     <string name="Data_Inserted">Data inserted</string>
     <string name="Data_not_Inserted">Error</string>
+    <style name="ZAPISZ">ZAPISZ</style>
     <string name="date">Data:</string>
     <string name="points">Punkty:</string>
     <string name="mood">Nastrój:</string>

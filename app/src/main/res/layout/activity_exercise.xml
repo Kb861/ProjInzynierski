@@ -76,28 +76,23 @@
         android:id="@+id/tvRatingScale"
         style="@style/TextViewForUser"
  />
+    <EditText
+        android:id="@+id/et_repeat"
+        style="@style/EditTextEx"/>
     <RelativeLayout
       style="@style/RelativeL">
 
-        <EditText
-            android:id="@+id/et_repeat"
-            style="@style/EditTextEx"/>
         <Button
             android:id="@+id/btn_ok"
             style="@style/ButtonStyle"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="80dp"
             android:layout_alignParentRight="true"
-            android:text="OK" />
+            android:text="ZAPISZ" />
 
         <Button
             android:id="@+id/btn_succes"
-            style="@style/ButtonStyle"
-            android:layout_below="@+id/btn_ok"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="10dp"
-            android:layout_alignParentRight="true"
-            android:text="  Osiągnięcia  " />
+            style="@style/SuccesButton" />
     </RelativeLayout>
 
 </LinearLayout>

@@ -59,7 +59,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
-    private static final String TAG = "MapActivity";
+    private static final String TAG = String.valueOf(R.string.MapActivity);
     private static final int ERROR_DIALOG_REQUEST = 9001;
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COURSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
@@ -93,7 +93,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void init(){
-        Log.d(TAG, "init: initializing");
+        Log.d(TAG, String.valueOf(R.string.init));
         if(mGoogleApiClient == null) {
         mGoogleApiClient = new GoogleApiClient
                 .Builder(this)
@@ -102,7 +102,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .enableAutoManage(this, this)
                 .build();
         }else{
-            Toast.makeText(this, "Theres a problem", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.problem, Toast.LENGTH_LONG).show();
 
         }
         mPlaceAutocompleteAdapter = new PlaceAutocompleteAdapter(this,mGoogleApiClient,LAT_LNG_BOUNDS,null);
@@ -125,13 +125,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         ic_gps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "onClick: clicked gps icon");
+                Log.d(TAG, String.valueOf(R.string.onClick));
                 getDeviceLocation();
             }
         });
     hideSoftKeyboard();}
     private void geoLocate(){
-        Log.d(TAG, "geoLocate: geolocating");
+        Log.d(TAG, String.valueOf(R.string.geoLocate));
 
         String searchString = input_search.getText().toString();
 
@@ -140,36 +140,32 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         try{
             list = geocoder.getFromLocationName(searchString, 1);
         }catch (IOException e){
-            Log.e(TAG, "geoLocate: IOException: " + e.getMessage() );
+            Log.e(TAG, String.valueOf(R.string.geoLocate1) + e.getMessage() );
         }
 
         if(list.size() > 0){
             Address address = list.get(0);
 
-            Log.d(TAG, "geoLocate: found a location: " + address.toString());
+            Log.d(TAG, String.valueOf(R.string.geoLocate2) + address.toString());
 
            moveCamera(new LatLng(address.getLatitude(), address.getLongitude()), DEFAULT_ZOOM, address.getAddressLine(0));
         }
     }
 
     public boolean isServicesOK() {
-        Log.d(TAG, "isServicesOK(): checking google services version");
+        Log.d(TAG, String.valueOf(R.string.isServicesOK));
         int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(MapsActivity.this);
 
         if (available == ConnectionResult.SUCCESS) {
-            Log.d(TAG, "isServicesOK: Google Play Services is working");
+            Log.d(TAG, String.valueOf(R.string.isServicesOK1));
             return true;
         }
         else if (GoogleApiAvailability.getInstance().isUserResolvableError(available)) ;
         {
-            Log.d(TAG, "isServicesOK: an error occured but we can fix it");
+            Log.d(TAG, String.valueOf(R.string.isServicesOK2));
             Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(MapsActivity.this, available, ERROR_DIALOG_REQUEST);
             dialog.show();
         }
-//            else{
-//            Toast.makeText(this, "You can't make map requests", Toast.LENGTH_SHORT).show();
-//        }
-
         return false;
     }
 
