@@ -22,12 +22,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
 import com.example.ketri.korektawadpostawy.R;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -139,11 +133,9 @@ public class ExerciseActivity extends AppCompatActivity {
                             Toast.makeText(ExerciseActivity.this,R.string.Data_not_Inserted,Toast.LENGTH_LONG).show();
                     }
                 }
-
         );
 
     }
-
     public void viewAll() {
         btn_mySuccess.setOnClickListener(
                 new View.OnClickListener() {

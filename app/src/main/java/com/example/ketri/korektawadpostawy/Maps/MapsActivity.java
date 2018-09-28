@@ -170,7 +170,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void getDeviceLocation(){
-        Log.d(TAG, "getDeviceLocation: getting the devices current location");
+        Log.d(TAG, String.valueOf(R.string.getDeviceLocation));
 
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -203,7 +203,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private void moveCamera(LatLng latLng, float zoom, String title){
         Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude );
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
-        if(!title.equals("Moja lokalizacja")){
+        if(!title.equals(R.string.myLocation)){
             MarkerOptions options = new MarkerOptions()
                     .position(latLng)
                     .title(title);

@@ -25,6 +25,10 @@
     <string name="isServicesOK">isServicesOK(): checking google services version</string>
     <string name="isServicesOK1">isServicesOK: Google Play Services is working </string>
     <string name="isServicesOK2">isServicesOK: an error occured but we can fix it</string>
+    <string name="getDeviceLocation">getDeviceLocation: getting the devices current location</string>
+    <string name="onComplete">onComplete: found location!</string>
+    <string name="onComplete1">onComplete: current location is null!</string>
+    <string name="myLocation">Moja lokalizacja</string>
 
     <string name="Data_Inserted">Data inserted</string>
     <string name="Data_not_Inserted">Error</string>
@@ -32,6 +36,7 @@
     <string name="date">Data:</string>
     <string name="points">Punkty:</string>
     <string name="mood">Nastrój:</string>
+    <string name="data">Dane</string>
     <string name="WaterRehabilitation">Rehabilitacja w wodzie może wpłynąć na poprawę jakości życia u osób z dysfunkcją ruchową. Woda, ze względu na swoje właściwości wpływa na rozluźnienie mięśni.</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_main2">Main2Activity</string>
