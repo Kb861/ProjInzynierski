@@ -1,7 +1,5 @@
 package com.example.ketri.korektawadpostawy.Maps;
 
-
-
 import android.Manifest;
 import android.app.Dialog;
 import android.content.pm.PackageManager;
@@ -24,17 +22,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ketri.korektawadpostawy.Maps.model.PlaceInfo;
 import com.example.ketri.korektawadpostawy.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiActivity;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.PendingResults;
+import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.places.AutocompletePrediction;
 import com.google.android.gms.location.places.GeoDataClient;
+import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.PlaceBuffer;
+import com.google.android.gms.location.places.PlaceBufferResponse;
+import com.google.android.gms.location.places.PlaceDetectionClient;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -54,10 +58,10 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener{
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener {
+
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
     }
     private static final String TAG = String.valueOf(R.string.MapActivity);
     private static final int ERROR_DIALOG_REQUEST = 9001;
@@ -66,58 +70,68 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
     private static final float DEFAULT_ZOOM = 15f;
     private static final int PLACE_PICKER_REQUEST = 1;
-    private Boolean mLocationPermissionsGranted =false;
+    private Boolean LocationPermissionsGranted = false;
     private static final LatLngBounds LAT_LNG_BOUNDS = new LatLngBounds(
             new LatLng(-40, -168), new LatLng(71, 136));
-    private PlaceAutocompleteAdapter mPlaceAutocompleteAdapter;
-    private GoogleMap mMap;
+    private PlaceAutocompleteAdapter PlaceAutocompleteAdapter;
+    private GoogleMap Map;
     private FusedLocationProviderClient mFusedLocationProviderClient;
-    private GoogleApiClient mGoogleApiClient=null;
-    private Marker mMarker;
-
+    private GoogleApiClient GoogleApiClient = null;
+    private Marker Marker;
+    private PlaceInfo Place;
+    private GeoDataClient GeoDataClient;
+    private PlaceDetectionClient PlaceDetectionClient;
 
     @BindView(R.id.input_search)
     AutoCompleteTextView input_search;
+
     @BindView(R.id.ic_gps)
     ImageView ic_gps;
+
+    @BindView(R.id.place_info)
+    ImageView place_info;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         ButterKnife.bind(this);
         getLocationPermission();
+        GeoDataClient = Places.getGeoDataClient(this, null);
 
-        if(isServicesOK()){
-    init();
-}
+        // Construct a PlaceDetectionClient.
+        PlaceDetectionClient = Places.getPlaceDetectionClient(this, null);
+        if (isServicesOK()) {
+            init();
+        }
     }
 
-    private void init(){
+    private void init() {
         Log.d(TAG, String.valueOf(R.string.init));
-        if(mGoogleApiClient == null) {
-        mGoogleApiClient = new GoogleApiClient
-                .Builder(this)
-                .addApi(Places.GEO_DATA_API)
-                .addApi(Places.PLACE_DETECTION_API)
-                .enableAutoManage(this, this)
-                .build();
-        }else{
+        if (GoogleApiClient == null) {
+            GoogleApiClient = new GoogleApiClient
+                    .Builder(this)
+                    .addApi(Places.GEO_DATA_API)
+                    .addApi(Places.PLACE_DETECTION_API)
+                    .enableAutoManage(this, this)
+                    .build();
+            input_search.setOnItemClickListener(autoCompleteClickListener);
+        } else {
             Toast.makeText(this, R.string.problem, Toast.LENGTH_LONG).show();
-
         }
-        mPlaceAutocompleteAdapter = new PlaceAutocompleteAdapter(this,mGoogleApiClient,LAT_LNG_BOUNDS,null);
-        input_search.setAdapter(mPlaceAutocompleteAdapter);
+        PlaceAutocompleteAdapter = new PlaceAutocompleteAdapter(this, GoogleApiClient, LAT_LNG_BOUNDS, null);
+        input_search.setAdapter(PlaceAutocompleteAdapter);
         input_search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
-                if(actionId == EditorInfo.IME_ACTION_SEARCH
+                if (actionId == EditorInfo.IME_ACTION_SEARCH
                         || actionId == EditorInfo.IME_ACTION_DONE
                         || keyEvent.getAction() == KeyEvent.ACTION_DOWN
-                        || keyEvent.getAction() == KeyEvent.KEYCODE_ENTER){
+                        || keyEvent.getAction() == KeyEvent.KEYCODE_ENTER) {
 
                     geoLocate();
                 }
-
                 return false;
             }
         });
@@ -129,26 +143,44 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 getDeviceLocation();
             }
         });
-    hideSoftKeyboard();}
-    private void geoLocate(){
+        place_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "onClick: clicked place info");
+                try{
+                    if(Marker.isInfoWindowShown()){
+                        Marker.hideInfoWindow();
+                    }else{
+                        Log.d(TAG, "onClick: place info: " + Place.toString());
+                        Marker.showInfoWindow();
+                    }
+                }catch (NullPointerException e){
+                    Log.e(TAG, "onClick: NullPointerException: " + e.getMessage() );
+                }
+            }
+        });
+        hideSoftKeyboard();
+    }
+
+    private void geoLocate() {
         Log.d(TAG, String.valueOf(R.string.geoLocate));
 
         String searchString = input_search.getText().toString();
 
         Geocoder geocoder = new Geocoder(MapsActivity.this);
         List<Address> list = new ArrayList<>();
-        try{
+        try {
             list = geocoder.getFromLocationName(searchString, 1);
-        }catch (IOException e){
-            Log.e(TAG, String.valueOf(R.string.geoLocate1) + e.getMessage() );
+        } catch (IOException e) {
+            Log.e(TAG, String.valueOf(R.string.geoLocate1) + e.getMessage());
         }
 
-        if(list.size() > 0){
+        if (list.size() > 0) {
             Address address = list.get(0);
 
             Log.d(TAG, String.valueOf(R.string.geoLocate2) + address.toString());
 
-           moveCamera(new LatLng(address.getLatitude(), address.getLongitude()), DEFAULT_ZOOM, address.getAddressLine(0));
+            moveCamera(new LatLng(address.getLatitude(), address.getLongitude()), DEFAULT_ZOOM, address.getAddressLine(0));
         }
     }
 
@@ -159,8 +191,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         if (available == ConnectionResult.SUCCESS) {
             Log.d(TAG, String.valueOf(R.string.isServicesOK1));
             return true;
-        }
-        else if (GoogleApiAvailability.getInstance().isUserResolvableError(available)) ;
+        } else if (GoogleApiAvailability.getInstance().isUserResolvableError(available)) ;
         {
             Log.d(TAG, String.valueOf(R.string.isServicesOK2));
             Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(MapsActivity.this, available, ERROR_DIALOG_REQUEST);
@@ -169,59 +200,86 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         return false;
     }
 
-    private void getDeviceLocation(){
+    private void getDeviceLocation() {
         Log.d(TAG, String.valueOf(R.string.getDeviceLocation));
 
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
-        try{
-            if(mLocationPermissionsGranted){
+        try {
+            if (LocationPermissionsGranted) {
 
                 final Task location = mFusedLocationProviderClient.getLastLocation();
                 location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
                     public void onComplete(@NonNull Task task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Log.d(TAG, "onComplete: found location!");
                             Location currentLocation = (Location) task.getResult();
 
                             moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
                                     DEFAULT_ZOOM, "Moja lokalizacja");
 
-                        }else{
+                        } else {
                             Log.d(TAG, "onComplete: current location is null");
                             Toast.makeText(MapsActivity.this, "unable to get current location", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
             }
-        }catch (SecurityException e){
-            Log.e(TAG, "getDeviceLocation: SecurityException: " + e.getMessage() );
+        } catch (SecurityException e) {
+            Log.e(TAG, "getDeviceLocation: SecurityException: " + e.getMessage());
         }
     }
 
-    private void moveCamera(LatLng latLng, float zoom, String title){
-        Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude );
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
-        if(!title.equals(R.string.myLocation)){
+    private void moveCamera(LatLng latLng, float zoom, PlaceInfo placeInfo) {
+        Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude);
+        Map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
+        Map.clear();
+        if(placeInfo!=null) {
+        try{
+            String snippet = "Address: " + placeInfo.getAddress() + "\n" +
+                    "Phone Number: " + placeInfo.getPhoneNumber() + "\n" +
+                    "Website: " + placeInfo.getWebsiteUri() + "\n" +
+                    "Price Rating: " + placeInfo.getRating() + "\n";
+
             MarkerOptions options = new MarkerOptions()
                     .position(latLng)
-                    .title(title);
-            mMap.addMarker(options);
+                    .title(placeInfo.getName())
+                    .snippet(snippet);
+            Marker = Map.addMarker(options);
+        }catch (NullPointerException e){
+            Log.e(TAG, "moveCamera: NullPointerException: " + e.getMessage() );
+        }
+        }else{
+            Map.addMarker(new MarkerOptions().position(latLng));
         }
 
         hideSoftKeyboard();
 
     }
-    private void hideSoftKeyboard(){
+    private void moveCamera(LatLng latLng, float zoom, String title){
+        Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude );
+        Map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
+
+        if(!title.equals("My Location")){
+            MarkerOptions options = new MarkerOptions()
+                    .position(latLng)
+                    .title(title);
+            Map.addMarker(options);
+        }
+
+        hideSoftKeyboard();
+    }
+
+    private void hideSoftKeyboard() {
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
-private void initMap(){
-    Log.d(TAG, "initMap: initializing map");
-    SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-    mapFragment.getMapAsync(MapsActivity.this);
-}
+    private void initMap() {
+        Log.d(TAG, "initMap: initializing map");
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(MapsActivity.this);
+    }
 
     private void getLocationPermission() {
         Log.d(TAG, "getLocationPermission: getting location permissions");
@@ -232,7 +290,7 @@ private void initMap(){
                 FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
                     COURSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                mLocationPermissionsGranted = true;
+                LocationPermissionsGranted = true;
                 initMap();
             } else {
                 ActivityCompat.requestPermissions(this,
@@ -245,23 +303,24 @@ private void initMap(){
                     LOCATION_PERMISSION_REQUEST_CODE);
         }
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         Log.d(TAG, "onRequestPermissionsResult: called.");
-        mLocationPermissionsGranted = false;
+        LocationPermissionsGranted = false;
 
-        switch(requestCode){
-            case LOCATION_PERMISSION_REQUEST_CODE:{
-                if(grantResults.length > 0){
-                    for(int i = 0; i < grantResults.length; i++){
-                        if(grantResults[i] != PackageManager.PERMISSION_GRANTED){
-                            mLocationPermissionsGranted = false;
+        switch (requestCode) {
+            case LOCATION_PERMISSION_REQUEST_CODE: {
+                if (grantResults.length > 0) {
+                    for (int i = 0; i < grantResults.length; i++) {
+                        if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                            LocationPermissionsGranted = false;
                             Log.d(TAG, "onRequestPermissionsResult: permission failed");
                             return;
                         }
                     }
                     Log.d(TAG, "onRequestPermissionsResult: permission granted");
-                    mLocationPermissionsGranted = true;
+                    LocationPermissionsGranted = true;
                     initMap();
                 }
             }
@@ -272,20 +331,64 @@ private void initMap(){
     public void onMapReady(GoogleMap googleMap) {
         Toast.makeText(this, R.string.Mapy_gotowe, Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onMapReady: map is ready");
-        mMap=googleMap;
-if(mLocationPermissionsGranted){getDeviceLocation();}
+        Map = googleMap;
+        if (LocationPermissionsGranted) {
+            getDeviceLocation();
+        }
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        mMap.setMyLocationEnabled(true);
-        mMap.getUiSettings().setMyLocationButtonEnabled(false);
-        mMap.getUiSettings().setAllGesturesEnabled(true);
+        Map.setMyLocationEnabled(true);
+        Map.getUiSettings().setMyLocationButtonEnabled(false);
+        Map.getUiSettings().setAllGesturesEnabled(true);
 
         init();
     }
 
+    //google places API
 
-}
+    private AdapterView.OnItemClickListener autoCompleteClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            hideSoftKeyboard();
+
+            final AutocompletePrediction item = PlaceAutocompleteAdapter.getItem(i);
+            final String placeID = item.getPlaceId();
+            Task<PlaceBufferResponse> placeResult = GeoDataClient.getPlaceById(placeID);
+            placeResult.addOnCompleteListener(UpdatePlaceDetailsCallback);
+
+        }
+    };
+
+    private OnCompleteListener<PlaceBufferResponse> UpdatePlaceDetailsCallback = new OnCompleteListener<PlaceBufferResponse>() {
+        @Override
+        public void onComplete(@NonNull Task<PlaceBufferResponse> task) {
+            if(task.isSuccessful()){
+                PlaceBufferResponse places = task.getResult();
+                final Place place = places.get(0);
+                try{
+                    Place = new PlaceInfo();
+                    Place.setName(place.getName().toString());
+                    Log.d(TAG, "onResult: name: " + place.getName());
+                    Place.setAddress(place.getAddress().toString());
+                    Place.setAttributions(place.getAttributions().toString());
+                    Place.setId(place.getId());
+                    Place.setLatlng(place.getLatLng());
+                    Place.setRating(place.getRating());
+                    Place.setPhoneNumber(place.getPhoneNumber().toString());
+                    Place.setWebsiteUri(place.getWebsiteUri());
+                    Log.d(TAG,"onResult:place"+Place.toString());
+                }catch (NullPointerException e){
+                    Log.e(TAG,e.getMessage());
+                }
+                moveCamera(new LatLng(place.getViewport().getCenter().latitude,place.getViewport().getCenter().longitude),DEFAULT_ZOOM,Place);
+                places.release();
+            }
+
+            }
+
+        };
+    }

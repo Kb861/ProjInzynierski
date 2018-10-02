@@ -38,20 +38,23 @@ public class RehabilitationFragment extends Fragment {
     boolean visible;
     Animation downtoup;
 
-@OnClick(R.id.btnInf)
-   void onClick(View view){
-     TransitionManager.beginDelayedTransition(transitions_container);
-   visible = !visible;
-     txt_rehabilitation.setVisibility(visible ? View.VISIBLE : View.GONE);    }
+    @OnClick(R.id.btnInf)
+    void onClick(View view) {
+        TransitionManager.beginDelayedTransition(transitions_container);
+        visible = !visible;
+        txt_rehabilitation.setVisibility(visible ? View.VISIBLE : View.GONE);
+    }
+
     public RehabilitationFragment() {
     }
 
     @OnClick(R.id.btnSearch)
-    void onClick1(View view){
-        Intent intent = new Intent(getActivity(),MapsActivity.class);
+    void onClick1(View view) {
+        Intent intent = new Intent(getActivity(), MapsActivity.class);
         Bundle bundle = new Bundle();
         intent.putExtras(bundle);
-        startActivity(intent);}
+        startActivity(intent);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,7 +62,7 @@ public class RehabilitationFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_rehabilitation, container, false);
         ButterKnife.bind(this, view);
-        downtoup= AnimationUtils.loadAnimation(this.getActivity(), R.anim.downtoup);
+        downtoup = AnimationUtils.loadAnimation(this.getActivity(), R.anim.downtoup);
         l2.setAnimation(downtoup);
         return view;
     }

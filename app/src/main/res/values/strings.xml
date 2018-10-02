@@ -40,6 +40,21 @@
     <string name="WaterRehabilitation">Rehabilitacja w wodzie może wpłynąć na poprawę jakości życia u osób z dysfunkcją ruchową. Woda, ze względu na swoje właściwości wpływa na rozluźnienie mięśni.</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string-array name="slide_desc">
+        <item>Charakteryzuje się odchyleniem od osi anatomicznej kręgosłupa lub jego odcinka w płaszczyźnie czołowej.</item>
+        <item>Charakteryzuje się nadmiernym wygięciem jednego odcinka lub całęgo kręgosłupa ku tyłowi.</item>
+        <item>Wada polega na pogłębieniu lordozy lędźwiowej czyli wygięcia ku przodowi w płaszczyźnie strzałkowej.</item>
+        <item>Wada charakteryzuje się spłaszczeniem lub brakiem fizjiologicznych wygięć kręgosłupa.</item>
+        <item>Charakterystyczną cechą tej wady jest zwiękoszona lordoza lędźwiowa i kifoza piersiowa. Zazwyczaj głowa jest pochylona ku przodowi, a klatka piersiowa spłaszczona.</item>
+    </string-array>
+
+    <string-array name="slide_head">
+        <item>SKOLIOZA</item>
+        <item>KIFOZA</item>
+        <item>LORDOZA</item>
+        <item>PLECY PŁASKIE</item>
+        <item>PLECY OKRĄGŁO-WKLĘSŁE</item>
+    </string-array>
 
 
 

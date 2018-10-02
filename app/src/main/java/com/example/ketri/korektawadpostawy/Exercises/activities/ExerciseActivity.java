@@ -85,7 +85,8 @@ public class ExerciseActivity extends AppCompatActivity {
         Glide.with(this).load(image_url).apply(requestOptions).into(img);
 
 
-        String videoPath="/Users/ketri/repozytorium/ProjInzynierski/korektawadpostawy/app/src/main/res/raw/" + video;
+        int id = this.getResources().getIdentifier(video.replace(".mp4",""), "raw", this.getPackageName());
+        String videoPath="android.resource://" + getPackageName() + "/" + id;
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
         videoView.start();

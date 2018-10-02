@@ -14,6 +14,7 @@
         <ImageView
             android:id="@+id/img"
             style="@style/ImageViewEx" />
+
         <TextView
             android:id="@+id/txt_defect"
             style="@style/TextViewEx" />

@@ -33,15 +33,15 @@ public class HomeFragment extends Fragment {
     @BindView(R.id.l2)
     LinearLayout l2;
 
-    Animation uptodown,downtoup;
+    Animation uptodown, downtoup;
 
-    @OnClick(
-            R.id.btnMain)
-    void onClick(View view){
-        Intent intent = new Intent(getActivity(),InfoActivity.class);
+    @OnClick(R.id.btnMain)
+    void onClick(View view) {
+        Intent intent = new Intent(getActivity(), InfoActivity.class);
         Bundle bundle = new Bundle();
         intent.putExtras(bundle);
-        startActivity(intent);}
+        startActivity(intent);
+    }
 
     public HomeFragment() {
     }
@@ -52,8 +52,8 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, view);
 
-        uptodown= AnimationUtils.loadAnimation(this.getActivity(), R.anim.uptodown);
-        downtoup= AnimationUtils.loadAnimation(this.getActivity(), R.anim.downtoup);
+        uptodown = AnimationUtils.loadAnimation(this.getActivity(), R.anim.uptodown);
+        downtoup = AnimationUtils.loadAnimation(this.getActivity(), R.anim.downtoup);
         l1.setAnimation(uptodown);
         l2.setAnimation(downtoup);
         return view;

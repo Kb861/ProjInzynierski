@@ -25,18 +25,18 @@ import butterknife.ButterKnife;
 
 public class DefectAdapter extends RecyclerView.Adapter<DefectAdapter.ViewHolder>{
 
-    private Context mContext ;
-    private List<Defect> mData ;
+    private Context Context ;
+    private List<Defect> Data ;
 
     public DefectAdapter(Context mContext, List<Defect> mData) {
-        this.mContext = mContext;
-        this.mData = mData;
+        this.Context = mContext;
+        this.Data = mData;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view ;
-        LayoutInflater mInflater = LayoutInflater.from(mContext);
+        LayoutInflater mInflater = LayoutInflater.from(Context);
         view = mInflater.inflate(R.layout.item,parent,false);
         ButterKnife.bind(this,view);
         return new ViewHolder(view);
@@ -44,17 +44,17 @@ public class DefectAdapter extends RecyclerView.Adapter<DefectAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.txt_defect.setText(mData.get(position).getName());
+        holder.txt_defect.setText(Data.get(position).getName());
 
-        holder.img.setImageResource(mData.get(position).getImage());
+        holder.img.setImageResource(Data.get(position).getImage());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
 
             @Override
 
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, DefectActivity.class);
-                intent.putExtra("KEY", mData.get(position).getName());
-                mContext.startActivity(intent);
+                Intent intent = new Intent(Context, DefectActivity.class);
+                intent.putExtra("KEY", Data.get(position).getName());
+                Context.startActivity(intent);
             }
 
         });
@@ -62,7 +62,7 @@ public class DefectAdapter extends RecyclerView.Adapter<DefectAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return Data.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

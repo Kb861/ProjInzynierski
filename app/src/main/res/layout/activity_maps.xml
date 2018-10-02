@@ -33,18 +33,16 @@
     <ImageView
         style="@style/ImgVMaps"
         android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/relLayout1"
         android:id="@+id/ic_gps"
         android:src="@drawable/ic_gps"
        />
     <ImageView
+        android:id="@+id/place_info"
+        android:src="@drawable/ic_info"
         style="@style/ImgVMaps"
-        android:id="@+id/place_picker"
         android:layout_below="@+id/relLayout1"
       />
-    <ImageView
-        style="@style/ImgVMaps"
-        android:layout_below="@+id/place_picker"
-        android:id="@+id/place_info"
-    />
+
 </RelativeLayout>
