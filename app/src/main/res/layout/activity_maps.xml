@@ -44,5 +44,11 @@
         style="@style/ImgVMaps"
         android:layout_below="@+id/relLayout1"
       />
+    <ImageView
+        android:id="@+id/place_map"
+        android:src="@drawable/ic_map"
+        style="@style/ImgVMaps"
+        android:layout_below="@+id/place_info"
+        />
 
 </RelativeLayout>

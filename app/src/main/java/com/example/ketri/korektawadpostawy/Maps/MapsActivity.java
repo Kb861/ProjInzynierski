@@ -2,6 +2,7 @@ package com.example.ketri.korektawadpostawy.Maps;
 
 import android.Manifest;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -26,6 +27,8 @@ import com.example.ketri.korektawadpostawy.Maps.model.PlaceInfo;
 import com.example.ketri.korektawadpostawy.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiActivity;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -40,6 +43,7 @@ import com.google.android.gms.location.places.PlaceBuffer;
 import com.google.android.gms.location.places.PlaceBufferResponse;
 import com.google.android.gms.location.places.PlaceDetectionClient;
 import com.google.android.gms.location.places.Places;
+import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -91,6 +95,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @BindView(R.id.place_info)
     ImageView place_info;
 
+    @BindView(R.id.place_map)
+    ImageView placePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,7 +165,32 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         });
+        placePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int PLACE_PICKER_REQUEST = 1;
+                PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+                try {
+                    startActivityForResult(builder.build(MapsActivity.this), PLACE_PICKER_REQUEST);
+                } catch (GooglePlayServicesRepairableException e) {
+                    Log.e(TAG, "onClick: GooglePlayServicesRepairableException: " + e.getMessage() );
+                } catch (GooglePlayServicesNotAvailableException e) {
+                    Log.e(TAG, "onClick: GooglePlayServicesNotAvailableException: " + e.getMessage() );
+                }
+            }
+        });
         hideSoftKeyboard();
+    }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PLACE_PICKER_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                Place placepik = PlacePicker.getPlace(this, data);
+                PendingResult<PlaceBuffer> placeResult = Places.GeoDataApi
+                        .getPlaceById(GoogleApiClient, placepik.getId());
+                placeResult.setResultCallback((ResultCallback<? super PlaceBuffer>) UpdatePlaceDetailsCallback);
+
+            }
+        }
     }
 
     private void geoLocate() {
@@ -235,6 +266,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude);
         Map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
         Map.clear();
+        Map.setInfoWindowAdapter(new CustomInfoAdapter(MapsActivity.this));
         if(placeInfo!=null) {
         try{
             String snippet = "Address: " + placeInfo.getAddress() + "\n" +
