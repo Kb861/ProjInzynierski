@@ -105,8 +105,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         ButterKnife.bind(this);
         getLocationPermission();
         GeoDataClient = Places.getGeoDataClient(this, null);
-
-        // Construct a PlaceDetectionClient.
         PlaceDetectionClient = Places.getPlaceDetectionClient(this, null);
         if (isServicesOK()) {
             init();
@@ -135,7 +133,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         || actionId == EditorInfo.IME_ACTION_DONE
                         || keyEvent.getAction() == KeyEvent.ACTION_DOWN
                         || keyEvent.getAction() == KeyEvent.KEYCODE_ENTER) {
-
                     geoLocate();
                 }
                 return false;
@@ -188,7 +185,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 PendingResult<PlaceBuffer> placeResult = Places.GeoDataApi
                         .getPlaceById(GoogleApiClient, placepik.getId());
                 placeResult.setResultCallback((ResultCallback<? super PlaceBuffer>) UpdatePlaceDetailsCallback);
-
             }
         }
     }
@@ -299,7 +295,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     .title(title);
             Map.addMarker(options);
         }
-
         hideSoftKeyboard();
     }
 
@@ -312,7 +307,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(MapsActivity.this);
     }
-
     private void getLocationPermission() {
         Log.d(TAG, "getLocationPermission: getting location permissions");
         String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION,
@@ -380,8 +374,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         init();
     }
 
-    //google places API
-
     private AdapterView.OnItemClickListener autoCompleteClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -391,7 +383,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             final String placeID = item.getPlaceId();
             Task<PlaceBufferResponse> placeResult = GeoDataClient.getPlaceById(placeID);
             placeResult.addOnCompleteListener(UpdatePlaceDetailsCallback);
-
         }
     };
 

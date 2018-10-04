@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
 import com.example.ketri.korektawadpostawy.Home.HomeFragment;
 import com.example.ketri.korektawadpostawy.Maps.RehabilitationFragment;
+import com.example.ketri.korektawadpostawy.Statistics.StatisticFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -77,7 +78,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_sport) {
             openFragmentRehabilitation();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_statistics) {
+            openFragmentStatistics();
 
         } else if (id == R.id.nav_send) {
 
@@ -86,6 +88,12 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void openFragmentStatistics() {
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.flMain,new StatisticFragment());
+        ft.commit();
     }
 
     private void openFragmentRehabilitation() {

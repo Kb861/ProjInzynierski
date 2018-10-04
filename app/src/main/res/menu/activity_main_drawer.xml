@@ -20,6 +20,10 @@
             android:id="@+id/nav_sport"
             android:icon="@drawable/ic_pool_black_24dp"
             android:title="Rehabilitacja wodna" />
+        <item
+            android:id="@+id/nav_statistics"
+            android:icon="@drawable/ic_show_chart_black_24dp"
+            android:title="Statystyki" />
     </group>
 
     <item android:title="Communicate">
