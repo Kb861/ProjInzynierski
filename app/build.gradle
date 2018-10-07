@@ -49,5 +49,4 @@ dependencies {
     compile 'com.airbnb.android:lottie:2.0.0'
 
 
-
 }

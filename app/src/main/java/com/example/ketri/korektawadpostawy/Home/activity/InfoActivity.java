@@ -34,7 +34,6 @@ public class InfoActivity extends AppCompatActivity {
         sliderAdapter=new SliderAdapter(this);
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndicator(0);
-
         SupportActionBarBack();
 
     }

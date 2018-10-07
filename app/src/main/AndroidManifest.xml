@@ -50,8 +50,8 @@
 
         <activity android:name=".Maps.MapsActivity" />
         <activity
-            android:name=".Statistics.StatisticTabActivity"
-            android:label="@string/title_activity_statistic_tab"
+            android:name=".Statistics.TabStatisticActivity"
+            android:label="@string/title_activity_tab_statistic"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
