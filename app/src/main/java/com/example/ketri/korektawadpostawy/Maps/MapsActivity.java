@@ -104,6 +104,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_maps);
         ButterKnife.bind(this);
         getLocationPermission();
+        SupportActionBarBack();
         GeoDataClient = Places.getGeoDataClient(this, null);
         PlaceDetectionClient = Places.getPlaceDetectionClient(this, null);
         if (isServicesOK()) {
@@ -414,4 +415,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
 
         };
+    public void SupportActionBarBack() {
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
     }

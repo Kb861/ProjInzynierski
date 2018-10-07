@@ -260,7 +260,9 @@
     <item name="android:layout_marginLeft">80dp</item>
     <item name="android:layout_marginTop">20dp</item>
     <item name="android:layout_alignParentLeft">true</item>
- <item name="android:background">@mipmap/ic_succes</item>
-
+    <item name="android:background">@mipmap/ic_succes</item>
 </style>
+
+
+
 </resources>

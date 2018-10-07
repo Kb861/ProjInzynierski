@@ -1,21 +1,20 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/Match"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.ketri.korektawadpostawy.Statistics.StatisticFragment">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Wrap"
+        android:layout_marginTop="5dp"
         android:layout_gravity="center"
         app:lottie_autoPlay="true"
         app:lottie_colorFilter="@color/colorAccent"
         app:lottie_fileName="graphanim.json"
         app:lottie_loop="true"/>
     <Button
-        android:id="@+id/btnMain"
+        android:id="@+id/btnStatistic"
         style="@style/ButtonStyle"
         android:layout_marginTop="200dp"
         android:text="        ZOBACZ       " />

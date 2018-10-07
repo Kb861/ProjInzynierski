@@ -57,6 +57,8 @@
         <item>PLECY PŁASKIE</item>
         <item>PLECY OKRĄGŁO-WKLĘSŁE</item>
     </string-array>
+    <string name="title_activity_statistic_tab">StatisticTabActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 
 </resources>
