@@ -47,6 +47,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-places:15.0.1'
     implementation 'com.google.android.gms:play-services-location:15.0.1'
     compile 'com.airbnb.android:lottie:2.0.0'
+    implementation 'com.jjoe64:graphview:4.2.1'
+
 
 
 }
