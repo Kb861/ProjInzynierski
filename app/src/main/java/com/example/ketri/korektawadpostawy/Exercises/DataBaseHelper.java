@@ -25,7 +25,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, DATE DATETIME DEFAULT CURRENT_DATE, POINTS TEXTcurre, MOOD TEXT)");
+        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, DATE DATETIME DEFAULT CURRENT_DATE, POINTS INTEGER , MOOD TEXT)");
 
     }
 
@@ -35,7 +35,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         onCreate(db);
 
     }
-    public boolean insertData( String points, String mood) {
+    public boolean insertData( int points, String mood) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_3,points);
@@ -52,4 +52,37 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return res;
     }
+    public int sumPoints(){
+        int sumPoints = 0;
+        String sql ="SELECT COUNT(*) FROM "+TABLE_NAME;
+       Cursor cursor= getWritableDatabase().rawQuery(sql,null);
+      if( cursor.moveToFirst()){
+     do{    cursor.getColumnIndex(COL_3);}
+     while (cursor.moveToNext());
+
+
+     }
+       cursor.close();
+
+                return sumPoints;
+    }
+
+//    public Cursor getSUM() {
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        Cursor cur = db.rawQuery("SELECT SUM(" + COL_3 + ") as Total FROM " + TABLE_NAME, null);
+//        if (cur.moveToFirst()) {
+//
+//            int total = cur.getInt(cur.getColumnIndex("Total"));}
+//        return cur;
+//    }
+public int getSUM() {
+
+    String countQuery = "SELECT SUM("+COL_3+") as Total FROM " + TABLE_NAME ;
+    SQLiteDatabase db = this.getReadableDatabase();
+    Cursor cursor = db.rawQuery(countQuery, null);
+    cursor.moveToFirst();
+    int sum =cursor.getInt(cursor.getColumnIndex("Total"));
+    cursor.close();
+    return sum;
+}
 }

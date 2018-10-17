@@ -126,7 +126,7 @@ public class ExerciseActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = myDb.insertData(et_repeat.getText().toString(),tvRatingScale.getText().toString());  //spr typ
+                        boolean isInserted = myDb.insertData(Integer.parseInt(et_repeat.getText().toString()),tvRatingScale.getText().toString());  //spr typ
                         if(isInserted == true)
                             Toast.makeText(ExerciseActivity.this, R.string.Data_Inserted ,Toast.LENGTH_LONG).show();
 
