@@ -52,30 +52,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return res;
     }
-    public int sumPoints(){
-        int sumPoints = 0;
-        String sql ="SELECT COUNT(*) FROM "+TABLE_NAME;
-       Cursor cursor= getWritableDatabase().rawQuery(sql,null);
-      if( cursor.moveToFirst()){
-     do{    cursor.getColumnIndex(COL_3);}
-     while (cursor.moveToNext());
 
-
-     }
-       cursor.close();
-
-                return sumPoints;
-    }
-
-//    public Cursor getSUM() {
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        Cursor cur = db.rawQuery("SELECT SUM(" + COL_3 + ") as Total FROM " + TABLE_NAME, null);
-//        if (cur.moveToFirst()) {
-//
-//            int total = cur.getInt(cur.getColumnIndex("Total"));}
-//        return cur;
-//    }
-public int getSUM() {
+    public int getSUM() {
 
     String countQuery = "SELECT SUM("+COL_3+") as Total FROM " + TABLE_NAME ;
     SQLiteDatabase db = this.getReadableDatabase();
@@ -84,5 +62,5 @@ public int getSUM() {
     int sum =cursor.getInt(cursor.getColumnIndex("Total"));
     cursor.close();
     return sum;
-}
+    }
 }

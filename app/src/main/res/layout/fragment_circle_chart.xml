@@ -1,13 +1,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/LinearLayout"
+
     tools:context="com.example.ketri.korektawadpostawy.Statistics.Tabs.CircleChartFragment">
+
+<TextView
+ style="@style/TextViewMain"
+    android:text="Twoje punkty:"/>
+
+        <TextView
+            android:id="@+id/point"
+            style="@style/Wrap"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:textColor="@color/black"
+            android:textSize="50dp" />
 
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/point"/>
+       style="@style/txvHome"
+        android:id="@+id/txv_consolation"
+        android:textColor="@color/colorPrimary"
+        android:text="Ćwicz dalej!                   Nie poddawaj się!"/>
+
 
 
 </LinearLayout>
