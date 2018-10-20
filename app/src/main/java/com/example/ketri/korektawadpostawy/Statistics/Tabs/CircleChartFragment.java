@@ -30,17 +30,15 @@ public class CircleChartFragment extends Fragment {
 
     @BindView(R.id.point)
     TextView point;
+
     @BindView(R.id.txv_consolation)
     TextView consolation;
-    public CircleChartFragment() {
 
+    public CircleChartFragment() {
     }
     DataBaseHelper myDb;
     Dialog epicDialog;
-
     ImageView close;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

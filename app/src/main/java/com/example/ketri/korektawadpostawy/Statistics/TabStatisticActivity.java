@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.ketri.korektawadpostawy.R;
@@ -45,6 +46,7 @@ public class TabStatisticActivity extends AppCompatActivity {
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
+        SupportActionBarBack();
     }
     private void setupTabIcons() {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
@@ -85,6 +87,19 @@ public class TabStatisticActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return null;
         }
+    }
+    public void SupportActionBarBack() {
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == android.R.id.home)
+        {
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

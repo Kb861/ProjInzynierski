@@ -12,6 +12,21 @@
         <TextView
            style="@style/TextViewMain"
             android:text="@string/mainText"/>
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <Button
+                android:id="@+id/start"
+                android:text="Ćwicz"
+                android:drawableStart="@drawable/ic_accessibility_black_24dp"
+                style="@style/ButtonStyle" />
+            <Button
+                style="@style/ButtonStyle"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
+
     </LinearLayout>
 
     <LinearLayout

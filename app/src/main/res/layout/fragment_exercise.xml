@@ -9,8 +9,7 @@
         <TextView
             android:id="@+id/txtV_heading"
             style="@style/Heading"
-            android:text="Wybierz wadę:"
-            />
+            android:text="Wybierz wadę:" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"
         style="@style/Recycler"></android.support.v7.widget.RecyclerView>
