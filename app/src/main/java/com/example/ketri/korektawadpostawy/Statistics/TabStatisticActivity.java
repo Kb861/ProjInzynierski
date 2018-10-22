@@ -61,8 +61,8 @@ public class TabStatisticActivity extends AppCompatActivity {
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
+        private final List<Fragment> FragmentList = new ArrayList<>();
+        private final List<String> FragmentTitleList = new ArrayList<>();
 
         public ViewPagerAdapter(FragmentManager supportFragmentManager) {
             super(supportFragmentManager);
@@ -70,17 +70,17 @@ public class TabStatisticActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return mFragmentList.get(position);
+            return FragmentList.get(position);
         }
 
         @Override
         public int getCount() {
-            return mFragmentList.size();
+            return FragmentList.size();
         }
 
         public void addFrag(Fragment fragment, String title) {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
+            FragmentList.add(fragment);
+            FragmentTitleList.add(title);
         }
 
         @Override
@@ -101,6 +101,4 @@ public class TabStatisticActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }

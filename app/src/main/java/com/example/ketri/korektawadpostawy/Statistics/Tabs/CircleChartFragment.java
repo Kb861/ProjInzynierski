@@ -43,17 +43,18 @@ public class CircleChartFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_circle_chart, container, false);
         ButterKnife.bind(this, view);
+
         epicDialog=new Dialog(getContext());
         myDb=new DataBaseHelper(getContext());
         point.setText(String.valueOf(myDb.getSUM()));
-         if(point.getText().toString().contains("50") || point.getText().toString().contains("100"))
-         {ShowBox();}
 
-        if(point.getText().toString().contains("150"))
-        {consolation.setText("Jesteś mistrzem!");}
+         if(point.getText().toString().contains("50") || point.getText().toString().contains("100")) {
+             ShowBox();}
+
+         if(point.getText().toString().contains("150")) {
+             consolation.setText("Jesteś mistrzem!");}
         return view;
     }
     public void ShowBox(){

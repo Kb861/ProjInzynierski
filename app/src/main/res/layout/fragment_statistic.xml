@@ -17,6 +17,6 @@
         android:id="@+id/btnStatistic"
         style="@style/ButtonStyle"
         android:layout_marginTop="200dp"
-        android:text="        ZOBACZ       " />
+        android:text="@string/see"/>
 
 </FrameLayout>

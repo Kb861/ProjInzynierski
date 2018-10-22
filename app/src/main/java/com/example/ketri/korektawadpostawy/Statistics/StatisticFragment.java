@@ -23,6 +23,7 @@ public class StatisticFragment extends Fragment {
 
     @BindView(R.id.btnStatistic)
     Button btnStatistic;
+
     @OnClick(R.id.btnStatistic)
     void onClick1(View view) {
         Intent intent = new Intent(getActivity(), TabStatisticActivity.class);
@@ -40,6 +41,4 @@ public class StatisticFragment extends Fragment {
         ButterKnife.bind(this, view);
         return view;
     }
-
-
 }

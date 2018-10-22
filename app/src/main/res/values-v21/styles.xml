@@ -49,6 +49,10 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">wrap_content</item>
     </style>
+    <style name="MatchWidth">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
     <style name="WrapMatch">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">wrap_content</item>
@@ -84,6 +88,13 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:padding">50dp</item>
+    </style>
+    <style name="LinearLDialogBox">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:layout_marginBottom">25dp</item>
     </style>
     <style name="MainL2">
         <item name="android:layout_width">wrap_content</item>
@@ -127,6 +138,13 @@
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_margin">10dp</item>
 </style>
+    <style name="CardViewDialogBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">350dp</item>
+       <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+    </style>
     <style name="TextViewToUser">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -229,6 +247,14 @@
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:background">@color/transparentWhite</item>
     </style>
+    <style name="RelativeLDialogBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">50dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
     <style name="RelativeL">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">150dp</item>
@@ -266,7 +292,48 @@
     <item name="android:layout_alignParentLeft">true</item>
     <item name="android:background">@mipmap/ic_succes</item>
 </style>
-
-
+    <style name="TVpoints">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">100dp</item>
+        <item name="android:textSize">50dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="TVDialogBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:textSize">35dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="IVclose">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">7dp</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:src">@drawable/ic_close_black_24dp</item>
+    </style>
+    <style name="LottieDialogBox">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">350dp</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+    <style name="TVcustomInf">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">10</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000</item>
+    </style>
 
 </resources>

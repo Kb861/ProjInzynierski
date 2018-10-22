@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -55,8 +56,10 @@ public class ExerciseActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_ok)
     Button btn_done;
+
     @BindView(R.id.btn_succes)
     Button btn_mySuccess;
+
     DataBaseHelper myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,32 +113,30 @@ public class ExerciseActivity extends AppCompatActivity {
                         break;
                     default:
                         tvRatingScale.setText("");
-
                 }
-
             }
 
         });
         myDb=new DataBaseHelper(this);
-
-        AddData();
-        viewAll();
+            viewAll();
+            AddData();
     }
     public  void AddData() {
         btn_done.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = myDb.insertData(Integer.parseInt(et_repeat.getText().toString()),tvRatingScale.getText().toString());  //spr typ
+                        try{
+                        boolean isInserted = myDb.insertData(Integer.parseInt(et_repeat.getText().toString()),tvRatingScale.getText().toString());
                         if(isInserted == true)
                             Toast.makeText(ExerciseActivity.this, R.string.Data_Inserted ,Toast.LENGTH_LONG).show();
-
                         else
                             Toast.makeText(ExerciseActivity.this,R.string.Data_not_Inserted,Toast.LENGTH_LONG).show();
+                        }catch(Exception e)
+                        { Toast.makeText(ExerciseActivity.this,R.string.Data_error,Toast.LENGTH_LONG).show(); }
                     }
                 }
         );
-
     }
     public void viewAll() {
         btn_mySuccess.setOnClickListener(
@@ -143,19 +144,19 @@ public class ExerciseActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Cursor res = myDb.getAllData();
-                        if(res.getCount() == 0) {
-                            showMessage("Error","Nothing found");
+                        if (res.getCount() == 0) {
+                            showMessage("Error", "Nothing found");
                             return;
                         }
                         StringBuffer buffer = new StringBuffer();
                         while (res.moveToNext()) {
-                            buffer.append("Data: " + res.getString(1) +"\n");
-                            buffer.append("Punkty: " + res.getString(2)+"\n");
-                            buffer.append("Nasrój: " + res.getString(3)+"\n");
+                            buffer.append("Data: " + res.getString(1) + "\n");
+                            buffer.append("Punkty: " + res.getString(2) + "\n");
+                            buffer.append("Nasrój: " + res.getString(3) + "\n");
 
                         }
-                        showMessage("Dane",buffer.toString());
-                    }
+                        showMessage("Dane", buffer.toString());
+                     }
                 }
         );
     }
