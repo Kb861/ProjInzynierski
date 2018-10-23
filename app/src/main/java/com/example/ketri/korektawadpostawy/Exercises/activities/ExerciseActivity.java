@@ -153,7 +153,6 @@ public class ExerciseActivity extends AppCompatActivity {
                             buffer.append("Data: " + res.getString(1) + "\n");
                             buffer.append("Punkty: " + res.getString(2) + "\n");
                             buffer.append("Nasrój: " + res.getString(3) + "\n");
-
                         }
                         showMessage("Dane", buffer.toString());
                      }

@@ -30,7 +30,9 @@
     <string name="Data_Inserted">Data inserted</string>
     <string name="Data_not_Inserted">Błąd</string>
     <string name="Data_error">Wprowadź wszystkie dane!</string>
+
     <style name="ZAPISZ">ZAPISZ</style>
+
     <string name="see">ZOBACZ</string>
     <string name="congrat">Gratulacje!</string>
     <string name="badge">Otrzymałeś odznakę</string>
@@ -64,6 +66,8 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
+    <string name="scol">Skolioza</string>
+    <string name="kyph">Kifoza</string>
 
 
 </resources>

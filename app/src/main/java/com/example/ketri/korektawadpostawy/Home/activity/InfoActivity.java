@@ -24,7 +24,7 @@ public class InfoActivity extends AppCompatActivity {
     LinearLayout InfoLayout;
 
     private SliderAdapter sliderAdapter;
-    private TextView[] mDots;
+    private TextView[] Dots;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,33 +34,45 @@ public class InfoActivity extends AppCompatActivity {
         sliderAdapter=new SliderAdapter(this);
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndicator(0);
+        slideViewPager.addOnPageChangeListener(viewListener);
         SupportActionBarBack();
-
     }
-
     public void SupportActionBarBack() {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-
     public void addDotsIndicator(int pos){
-        mDots=new TextView[5];
-        for(int i=0;i<mDots.length;i++)
-        {
-            mDots[i]=new TextView(this);
-            mDots[i].setText(Html.fromHtml("&#8226"));
-            mDots[i].setTextSize(35);
-            mDots[i].setTextColor(getResources().getColor(R.color.transparentWhite));
-            InfoLayout.addView(mDots[i]);
 
+        Dots =new TextView[5];
+        for(int i=0; i < Dots.length;i++)
+        {
+            Dots[i]=new TextView(this);
+            Dots[i].setText(Html.fromHtml("&#8226;"));
+            Dots[i].setTextSize(35);
+            Dots[i].setTextColor(getResources().getColor(R.color.transparentWhite));
+            InfoLayout.addView(Dots[i]);
         }
-        if(mDots.length > 0)
+        if(Dots.length > 0)
         {
-            mDots[pos].setTextColor(getResources().getColor(R.color.white));
-
+            Dots[pos].setTextColor(getResources().getColor(R.color.white));
         }
     }
+    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int i, float positionOffset, int positionOffsetPixels) {
+        }
+
+        @Override
+        public void onPageSelected(int i) {
+            addDotsIndicator(i);
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int i) {
+
+        }
+    };
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
@@ -71,5 +83,4 @@ public class InfoActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

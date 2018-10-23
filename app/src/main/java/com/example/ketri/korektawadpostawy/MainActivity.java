@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.ketri.korektawadpostawy.Exam.ExamFragment;
 import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
 import com.example.ketri.korektawadpostawy.Home.HomeFragment;
 import com.example.ketri.korektawadpostawy.Maps.RehabilitationFragment;

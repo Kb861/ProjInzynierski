@@ -10,7 +10,6 @@
         app:civ_border_width="2dp"
         app:civ_border_color="@color/white"
         />
-
     <TextView
         android:id="@+id/txtHeading"
         style="@style/TextViewMain"

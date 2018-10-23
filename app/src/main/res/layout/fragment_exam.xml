@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ketri.korektawadpostawy.ExamFragment">
+    tools:context="com.example.ketri.korektawadpostawy.Exam.ExamFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -10,6 +10,12 @@
         android:layout_height="match_parent"
         android:textStyle="bold"
         android:textSize="30dp"
-        android:text="HELLO EXAM badANIE" />
+        android:text="Wykonaj test" />
+    <Button
+        android:id="@+id/testBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="test"/>
 
 </FrameLayout>
