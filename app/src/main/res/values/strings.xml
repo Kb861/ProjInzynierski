@@ -66,8 +66,20 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
-    <string name="scol">Skolioza</string>
-    <string name="kyph">Kifoza</string>
 
+    <string name="scoliosis">skolioza</string>
+    <string name="kyphosis">kifoza</string>
+    <string name="lordosis">lordoza</string>
+    <string name="OK">OK</string>
+    <string name="work">Ćwicz</string>
+    <string name="exam">Zbadaj</string>
+    <string-array name="questions">
+        <item>Ustawienie głowy:</item>
+        <item>Ustawienie barków:</item>
+        <item>Ustawienie i kształt klatki piersiowej:</item>
+        <item>Ustawienie łopatek:</item>
+        <item>Skrzywienie boczne kręgosłupa:</item>
+        <item>Ustawienie brzucha:</item>
+    </string-array>
 
 </resources>

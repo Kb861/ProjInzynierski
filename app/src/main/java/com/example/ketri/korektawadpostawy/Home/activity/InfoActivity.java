@@ -45,6 +45,7 @@ public class InfoActivity extends AppCompatActivity {
     public void addDotsIndicator(int pos){
 
         Dots =new TextView[5];
+
         for(int i=0; i < Dots.length;i++)
         {
             Dots[i]=new TextView(this);
@@ -53,10 +54,10 @@ public class InfoActivity extends AppCompatActivity {
             Dots[i].setTextColor(getResources().getColor(R.color.transparentWhite));
             InfoLayout.addView(Dots[i]);
         }
-        if(Dots.length > 0)
-        {
+
+
             Dots[pos].setTextColor(getResources().getColor(R.color.white));
-        }
+
     }
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
         @Override
@@ -65,7 +66,11 @@ public class InfoActivity extends AppCompatActivity {
 
         @Override
         public void onPageSelected(int i) {
-            addDotsIndicator(i);
+            
+            for(int p=0; p < Dots.length;p++){
+                Dots[p].setTextColor(getResources().getColor(R.color.transparentWhite));
+            }
+            Dots[i].setTextColor(getResources().getColor(R.color.white));
         }
 
         @Override

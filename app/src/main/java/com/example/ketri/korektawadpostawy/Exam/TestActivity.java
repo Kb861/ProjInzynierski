@@ -2,9 +2,11 @@ package com.example.ketri.korektawadpostawy.Exam;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,10 +25,7 @@ public class TestActivity extends AppCompatActivity {
     private Questions questions=new Questions();
     private int QuestionLength=questions.Questions.length;
     Random r;
-    private  String defect;
-
-    @BindView(R.id.score)
-    TextView score;
+    private String defect;
 
     @BindView(R.id.question)
     TextView question;
@@ -48,48 +47,49 @@ public class TestActivity extends AppCompatActivity {
     @OnClick(R.id.answer2)
     void onClick2(View view) {
         updateQuestion(r.nextInt(QuestionLength));
-
-
     }
 
     @OnClick(R.id.answer3)
     void onClick3(View view) {
         if(question.getText() == "Skrzywienie boczne kręgosłupa:")
         {
-            defect ="skolioza";
-           // score.setText("Prawdopodona skolioza");
+            defect = "skolioza";
             info();
             updateQuestion(r.nextInt(QuestionLength));
-
         }
         if(question.getText() == "Ustawienie głowy:")
         {
-            score.setText("Prawdopodona kifoza");
+            defect ="kifoza";
+            info();
             updateQuestion(r.nextInt(QuestionLength));
 
         }
         if(question.getText() == "Ustawienie barków:")
         {
-            score.setText("Prawdopodona ow");
+            defect ="plecy okrągło-wklęsłe";
+            info();
             updateQuestion(r.nextInt(QuestionLength));
 
         }
 
         if(question.getText() == "Ustawienie i kształt klatki piersiowej:")
         {
-            score.setText("Prawdopodona plaskie");
+            defect ="plecy płaskie";
+            info();
             updateQuestion(r.nextInt(QuestionLength));
 
         }
         if(question.getText() == "Ustawienie łopatek:")
         {
-            score.setText("Prawdopodona kifoza lub ow.");
+            defect ="plecy okrągło-wklęsłe lub kifoza";
+            info();
             updateQuestion(r.nextInt(QuestionLength));
 
         }
         if(question.getText() == "Ustawienie brzucha:")
         {
-            score.setText("Prawdopodona lordoza");
+            defect ="lordoza";
+            info();
             updateQuestion(r.nextInt(QuestionLength));
 
         }
@@ -102,31 +102,49 @@ public class TestActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         r=new Random();
         updateQuestion(r.nextInt(QuestionLength));
+        SupportActionBarBack();
 
     }
 
-
-
-        private void updateQuestion ( int num){
+    private void updateQuestion ( int num){
         question.setText(questions.getQuestion(num));
         answer1.setText(questions.getChoice1(num));
         answer2.setText(questions.getChoice2(num));
         answer3.setText(questions.getChoice3(num));
-
     }
     private void info(){
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TestActivity.this);
+        final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TestActivity.this);
         alertDialogBuilder
-                .setMessage("Prawdopodobna wada postawy to:"+defect+"Idz do lekarza!")
+                .setMessage("Prawdopodobna wada postawy to: "+defect+". Skonsultuj to z lekarzem!")
                 .setCancelable(false)
-                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                .setTitle("UWAGA")
+                .setNegativeButton(R.string.OK, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
                     closeOptionsMenu();
                     }
                 });
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
 
+        final AlertDialog alertDialog = alertDialogBuilder.create();
+       alertDialog.setOnShowListener( new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface arg0) {
+                alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+            }
+        });
+        alertDialog.show();
+    }
+    public void SupportActionBarBack() {
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == android.R.id.home)
+        {
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

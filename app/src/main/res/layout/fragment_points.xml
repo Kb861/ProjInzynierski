@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/LinearLayout"
-    tools:context="com.example.ketri.korektawadpostawy.Statistics.Tabs.CircleChartFragment">
+    tools:context="com.example.ketri.korektawadpostawy.Statistics.Tabs.PointsFragment">
 
     <TextView
         style="@style/TextViewMain"

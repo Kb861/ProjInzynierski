@@ -15,6 +15,7 @@ import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
 import com.example.ketri.korektawadpostawy.Home.HomeFragment;
 import com.example.ketri.korektawadpostawy.Maps.RehabilitationFragment;
 import com.example.ketri.korektawadpostawy.Statistics.StatisticFragment;
+import com.facebook.stetho.Stetho;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        Stetho.initializeWithDefaults(this);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

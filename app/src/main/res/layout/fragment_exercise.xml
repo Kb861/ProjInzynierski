@@ -6,10 +6,10 @@
     style="@style/LinearLayout"
     tools:context="com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment">
 
-        <TextView
-            android:id="@+id/txtV_heading"
-            style="@style/Heading"
-            android:text="Wybierz wadę:" />
+    <TextView
+        android:id="@+id/txtV_heading"
+        style="@style/Heading"
+        android:text="Wybierz wadę:" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"
         style="@style/Recycler"></android.support.v7.widget.RecyclerView>

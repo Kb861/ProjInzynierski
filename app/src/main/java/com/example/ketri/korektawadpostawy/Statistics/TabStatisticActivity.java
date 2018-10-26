@@ -9,10 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.example.ketri.korektawadpostawy.R;
-import com.example.ketri.korektawadpostawy.Statistics.Tabs.CircleChartFragment;
+import com.example.ketri.korektawadpostawy.Statistics.Tabs.PointsFragment;
 import com.example.ketri.korektawadpostawy.Statistics.Tabs.LineChartFragment;
 
 import java.util.ArrayList;
@@ -56,7 +55,7 @@ public class TabStatisticActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new LineChartFragment(), "ONE");
-        adapter.addFrag(new CircleChartFragment(), "TWO");
+        adapter.addFrag(new PointsFragment(), "TWO");
         viewPager.setAdapter(adapter);
     }
 

@@ -124,7 +124,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     .build();
             input_search.setOnItemClickListener(autoCompleteClickListener);
         } else {
-            Toast.makeText(this, R.string.problem, Toast.LENGTH_LONG).show();
+           // Toast.makeText(this, R.string.problem, Toast.LENGTH_LONG).show();
         }
         PlaceAutocompleteAdapter = new PlaceAutocompleteAdapter(this, GoogleApiClient, LAT_LNG_BOUNDS, null);
         input_search.setAdapter(PlaceAutocompleteAdapter);

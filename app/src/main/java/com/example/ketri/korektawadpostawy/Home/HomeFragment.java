@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.ketri.korektawadpostawy.Exam.ExamFragment;
 import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
 import com.example.ketri.korektawadpostawy.Exercises.activities.ExerciseActivity;
 import com.example.ketri.korektawadpostawy.Home.activity.InfoActivity;
@@ -40,6 +41,9 @@ public class HomeFragment extends Fragment {
     @BindView(R.id.start)
     Button start;
 
+    @BindView(R.id.exam)
+    Button exam;
+
     Animation uptodown, downtoup;
 
     @OnClick(R.id.btnMain)
@@ -52,6 +56,11 @@ public class HomeFragment extends Fragment {
     @OnClick(R.id.start)
     void onClickStart(View view) {
         FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.flMain, new ExerciseFragment());
+        ft.commit();
+    }
+    @OnClick(R.id.exam)
+    void onClickExam(View view) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.flMain, new ExamFragment());
         ft.commit();
     }
 

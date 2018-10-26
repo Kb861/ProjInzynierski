@@ -1,5 +1,7 @@
 package com.example.ketri.korektawadpostawy.Exam;
 
+
+import com.example.ketri.korektawadpostawy.R;
 import java.security.PrivateKey;
 
 /**
@@ -8,14 +10,14 @@ import java.security.PrivateKey;
 
 public class Questions {
 
-    public String Questions[] = {
+    public String Questions[] ={
             "Ustawienie głowy:",
             "Ustawienie barków:",
             "Ustawienie i kształt klatki piersiowej:",
             "Ustawienie łopatek:",
             "Skrzywienie boczne kręgosłupa:",
-            "Ustawienie brzucha:"
-    };
+            "Ustawienie brzucha:"};
+
     private String Choices[] []={
             {"nos nie wystaje przed pion przechodzący przez górną część rękojeści mostka", "twarz nie wystaje w przód przed pion przechodzący przez rękojeść mostka", "twarz wystaje w przód przed rękojeść mostka, głowa jest silnie pochylona do przodu"},
             {"szczyt barków znajduje się na tle tylnej części szyi", "szczyt barków znajduje się na tle przedniej części szyi", "szczyt barków znajduje się przed konturem szyi"},
@@ -44,4 +46,6 @@ public class Questions {
         String choice = Choices[a][2];
         return choice;
     }
+
+
 }

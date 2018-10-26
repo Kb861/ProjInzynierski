@@ -1,21 +1,17 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/LinearLayout"
+    android:background="@drawable/b"
     tools:context="com.example.ketri.korektawadpostawy.Exam.ExamFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:text="Wykonaj test" />
+        style="@style/TextViewMain"
+        android:text="Sprawdź i oceń swoją postawę" />
+
     <Button
         android:id="@+id/testBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        style="@style/ButtonStyle"
         android:text="test"/>
 
-</FrameLayout>
+</LinearLayout>

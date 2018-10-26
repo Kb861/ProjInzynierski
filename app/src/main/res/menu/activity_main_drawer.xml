@@ -26,16 +26,16 @@
             android:title="Statystyki" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Poczytaj">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:icon="@drawable/ic_info"
+                android:title="O aplikacji" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Porady" />
         </menu>
     </item>
 

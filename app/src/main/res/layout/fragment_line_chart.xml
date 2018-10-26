@@ -5,7 +5,7 @@
 
     <TextView
     style="@style/TextViewForUser"
-    android:text="jakis text"/>
+    android:text="Wykres"/>
 
     <com.jjoe64.graphview.GraphView
         android:layout_width="match_parent"
