@@ -27,9 +27,9 @@
     <string name="onComplete">onComplete: found location!</string>
     <string name="onComplete1">onComplete: current location is null!</string>
     <string name="myLocation">Moja lokalizacja</string>
-    <string name="Data_Inserted">Data inserted</string>
+    <string name="Data_Inserted">Dane wprowadzone</string>
     <string name="Data_not_Inserted">Błąd</string>
-    <string name="Data_error">Wprowadź wszystkie dane!</string>
+    <string name="Data_error">Wprowadź wszystkie dane poprawnie!</string>
 
     <style name="ZAPISZ">ZAPISZ</style>
 
@@ -63,9 +63,6 @@
     <string name="title_activity_statistic_tab">StatisticTabActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_tab_statistic">TabStatisticActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <string name="tab_text_3">Tab 3</string>
 
     <string name="scoliosis">skolioza</string>
     <string name="kyphosis">kifoza</string>

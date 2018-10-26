@@ -1,6 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/Match"
+    android:animateLayoutChanges="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.ketri.korektawadpostawy.Statistics.StatisticFragment">
 

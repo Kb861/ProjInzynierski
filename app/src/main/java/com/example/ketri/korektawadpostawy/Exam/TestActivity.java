@@ -104,6 +104,7 @@ public class TestActivity extends AppCompatActivity {
         updateQuestion(r.nextInt(QuestionLength));
         SupportActionBarBack();
 
+
     }
 
     private void updateQuestion ( int num){

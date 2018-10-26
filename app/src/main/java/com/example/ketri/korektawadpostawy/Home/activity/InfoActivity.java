@@ -66,7 +66,7 @@ public class InfoActivity extends AppCompatActivity {
 
         @Override
         public void onPageSelected(int i) {
-            
+
             for(int p=0; p < Dots.length;p++){
                 Dots[p].setTextColor(getResources().getColor(R.color.transparentWhite));
             }

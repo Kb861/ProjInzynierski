@@ -3,6 +3,7 @@ package com.example.ketri.korektawadpostawy.Statistics;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,17 +21,21 @@ import butterknife.OnClick;
  * A simple {@link Fragment} subclass.
  */
 public class StatisticFragment extends Fragment {
+//public static int SPLASH_TIME_OUT=4000;
 
     @BindView(R.id.btnStatistic)
     Button btnStatistic;
 
-    @OnClick(R.id.btnStatistic)
-    void onClick1(View view) {
-        Intent intent = new Intent(getActivity(), TabStatisticActivity.class);
-        Bundle bundle = new Bundle();
-        intent.putExtras(bundle);
-        startActivity(intent);
-    }
+//    @OnClick(R.id.btnStatistic)
+//    void onClick1(View view) {
+//        Intent intent = new Intent(getActivity(), TabStatisticActivity.class);
+//        Bundle bundle = new Bundle();
+//        intent.putExtras(bundle);
+//        startActivity(intent);
+//    }
+
+
+
     public StatisticFragment() {
     }
 
@@ -39,6 +44,20 @@ public class StatisticFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_statistic, container, false);
         ButterKnife.bind(this, view);
+Thread myThread = new Thread(){
+    @Override
+    public void run() {
+        try{
+            sleep(3000);
+            Intent intent = new Intent(getActivity(), TabStatisticActivity.class);
+            startActivity(intent);
+            getActivity().finish();
+        }catch (InterruptedException e)
+        {e.printStackTrace();}
+
+    }
+};
+myThread.start();
         return view;
     }
 }
