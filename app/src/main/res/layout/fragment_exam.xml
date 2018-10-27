@@ -1,17 +1,13 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/LinearLayout"
-    android:background="@drawable/b"
+   style="@style/Match"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.ketri.korektawadpostawy.Exam.ExamFragment">
 
-    <TextView
-        style="@style/TextViewMain"
-        android:text="Sprawdź i oceń swoją postawę" />
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/recyclerExam"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
-    <Button
-        android:id="@+id/testBtn"
-        android:layout_marginTop="100dp"
-        style="@style/ButtonStyle"
-        android:text="test"/>
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

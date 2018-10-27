@@ -91,7 +91,6 @@ public class TestActivity extends AppCompatActivity {
             defect ="lordoza";
             info();
             updateQuestion(r.nextInt(QuestionLength));
-
         }
     }
 

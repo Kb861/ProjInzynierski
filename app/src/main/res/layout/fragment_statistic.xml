@@ -14,10 +14,4 @@
         app:lottie_colorFilter="@color/colorAccent"
         app:lottie_fileName="graphanim.json"
         app:lottie_loop="true"/>
-    <Button
-        android:id="@+id/btnStatistic"
-        style="@style/ButtonStyle"
-        android:layout_marginTop="200dp"
-        android:text="@string/see"/>
-
 </FrameLayout>
