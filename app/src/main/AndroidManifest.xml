@@ -49,8 +49,15 @@
             android:label="@string/title_activity_tab_statistic"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Exam.TestActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Exam.TestActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AboutApp.AboutAppActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

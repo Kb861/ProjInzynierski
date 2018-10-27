@@ -1,18 +1,16 @@
 package com.example.ketri.korektawadpostawy.Exam;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ketri.korektawadpostawy.Exercises.adapters.DefectAdapter;
-import com.example.ketri.korektawadpostawy.Exercises.adapters.RecyclerViewAdapter;
-import com.example.ketri.korektawadpostawy.Exercises.model.Defect;
 import com.example.ketri.korektawadpostawy.R;
 
 import java.util.List;
@@ -59,12 +57,29 @@ public class AdapterExam extends RecyclerView.Adapter<AdapterExam.ViewHolder>{
         @BindView(R.id.txv_nameCardView)
         TextView cardName;
 
-        @BindView(R.id.imgBtn_exam)
-        ImageButton background;
+        @BindView(R.id.img_exam)
+        ImageView background;
+        Button btn_go;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(final View itemView) {
+
             super(itemView);
+            btn_go=(Button)itemView.findViewById(R.id.btn_go);
+            btn_go.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(cardName.getText().toString().equals("Badanie")){
+                        Intent intent = new Intent(itemView.getContext(), TestActivity.class);
+                        Bundle bundle = new Bundle();
+                        intent.putExtras(bundle);
+                        Context context = itemView.getContext();
+                        context.startActivity(intent);
+                    }
+
+                }
+            });
             ButterKnife.bind(this, itemView);
+
         }
     }
 }
