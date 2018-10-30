@@ -54,8 +54,6 @@ public class InfoActivity extends AppCompatActivity {
             Dots[i].setTextColor(getResources().getColor(R.color.transparentWhite));
             InfoLayout.addView(Dots[i]);
         }
-
-
             Dots[pos].setTextColor(getResources().getColor(R.color.white));
 
     }
