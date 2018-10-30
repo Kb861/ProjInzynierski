@@ -29,7 +29,7 @@
     <item android:title="Poczytaj">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_about"
                 android:icon="@drawable/ic_info"
                 android:title="O aplikacji" />
             <item

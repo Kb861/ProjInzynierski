@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.ketri.korektawadpostawy.AboutApp.AboutFragment;
 import com.example.ketri.korektawadpostawy.Exam.ExamFragment;
 import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
 import com.example.ketri.korektawadpostawy.Home.HomeFragment;
@@ -83,8 +84,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_statistics) {
             openFragmentStatistics();
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_about) {
+            openFragmentAbout();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -119,6 +120,11 @@ public class MainActivity extends AppCompatActivity
     private void openFragmentHome() {
         android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.flMain,new HomeFragment());
+        ft.commit();
+    }
+    private void openFragmentAbout() {
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.flMain,new AboutFragment());
         ft.commit();
     }
 }
