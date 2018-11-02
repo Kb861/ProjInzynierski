@@ -54,10 +54,13 @@
             android:screenOrientation="portrait" />
         <activity android:name=".AboutApp.AboutAppActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Exam.Examination.ExaminationActivity" />
+        <activity android:name=".Exam.Results.ResultActivity"></activity>
     </application>
 
 </manifest>

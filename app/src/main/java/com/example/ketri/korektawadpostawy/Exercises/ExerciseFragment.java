@@ -43,7 +43,7 @@ public class ExerciseFragment extends Fragment {
         lstDefect.add( new Defect("Kifoza", R.drawable.kyphosis));
         lstDefect.add( new Defect("Lordoza", R.drawable.lordosis));
         lstDefect.add( new Defect("Plecy płaskie", R.drawable.flat));
-        lstDefect.add( new Defect("Plecy okrągło-wklęsłe", R.drawable.round));
+        lstDefect.add( new Defect("Plecy okrągło-wklęsłe", R.drawable.roundbtn));
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recycler.setLayoutManager(layoutManager);
 

@@ -85,7 +85,7 @@ public class DefectActivity extends AppCompatActivity {
         }
         if(name.getText().toString().contains("Okrągło-wklęsłe"))
         {
-            URL_JSON = "https://gist.githubusercontent.com/Kb861/178543f5895cb31e99f11d273371423a/raw/d370b857201491ef8bcc1953866f5ee28c9c265e/round.json";
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/178543f5895cb31e99f11d273371423a/raw/d370b857201491ef8bcc1953866f5ee28c9c265e/roundbtn.json";
             lstEX=new ArrayList<>();
             jsoncall();
 

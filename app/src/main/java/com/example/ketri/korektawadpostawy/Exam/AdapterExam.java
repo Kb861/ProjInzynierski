@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ketri.korektawadpostawy.Exam.Examination.ExaminationActivity;
+import com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity;
 import com.example.ketri.korektawadpostawy.R;
 
 import java.util.List;
@@ -69,13 +71,19 @@ public class AdapterExam extends RecyclerView.Adapter<AdapterExam.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     if(cardName.getText().toString().equals("Badanie")){
-                        Intent intent = new Intent(itemView.getContext(), TestActivity.class);
+                        Intent intent = new Intent(itemView.getContext(), ExaminationActivity.class);
                         Bundle bundle = new Bundle();
                         intent.putExtras(bundle);
                         Context context = itemView.getContext();
                         context.startActivity(intent);
                     }
-
+                    if(cardName.getText().toString().equals("Wyniki")){
+                        Intent intent = new Intent(itemView.getContext(), ResultActivity.class);
+                        Bundle bundle = new Bundle();
+                        intent.putExtras(bundle);
+                        Context context = itemView.getContext();
+                        context.startActivity(intent);
+                    }
                 }
             });
             ButterKnife.bind(this, itemView);

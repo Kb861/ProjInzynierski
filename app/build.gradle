@@ -20,6 +20,10 @@ android {
     sourceSets {
         main { res.srcDirs = ['src/main/res', 'src/main/res/raw', 'src/main/res/layout/fragments'] }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 repositories {
     mavenCentral()
@@ -49,7 +53,6 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:15.0.1'
     compile 'com.airbnb.android:lottie:2.0.0'
     implementation 'com.jjoe64:graphview:4.2.1'
-    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     implementation 'com.facebook.stetho:stetho:1.5.0'
     implementation 'com.facebook.stetho:stetho-urlconnection:1.5.0'
     compile 'com.github.msayan:tutorial-view:v1.0.6'

@@ -6,6 +6,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.jjoe64.graphview.series.DataPoint;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by ketri on 27.09.2018.
  */
@@ -26,7 +33,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, DATE DATETIME DEFAULT CURRENT_DATE, POINTS INTEGER , MOOD TEXT)");
-
     }
 
     @Override
@@ -54,7 +60,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     public int getSUM() {
-
     String countQuery = "SELECT SUM("+COL_3+") as Total FROM " + TABLE_NAME ;
     SQLiteDatabase db = this.getReadableDatabase();
     Cursor cursor = db.rawQuery(countQuery, null);
@@ -62,5 +67,22 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     int sum =cursor.getInt(cursor.getColumnIndex("Total"));
     cursor.close();
     return sum;
+
     }
+    public DataPoint[] getData(){
+
+        String countQuery = "SELECT "+COL_3+" as Points, "+COL_1+" as Date FROM " + TABLE_NAME ;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        DataPoint[] dp=new DataPoint[cursor.getCount()];
+        for(int i =0 ;i<cursor.getCount();i++){
+
+                cursor.moveToNext();
+                dp[i] = new DataPoint(cursor.getColumnIndex("Points"),i);
+
+        }
+        cursor.close();
+        return dp;
+    }
+
 }

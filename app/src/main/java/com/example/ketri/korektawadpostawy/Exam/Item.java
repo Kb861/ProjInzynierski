@@ -7,6 +7,7 @@ package com.example.ketri.korektawadpostawy.Exam;
 public class Item {
     int background;
     String cardName;
+    String descrip;
 
     public Item() {
     }
@@ -14,6 +15,12 @@ public class Item {
     public Item(int background, String cardName) {
         this.background = background;
         this.cardName = cardName;
+    }
+
+    public Item(int background, String cardName, String descrip) {
+        this.background = background;
+        this.cardName = cardName;
+        this.descrip = descrip;
     }
 
     public int getBackground() {
@@ -30,5 +37,13 @@ public class Item {
 
     public void setCardName(String cardName) {
         this.cardName = cardName;
+    }
+
+    public String getDescrip() {
+        return descrip;
+    }
+
+    public void setDescrip(String descrip) {
+        this.descrip = descrip;
     }
 }
