@@ -127,7 +127,7 @@ public class ExerciseActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         try{
-                        boolean isInserted = myDb.insertData(Integer.parseInt(et_repeat.getText().toString()),tvRatingScale.getText().toString());
+                        boolean isInserted = myDb.insertData(Integer.parseInt(et_repeat.getText().toString()),tvRatingScale.getText().toString(),null);
                         if(isInserted == true)
                             Toast.makeText(ExerciseActivity.this, R.string.Data_Inserted ,Toast.LENGTH_LONG).show();
                         else
@@ -145,7 +145,7 @@ public class ExerciseActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Cursor res = myDb.getAllData();
                         if (res.getCount() == 0) {
-                            showMessage("Error", "Nothing found");
+                            showMessage("Error", "Brak danych");
                             return;
                         }
                         StringBuffer buffer = new StringBuffer();

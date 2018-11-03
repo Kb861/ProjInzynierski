@@ -12,10 +12,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ketri.korektawadpostawy.Exam.Item;
 import com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity;
+import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
 import com.example.ketri.korektawadpostawy.Exercises.activities.DefectActivity;
+import com.example.ketri.korektawadpostawy.Exercises.activities.ExerciseActivity;
 import com.example.ketri.korektawadpostawy.R;
 
 import java.util.List;
@@ -73,7 +76,6 @@ public class Adapter  extends PagerAdapter {
                 Intent intent = new Intent(context, ExaminationActivity.class);
                 intent.putExtra("KEY", items.get(position).getCardName());
                 context.startActivity(intent);
-
             }
         });
         txv_descrip.setText(items.get(position).getDescrip());

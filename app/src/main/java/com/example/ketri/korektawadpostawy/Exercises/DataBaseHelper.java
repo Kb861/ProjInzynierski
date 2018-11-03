@@ -25,6 +25,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String COL_2 = "DATE";
     public static final String COL_3 = "POINTS";
     public static final String COL_4 = "MOOD";
+    public static final String COL_5 = "DEFECT";
 
     public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -32,20 +33,21 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, DATE DATETIME DEFAULT CURRENT_DATE, POINTS INTEGER , MOOD TEXT)");
+        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, DATE DATETIME DEFAULT CURRENT_DATE, POINTS INTEGER , MOOD TEXT, DEFECT TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
-
     }
-    public boolean insertData( int points, String mood) {
+
+    public boolean insertData( int points, String mood, String defects) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_3,points);
         contentValues.put(COL_4,mood);
+        contentValues.put(COL_5,defects);
 
         long result = db.insert(TABLE_NAME,null ,contentValues);
         if(result == -1)
@@ -67,7 +69,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     int sum =cursor.getInt(cursor.getColumnIndex("Total"));
     cursor.close();
     return sum;
-
+    }
+    public String getDefect() {
+        String countQuery = "SELECT "+COL_5+" as defect FROM " +TABLE_NAME+ " WHERE "+COL_5+" IS NOT NULL";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        cursor.moveToFirst();
+        String defect =cursor.getString(cursor.getColumnIndex("defect"));
+        cursor.close();
+        return defect;
     }
     public DataPoint[] getData(){
 
@@ -76,10 +86,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(countQuery, null);
         DataPoint[] dp=new DataPoint[cursor.getCount()];
         for(int i =0 ;i<cursor.getCount();i++){
-
                 cursor.moveToNext();
                 dp[i] = new DataPoint(cursor.getColumnIndex("Points"),i);
-
         }
         cursor.close();
         return dp;

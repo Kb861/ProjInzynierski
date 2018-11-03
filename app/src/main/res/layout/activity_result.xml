@@ -15,7 +15,16 @@
 
     android:textColor="@color/black"
     android:layout_marginTop="100dp"
-
+    android:text="text"
     android:id="@+id/txv_result"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textColor="@color/black"
+        android:layout_marginTop="150dp"
+android:text="text"
+        android:id="@+id/txv_resultres"/>
+
 
 </LinearLayout>
