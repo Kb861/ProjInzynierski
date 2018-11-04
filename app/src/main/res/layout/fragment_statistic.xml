@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/Match"
     android:animateLayoutChanges="true"
+    android:background="@color/colorPrimary"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.ketri.korektawadpostawy.Statistics.StatisticFragment">
 
@@ -12,6 +13,6 @@
         android:layout_gravity="center"
         app:lottie_autoPlay="true"
         app:lottie_colorFilter="@color/colorAccent"
-        app:lottie_fileName="graphanim.json"
+        app:lottie_fileName="animated_graph.json"
         app:lottie_loop="true"/>
 </FrameLayout>

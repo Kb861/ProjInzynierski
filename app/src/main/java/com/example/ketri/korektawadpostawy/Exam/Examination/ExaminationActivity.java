@@ -14,6 +14,7 @@ import com.example.ketri.korektawadpostawy.Exam.Item;
 import com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity;
 import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
 import com.example.ketri.korektawadpostawy.Exercises.activities.ExerciseActivity;
+import com.example.ketri.korektawadpostawy.Home.activity.InfoActivity;
 import com.example.ketri.korektawadpostawy.R;
 
 import java.util.ArrayList;
@@ -27,29 +28,37 @@ public class ExaminationActivity extends AppCompatActivity {
     @BindView(R.id.ExamViewPager)
      ViewPager viewPager;
 
-    @BindView(R.id.name)
-    TextView name;
+    @BindView(R.id.nameCardView)
+    TextView nameCardView;
+
     DataBaseHelper myDb;
     Adapter adapter;
     List<Item>items;
     Integer[]colors=null;
     ArgbEvaluator argbEvaluator=new ArgbEvaluator();
 
-    @BindView(R.id.btn)
-    Button btn;
+    @BindView(R.id.btn_gotoresult)
+    Button btn_gotoresult;
 
+    @OnClick(R.id.btn_gotoresult)
+    void onClick(View view) {
+        Intent intent = new Intent(this, ResultActivity.class);
+        Bundle bundle = new Bundle();
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_examination);
         ButterKnife.bind(this);
-       myDb=new DataBaseHelper(this);
+        myDb=new DataBaseHelper(this);
         items=new ArrayList<>();
-        items.add(new Item(R.drawable.scoliosisexamin,"Skolioza","Sprawdź czy linia barkowa, łączy oba wyrostki barkowe. Czy linia sutkowa jest równa?"));
-        items.add(new Item(R.drawable.doctor,"Tytuł 2","Czy głowa i szyja jest wysunięta? Czy łopatki odstają poza kontur pleców?"));
-        items.add(new Item(R.drawable.happy,"Tytuł 3","Czy zarys brzucha wystaje poza linię klatki piersiowej. Czy kręgosłup jest nienaturalnie wygięty w stronę brzuszną?"));
+        items.add(new Item(R.drawable.scoliosisexamin,"Skolioza","Sprawdź czy linia barkowa, nie łączy oba wyrostki barkowe. Czy linia sutkowa nie jest równa?"));
+        items.add(new Item(R.drawable.doctor,"Kifoza","Czy głowa i szyja jest wysunięta? Czy łopatki odstają poza kontur pleców?"));
+        items.add(new Item(R.drawable.happy,"Lordoza","Czy zarys brzucha wystaje poza linię klatki piersiowej. Czy kręgosłup jest nienaturalnie wygięty w stronę brzuszną?"));
         items.add(new Item(R.drawable.scoliosisexamin,"Plaskie","Sprawdź czy zarys klatki piersiowej jest płaski."));
-        items.add(new Item(R.drawable.scoliosisexamin,"OW","Czy łopatki odstają poza kontur pleców? Sprawdź czy zarys brzucha wystaje poza linię klatki piersiowej."));
+        items.add(new Item(R.drawable.scoliosisexamin,"Okrągło-wkęsłe","Czy łopatki odstają poza kontur pleców? Sprawdź czy zarys brzucha wystaje poza linię klatki piersiowej."));
 
         adapter=new Adapter(items,this);
         viewPager.setAdapter(adapter);
@@ -60,7 +69,6 @@ public class ExaminationActivity extends AppCompatActivity {
                         getResources().getColor(R.color.color3),
                         getResources().getColor(R.color.color4),
                         getResources().getColor(R.color.color5)
-
                 };
         colors=colors_temp;
 
@@ -73,7 +81,6 @@ public class ExaminationActivity extends AppCompatActivity {
             }
             @Override
             public void onPageSelected(int position) {
-
             }
             @Override
             public void onPageScrollStateChanged(int state) {
@@ -81,43 +88,22 @@ public class ExaminationActivity extends AppCompatActivity {
         });
 
         Bundle data = getIntent().getExtras();
-        String totext = data.getString("KEY");
-        name.setText(totext);
+        String totext = data.getString("nameCardView");
+        nameCardView.setText(totext);
 
-        if(name.getText().toString().contains("Skolioza")) {
-
-            String wpisanyTekst = "Prawdopodobni mozesz miec skolioze";
-            Bundle bundle = new Bundle();
-
-            bundle.putString("slowa", wpisanyTekst);
-            Intent intent = new Intent(this, ResultActivity.class);
-            intent.putExtras(bundle);
-
-            startActivity(intent);
-            Toast.makeText(getApplicationContext(), "Masz skolioze! Ale spr to",
-                    Toast.LENGTH_LONG).show();
-
-            boolean isInserted = myDb.insertData(0,null,name.getText().toString());
-            if(isInserted == true)
-                Toast.makeText(ExaminationActivity.this, R.string.Data_Inserted ,Toast.LENGTH_LONG).show();
-            else
-                Toast.makeText(ExaminationActivity.this,R.string.Data_not_Inserted,Toast.LENGTH_LONG).show();
-
+        if(nameCardView.getText().toString().contains("Skolioza")) {
+            insertDefect();
         }
-        if(name.getText().toString().contains("Tytuł 2")) {
-
-            Intent intent = new Intent(ExaminationActivity.this, ResultActivity.class);
-
-            Bundle bundle = new Bundle();
-
-            String wpisanyTekst = "Prawdopodobni mozesz miec kifoze";
-
-            bundle.putString("slowa", wpisanyTekst);
-
-            intent.putExtras(bundle);
-
-            startActivity(intent);
-
+        if(nameCardView.getText().toString().contains("Kifoza")) {
+            insertDefect();
         }
+    }
+
+    private void insertDefect() {
+        boolean isInserted = myDb.insertData(0,null,nameCardView.getText().toString());
+        if(isInserted == true)
+            Toast.makeText(this, R.string.Data_Inserted ,Toast.LENGTH_LONG).show();
+        else
+            Toast.makeText(this,R.string.Data_not_Inserted,Toast.LENGTH_LONG).show();
     }
 }

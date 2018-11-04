@@ -45,11 +45,9 @@ public class Adapter  extends PagerAdapter {
     Context context;
     private LayoutInflater layoutInflater;
 
-
     public Adapter(List<Item> items, Context context) {
         this.items = items;
         this.context = context;
-
     }
 
     @Override
@@ -69,19 +67,17 @@ public class Adapter  extends PagerAdapter {
         View view=layoutInflater.inflate(R.layout.examination_item,container,false);
         ButterKnife.bind(this,view);
         img_posture.setImageResource(items.get(position).getBackground());
-       txv_questionExam.setText(items.get(position).getCardName());
+       // txv_questionExam.setText(items.get(position).getCardName());
         txv_questionExam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ExaminationActivity.class);
-                intent.putExtra("KEY", items.get(position).getCardName());
+                intent.putExtra("nameCardView", items.get(position).getCardName());
                 context.startActivity(intent);
             }
         });
         txv_descrip.setText(items.get(position).getDescrip());
-
         container.addView(view, 0);
-
         return view;
     }
 
@@ -89,6 +85,4 @@ public class Adapter  extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
     }
-
-
 }

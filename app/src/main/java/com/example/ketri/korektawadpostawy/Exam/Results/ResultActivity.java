@@ -21,23 +21,23 @@ public class ResultActivity extends AppCompatActivity {
     @BindView(R.id.txv_resultres)
     TextView txv_resultres;
     DataBaseHelper myDb;
-    String myString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         ButterKnife.bind(this);
-
-        Bundle przekazanedane = getIntent().getExtras();
-        String przekazanytekst = przekazanedane.getString("slowa");
-      //  txv_result.setText(przekazanytekst);
         myDb=new DataBaseHelper(this);
 
         txv_result.setText(String.valueOf(myDb.getDefect()));
         if(txv_result.getText().toString().contains("Skolioza")){
+
            txv_resultres.setText("Prawdopodobnie masz skoliozę");
       }
+        if(txv_result.getText().toString().contains("Kifoza")){
+            txv_result.setText(String.valueOf(myDb.getDefect()));
+            txv_resultres.setText("Prawdopodobnie masz kifozę");
+        }
 
 
 

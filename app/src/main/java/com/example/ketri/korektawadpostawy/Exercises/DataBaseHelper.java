@@ -62,13 +62,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     public int getSUM() {
-    String countQuery = "SELECT SUM("+COL_3+") as Total FROM " + TABLE_NAME ;
-    SQLiteDatabase db = this.getReadableDatabase();
-    Cursor cursor = db.rawQuery(countQuery, null);
-    cursor.moveToFirst();
-    int sum =cursor.getInt(cursor.getColumnIndex("Total"));
-    cursor.close();
-    return sum;
+        String countQuery = "SELECT SUM("+COL_3+") as Total FROM " + TABLE_NAME ;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        cursor.moveToFirst();
+        int sum =cursor.getInt(cursor.getColumnIndex("Total"));
+        cursor.close();
+        return sum;
     }
     public String getDefect() {
         String countQuery = "SELECT "+COL_5+" as defect FROM " +TABLE_NAME+ " WHERE "+COL_5+" IS NOT NULL";

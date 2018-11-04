@@ -53,8 +53,6 @@ public class LineChartFragment extends Fragment {
         graph.addSeries(series);
         series.setTitle("Wykres czas punkty");
         series.setValuesOnTopColor(Color.RED);
-        graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getActivity()));
-        graph.getGridLabelRenderer().setNumHorizontalLabels(3); // only 4 because of the space
         graph.getViewport().setXAxisBoundsManual(true);
         graph.getGridLabelRenderer().setHumanRounding(false);
         return view;
