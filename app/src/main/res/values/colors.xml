@@ -11,9 +11,12 @@
     <color name="ładny">#053042</color>
     <color name="gold">#FFC107</color>
 
-    <color name="color1">#F8BBD0</color>
-    <color name="color2">#E1BEE7</color>
-    <color name="color3">#C5CAE9</color>
-    <color name="color4">#B2DFDB</color>
+
+    <color name="color1">#FFCCBC</color>
+    <color name="color2">#F8BBD0</color>
+    <color name="color3">#E1BEE7</color>
+    <color name="color4">#C5CAE9</color>
+    <color name="color5">#B2DFDB</color>
+
 
 </resources>

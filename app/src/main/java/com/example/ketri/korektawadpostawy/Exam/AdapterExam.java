@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ketri.korektawadpostawy.Exam.Examination.ExaminationActivity;
+import com.example.ketri.korektawadpostawy.Exam.Instruction.RulesActivity;
 import com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity;
 import com.example.ketri.korektawadpostawy.R;
 
@@ -77,6 +78,13 @@ public class AdapterExam extends RecyclerView.Adapter<AdapterExam.ViewHolder>{
                         Context context = itemView.getContext();
                         context.startActivity(intent);
                     }
+                    if(cardName.getText().toString().equals("Zasady")){
+                        Intent intent = new Intent(itemView.getContext(), RulesActivity.class);
+                        Bundle bundle = new Bundle();
+                        intent.putExtras(bundle);
+                        Context context = itemView.getContext();
+                        context.startActivity(intent);
+                    }
                     if(cardName.getText().toString().equals("Wyniki")){
                         Intent intent = new Intent(itemView.getContext(), ResultActivity.class);
                         Bundle bundle = new Bundle();
@@ -87,7 +95,6 @@ public class AdapterExam extends RecyclerView.Adapter<AdapterExam.ViewHolder>{
                 }
             });
             ButterKnife.bind(this, itemView);
-
         }
     }
 }

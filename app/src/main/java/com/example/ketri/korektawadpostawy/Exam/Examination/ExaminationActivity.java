@@ -45,9 +45,11 @@ public class ExaminationActivity extends AppCompatActivity {
         ButterKnife.bind(this);
        myDb=new DataBaseHelper(this);
         items=new ArrayList<>();
-        items.add(new Item(R.drawable.clock,"Skolioza","Opis1"));
-        items.add(new Item(R.drawable.doctor,"Tytuł 2","Opis2"));
-        items.add(new Item(R.drawable.happy,"Tytuł 3","Opis3"));
+        items.add(new Item(R.drawable.scoliosisexamin,"Skolioza","Sprawdź czy linia barkowa, łączy oba wyrostki barkowe. Czy linia sutkowa jest równa?"));
+        items.add(new Item(R.drawable.doctor,"Tytuł 2","Czy głowa i szyja jest wysunięta? Czy łopatki odstają poza kontur pleców?"));
+        items.add(new Item(R.drawable.happy,"Tytuł 3","Czy zarys brzucha wystaje poza linię klatki piersiowej. Czy kręgosłup jest nienaturalnie wygięty w stronę brzuszną?"));
+        items.add(new Item(R.drawable.scoliosisexamin,"Plaskie","Sprawdź czy zarys klatki piersiowej jest płaski."));
+        items.add(new Item(R.drawable.scoliosisexamin,"OW","Czy łopatki odstają poza kontur pleców? Sprawdź czy zarys brzucha wystaje poza linię klatki piersiowej."));
 
         adapter=new Adapter(items,this);
         viewPager.setAdapter(adapter);
@@ -55,7 +57,9 @@ public class ExaminationActivity extends AppCompatActivity {
         Integer[]colors_temp=
                 {getResources().getColor(R.color.color1),
                         getResources().getColor(R.color.color2),
-                        getResources().getColor(R.color.color3)
+                        getResources().getColor(R.color.color3),
+                        getResources().getColor(R.color.color4),
+                        getResources().getColor(R.color.color5)
 
                 };
         colors=colors_temp;

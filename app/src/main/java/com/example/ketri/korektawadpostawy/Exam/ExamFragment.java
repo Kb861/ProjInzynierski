@@ -64,8 +64,8 @@ public class ExamFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recycler.setLayoutManager(layoutManager);
 
-       AdapterExam adapterExam = new AdapterExam(getContext(),lstExam);
-       recycler.setAdapter(adapterExam);
+        AdapterExam adapterExam = new AdapterExam(getContext(),lstExam);
+        recycler.setAdapter(adapterExam);
 
         return view;
     }
