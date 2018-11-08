@@ -4,7 +4,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     card_view:cardCornerRadius="4dp"
-   style="@style/CardViewDefects">
+    style="@style/CardViewDefects">
     <LinearLayout
         android:weightSum="10"
         android:padding="10dp"

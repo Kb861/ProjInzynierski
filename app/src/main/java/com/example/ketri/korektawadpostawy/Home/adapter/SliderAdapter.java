@@ -40,7 +40,7 @@ public class SliderAdapter extends PagerAdapter{
             R.drawable.kyphosis,
             R.drawable.lordosis,
             R.drawable.flat,
-            R.drawable.roundbtn
+            R.drawable.round
 };
     public String[] slide_headings={
             "SKOLIOZA",

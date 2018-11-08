@@ -9,9 +9,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.jjoe64.graphview.series.DataPoint;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by ketri on 27.09.2018.
@@ -33,61 +34,68 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, DATE DATETIME DEFAULT CURRENT_DATE, POINTS INTEGER , MOOD TEXT, DEFECT TEXT)");
+        db.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, DATE DATETIME DEFAULT CURRENT_DATE, POINTS INTEGER , MOOD TEXT, DEFECT TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 
-    public boolean insertData( int points, String mood, String defects) {
+    public boolean insertData(int points, String mood, String defects) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_3,points);
-        contentValues.put(COL_4,mood);
-        contentValues.put(COL_5,defects);
+        contentValues.put(COL_3, points);
+        contentValues.put(COL_4, mood);
+        contentValues.put(COL_5, defects);
 
-        long result = db.insert(TABLE_NAME,null ,contentValues);
-        if(result == -1)
+        long result = db.insert(TABLE_NAME, null, contentValues);
+        if (result == -1)
             return false;
         else
             return true;
     }
+
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME, null);
         return res;
     }
 
     public int getSUM() {
-        String countQuery = "SELECT SUM("+COL_3+") as Total FROM " + TABLE_NAME ;
+        String countQuery = "SELECT SUM(" + COL_3 + ") as Total FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
         cursor.moveToFirst();
-        int sum =cursor.getInt(cursor.getColumnIndex("Total"));
+        int sum = cursor.getInt(cursor.getColumnIndex("Total"));
         cursor.close();
         return sum;
     }
+
     public String getDefect() {
-        String countQuery = "SELECT "+COL_5+" as defect FROM " +TABLE_NAME+ " WHERE "+COL_5+" IS NOT NULL";
+        String countQuery = "SELECT " + COL_5 + " as defect FROM " + TABLE_NAME + " WHERE " + COL_5 + " IS NOT NULL";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
         cursor.moveToFirst();
-        String defect =cursor.getString(cursor.getColumnIndex("defect"));
+        String defect = cursor.getString(cursor.getColumnIndex("defect"));
         cursor.close();
         return defect;
     }
-    public DataPoint[] getData(){
 
-        String countQuery = "SELECT "+COL_3+" as Points, "+COL_1+" as Date FROM " + TABLE_NAME ;
+    public DataPoint[] getData() throws ParseException {
+
+        String countQuery = "SELECT " + COL_3 + " as Points, " + COL_2 + " as Date FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
-        DataPoint[] dp=new DataPoint[cursor.getCount()];
-        for(int i =0 ;i<cursor.getCount();i++){
-                cursor.moveToNext();
-                dp[i] = new DataPoint(cursor.getColumnIndex("Points"),i);
+        DataPoint[] dp = new DataPoint[cursor.getCount()];
+        for (int i = 0; i < cursor.getCount(); i++) {
+            cursor.moveToNext();
+            String temp = cursor.getString(cursor.getColumnIndex("Date"));
+            SimpleDateFormat sdfIn = new SimpleDateFormat("yyyy-MM-dd",Locale.GERMAN);
+            SimpleDateFormat sdfOut = new SimpleDateFormat("dd.MM",Locale.GERMAN);
+            Date date = sdfIn.parse(temp);
+            dp[i] = new DataPoint(Double.parseDouble(sdfOut.format(date)), cursor.getDouble(cursor.getColumnIndex("Points")));
         }
         cursor.close();
         return dp;
