@@ -30,7 +30,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:id="@+id/txv_descrip"
-            android:maxLines="3"
+            android:maxLines="4"
             android:drawablePadding="10dp"
             android:text="description"
             android:ellipsize="end"
@@ -41,12 +41,11 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimaryDark"
             android:layout_below="@id/txv_descrip"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="36dp"
-            android:text="Wynik pozytywny"
-            android:textStyle="bold"
-
-            android:textSize="25sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="  Mam dysproporcję  "
+            android:background="@drawable/roundbackground"
+            android:textSize="19sp"
             android:id="@+id/txv_questionExam"/>
     </RelativeLayout>
     </android.support.v7.widget.CardView>

@@ -54,10 +54,10 @@ public class ExaminationActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         myDb=new DataBaseHelper(this);
         items=new ArrayList<>();
-        items.add(new Item(R.drawable.scoliosisexamin,"Skolioza","Sprawdź czy linia barkowa, nie łączy oba wyrostki barkowe. Czy linia sutkowa nie jest równa?"));
-        items.add(new Item(R.drawable.doctor,"Kifoza","Czy głowa i szyja jest wysunięta? Czy łopatki odstają poza kontur pleców?"));
+        items.add(new Item(R.drawable.scoliosisexamin,"Skolioza","Sprawdź czy linia barkowa, nie łączy obu wyrostków barkowych. Czy linia sutkowa nie jest równa?"));
+        items.add(new Item(R.drawable.kyphosisexam,"Kifoza","Czy głowa i szyja jest wysunięta? Czy łopatki odstają poza kontur pleców?"));
         items.add(new Item(R.drawable.happy,"Lordoza","Czy zarys brzucha wystaje poza linię klatki piersiowej. Czy kręgosłup jest nienaturalnie wygięty w stronę brzuszną?"));
-        items.add(new Item(R.drawable.scoliosisexamin,"Plaskie","Sprawdź czy zarys klatki piersiowej jest płaski."));
+        items.add(new Item(R.drawable.flatexamin,"Plaskie","Sprawdź czy zarys klatki piersiowej jest płaski."));
         items.add(new Item(R.drawable.scoliosisexamin,"Okrągło-wkęsłe","Czy łopatki odstają poza kontur pleców? Sprawdź czy zarys brzucha wystaje poza linię klatki piersiowej."));
 
         adapter=new Adapter(items,this);
@@ -92,10 +92,18 @@ public class ExaminationActivity extends AppCompatActivity {
         nameCardView.setText(totext);
 
         if(nameCardView.getText().toString().contains("Skolioza")) {
-            insertDefect();
+            boolean isInserted = myDb.insertData(0,null,nameCardView.getText().toString());
+            if(isInserted == true)
+                Toast.makeText(this, R.string.Data_Inserted ,Toast.LENGTH_LONG).show();
+            else
+                Toast.makeText(this,R.string.Data_not_Inserted,Toast.LENGTH_LONG).show();
         }
         if(nameCardView.getText().toString().contains("Kifoza")) {
-            insertDefect();
+            boolean isInserted = myDb.insertData(0,null,nameCardView.getText().toString());
+            if(isInserted == true)
+                Toast.makeText(this, R.string.Data_Inserted ,Toast.LENGTH_LONG).show();
+            else
+                Toast.makeText(this,R.string.Data_not_Inserted,Toast.LENGTH_LONG).show();
         }
     }
 

@@ -33,9 +33,9 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LineChartFragment extends Fragment {
+public class BarChartFragment extends Fragment {
 
-    public LineChartFragment() {
+    public BarChartFragment() {
     }
 
     @BindView(R.id.line_graph)
@@ -54,7 +54,7 @@ public class LineChartFragment extends Fragment {
 
         myDb=new DataBaseHelper(getContext());
         try {
-            series=new BarGraphSeries<DataPoint>(myDb.getData());
+            series=new BarGraphSeries<DataPoint>(myDb.getPointsDateTab());
         } catch (ParseException e) {
             e.printStackTrace();
         }

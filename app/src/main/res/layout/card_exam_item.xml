@@ -23,11 +23,11 @@
         app:srcCompat="@drawable/blac_gradient" />
 
     <TextView
+        android:id="@+id/txv_nameCardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txv_nameCardView"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="180dp"
         android:text="Badanie"
         android:textColor="@color/white"
         android:textSize="30dp"
@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="250dp"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="180dp"
         android:background="@drawable/btn_oval_shape"
         android:text="IDŹ"
         app:layout_constraintStart_toStartOf="parent"

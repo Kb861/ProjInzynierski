@@ -74,7 +74,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     public String getDefect() {
-        String countQuery = "SELECT " + COL_5 + " as defect FROM " + TABLE_NAME + " WHERE " + COL_5 + " IS NOT NULL";
+        String countQuery = "SELECT " + COL_5 + " as defect FROM " + TABLE_NAME + " WHERE " + COL_5 + " LIKE 'Skolioza'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        cursor.moveToFirst();
+        String defect = cursor.getString(cursor.getColumnIndex("defect"));
+        cursor.close();
+        return defect;
+    }
+    public String getDefectKif() {
+        String countQuery = "SELECT " + COL_5 + " as defect FROM " + TABLE_NAME + " WHERE " + COL_5 + " LIKE 'Kifoza'";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
         cursor.moveToFirst();
@@ -83,7 +92,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return defect;
     }
 
-    public DataPoint[] getData() throws ParseException {
+    public DataPoint[] getPointsDateTab() throws ParseException {
 
         String countQuery = "SELECT " + COL_3 + " as Points, " + COL_2 + " as Date FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();

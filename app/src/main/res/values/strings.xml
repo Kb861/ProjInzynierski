@@ -78,5 +78,6 @@
         <item>Skrzywienie boczne kręgosłupa:</item>
         <item>Ustawienie brzucha:</item>
     </string-array>
+    <string name="title_activity_tab_result">TabResultActivity</string>
 
 </resources>

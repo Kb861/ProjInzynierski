@@ -1,18 +1,28 @@
-package com.example.ketri.korektawadpostawy.Statistics;
+package com.example.ketri.korektawadpostawy.Exam.Results;
 
-import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+
+import android.widget.TextView;
 
 import com.example.ketri.korektawadpostawy.R;
-import com.example.ketri.korektawadpostawy.Statistics.Tabs.PointsFragment;
+import com.example.ketri.korektawadpostawy.Statistics.TabStatisticActivity;
 import com.example.ketri.korektawadpostawy.Statistics.Tabs.BarChartFragment;
+import com.example.ketri.korektawadpostawy.Statistics.Tabs.PointsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +30,10 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TabStatisticActivity extends AppCompatActivity {
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
+public class TabResultActivity extends AppCompatActivity {
+
+    @BindView(R.id.toolbar_result)
+    Toolbar toolbar_result;
 
     @BindView(R.id.tabs)
     TabLayout tabLayout;
@@ -35,25 +46,28 @@ public class TabStatisticActivity extends AppCompatActivity {
             R.drawable.ic_action_points,
     };
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab_statistic);
+        setContentView(R.layout.activity_tab_result);
         ButterKnife.bind(this);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar_result);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
         SupportActionBarBack();
+
     }
+
     private void setupTabIcons() {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        TabResultActivity.ViewPagerAdapter adapter = new  TabResultActivity.ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new BarChartFragment(), "ONE");
         adapter.addFrag(new PointsFragment(), "TWO");
         viewPager.setAdapter(adapter);

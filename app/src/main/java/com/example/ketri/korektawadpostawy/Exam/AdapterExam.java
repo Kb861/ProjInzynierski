@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.ketri.korektawadpostawy.Exam.Examination.ExaminationActivity;
 import com.example.ketri.korektawadpostawy.Exam.Instruction.RulesActivity;
 import com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity;
+import com.example.ketri.korektawadpostawy.Exam.Results.TabResultActivity;
 import com.example.ketri.korektawadpostawy.R;
 
 import java.util.List;
