@@ -17,4 +17,9 @@
         android:textColor="@color/colorPrimary"
         android:text="Ćwicz dalej!                   Nie poddawaj się!"/>
 
+    <Button
+        android:id="@+id/btn_shere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="shere"/>
 </LinearLayout>
