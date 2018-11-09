@@ -59,10 +59,6 @@
         <activity android:name=".Exam.Examination.ExaminationActivity" />
         <activity android:name=".Exam.Results.ResultActivity" />
         <activity android:name=".Exam.Instruction.RulesActivity" />
-        <activity
-            android:name=".Exam.Results.TabResultActivity"
-            android:label="@string/title_activity_tab_result"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

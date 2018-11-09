@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp">
+    <TextView
+
+        android:id="@+id/txt_def"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:text="Skolioza"
+
+        android:textStyle="bold"
+android:layout_margin="10dp"
+        android:textSize="20dp"
+
+        android:layout_toRightOf="@id/check"
+
+        android:layout_centerVertical="true"
+
+        android:textColor="@color/colorAccent"
+
+        />
+    <TextView
+        android:id="@+id/txt_advice"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/check"
+        android:layout_marginTop="19dp"
+        android:maxLines="4"
+        android:padding="5dp"
+        android:text="Prawdopodobnie posiadasz skoliozę. Skonsultuj się z lekarzem. "
+        android:layout_below="@id/txt_def"/>
+
+    <ImageView
+
+        android:id="@+id/check"
+
+        android:layout_width="40dp"
+
+        android:layout_height="40dp"
+
+        android:layout_centerVertical="true"
+
+        android:src="@drawable/ic_check_black_24dp"
+
+
+        />
+    <TextView
+        android:id="@+id/namedef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/check"/>
+
+
+    <Button
+
+        android:id="@+id/btn_go"
+
+        android:layout_width="50dp"
+
+        android:layout_height="50dp"
+
+        android:layout_alignParentRight="true"
+
+
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="50dp"
+
+        android:layout_toRightOf="@id/txt_advice"
+
+        android:background="@drawable/btn_go_round"
+
+        android:gravity="center"
+
+        android:textColor="@android:color/white" />
+
+
+</RelativeLayout>

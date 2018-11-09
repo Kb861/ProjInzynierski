@@ -2,48 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
+    style="@style/LinearLayout"
     tools:context="com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity">
-
     <TextView
-        android:id="@+id/txv_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="text"
-        android:textColor="@color/black" />
+        style="@style/Heading"
+        android:text="Zaobserowano:"/>
 
-    <TextView
-        android:id="@+id/txv_resultres2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="text"
-        android:textColor="@color/color3" />
-
-    <TextView
-        android:id="@+id/txv_resultkif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="180dp"
-        android:text="text"
-        android:textColor="@color/black" />
-
-    <TextView
-        android:id="@+id/txv_resultres"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:text="text"
-        android:textColor="@color/black" />
-
-    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Aktywność wyniki:"/>
-
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerExam"
+        style="@style/Recycler"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

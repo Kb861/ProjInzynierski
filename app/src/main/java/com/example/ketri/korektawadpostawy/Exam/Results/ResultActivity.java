@@ -3,9 +3,13 @@ package com.example.ketri.korektawadpostawy.Exam.Results;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ketri.korektawadpostawy.Exam.Results.Result.Result;
+import com.example.ketri.korektawadpostawy.Exam.Results.Result.ResultAdapter;
 import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
 import com.example.ketri.korektawadpostawy.R;
 
@@ -16,17 +20,9 @@ import butterknife.ButterKnife;
 
 public class ResultActivity extends AppCompatActivity {
 
-    @BindView(R.id.txv_result)
-    TextView txv_result;
+    @BindView(R.id.recyclerExam)
+    RecyclerView recycler;
 
-    @BindView(R.id.txv_resultres)
-    TextView txv_resultres;
-
-    @BindView(R.id.txv_resultkif)
-    TextView txv_resultkif;
-
-    @BindView(R.id.txv_resultres2)
-    TextView txv_resultres2;
     DataBaseHelper myDb;
 
     @Override
@@ -36,20 +32,17 @@ public class ResultActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         myDb=new DataBaseHelper(this);
 
+        ArrayList<Result> results =new ArrayList<>();
+        results.add(new Result("Skolioza", "Prawdopodobnie posiadasz skoliozę. Skonsultuj się z lekarzem."));
+        results.add(new Result("Kifoza", "Prawdopodobnie posiadasz kifozę. Skonsultuj się z lekarzem."));
+        results.add(new Result("Lordoza", "Prawdopodobnie posiadasz lordozę. Skonsultuj się z lekarzem."));
+        results.add(new Result("Plecy płaskie", "Prawdopodobnie posiadasz lordozę. Skonsultuj się z lekarzem."));
 
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recycler.setLayoutManager(layoutManager);
 
-        txv_result.setText(String.valueOf(myDb.getDefect()));
-        if(txv_result.getText().toString().contains("Skolioza")){
-
-           txv_resultres.setText("Prawdopodobnie masz skoliozę");
-      }
-        txv_resultkif.setText(String.valueOf(myDb.getDefectKif()));
-        if(txv_resultkif.getText().toString().contains("Kifoza")){
-
-            txv_resultres2.setText("Prawdopodobnie masz kifozę");
-        }
-
-
+        ResultAdapter resultAdaper = new ResultAdapter(results);
+        recycler.setAdapter(resultAdaper);
 
 
 

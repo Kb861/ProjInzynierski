@@ -92,6 +92,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return defect;
     }
 
+
     public DataPoint[] getPointsDateTab() throws ParseException {
 
         String countQuery = "SELECT " + COL_3 + " as Points, " + COL_2 + " as Date FROM " + TABLE_NAME;
