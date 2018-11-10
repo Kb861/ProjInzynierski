@@ -36,7 +36,8 @@ public class ResultActivity extends AppCompatActivity {
         results.add(new Result("Skolioza", "Prawdopodobnie posiadasz skoliozę. Skonsultuj się z lekarzem."));
         results.add(new Result("Kifoza", "Prawdopodobnie posiadasz kifozę. Skonsultuj się z lekarzem."));
         results.add(new Result("Lordoza", "Prawdopodobnie posiadasz lordozę. Skonsultuj się z lekarzem."));
-        results.add(new Result("Plecy płaskie", "Prawdopodobnie posiadasz lordozę. Skonsultuj się z lekarzem."));
+        results.add(new Result("Plecy płaskie", "Prawdopodobnie posiadasz plecy płaskie. Skonsultuj się z lekarzem."));
+        results.add(new Result("Plecy okrągło-wklęsłe", "Prawdopodobnie posiadasz plecy okrągło-wklęsłe. Skonsultuj się z lekarzem."));
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recycler.setLayoutManager(layoutManager);

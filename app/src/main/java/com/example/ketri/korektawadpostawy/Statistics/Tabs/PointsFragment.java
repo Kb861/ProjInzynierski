@@ -31,15 +31,15 @@ public class PointsFragment extends Fragment {
     @BindView(R.id.txv_consolation)
     TextView consolation;
 
-    @BindView(R.id.btn_shere)
-    Button btn_shere;
+    @BindView(R.id.btn_share)
+    Button btn_share;
 
     public PointsFragment() {
     }
     DataBaseHelper myDb;
     Dialog epicDialog;
     ImageView close;
-    Intent shereIntent;
+    Intent shareIntent;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,15 +56,15 @@ public class PointsFragment extends Fragment {
 
          if(point.getText().toString().contains("150")) {
              consolation.setText("Jesteś mistrzem!");}
-String shereText="Mam już"+ point.getText()+"Punktów";
-             btn_shere.setOnClickListener(new View.OnClickListener() {
+        String shareText="Posiadam już "+ point.getText()+" punktów!";
+             btn_share.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View v) {
-                     shereIntent=new Intent(Intent.ACTION_SEND);
-                     shereIntent.setType("text/pain");
-                     shereIntent.putExtra(Intent.EXTRA_SUBJECT,"korektywadpostawy");
-                     shereIntent.putExtra(Intent.EXTRA_TEXT,shereText);
-                     startActivity(Intent.createChooser(shereIntent,"Udostępnij"));
+                     shareIntent=new Intent(Intent.ACTION_SEND);
+                     shareIntent.setType("text/pain");
+                     shareIntent.putExtra(Intent.EXTRA_SUBJECT,"korektywadpostawy");
+                     shareIntent.putExtra(Intent.EXTRA_TEXT,shareText);
+                     startActivity(Intent.createChooser(shareIntent,"Udostępnij"));
                  }
              });
         return view;

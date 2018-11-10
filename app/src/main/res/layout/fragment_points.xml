@@ -18,8 +18,9 @@
         android:text="Ćwicz dalej!                   Nie poddawaj się!"/>
 
     <Button
-        android:id="@+id/btn_shere"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="shere"/>
+        android:id="@+id/btn_share"
+        android:layout_margin="20dp"
+        style="@style/ButtonStyle"
+        android:drawableStart="@drawable/ic_share_black_24dp"
+        android:text="Udostępnij"/>
 </LinearLayout>

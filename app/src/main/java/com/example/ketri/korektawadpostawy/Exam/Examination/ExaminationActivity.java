@@ -56,7 +56,7 @@ public class ExaminationActivity extends AppCompatActivity {
         items=new ArrayList<>();
         items.add(new Item(R.drawable.scoliosisexamin,"Skolioza","Sprawdź czy linia barkowa, nie łączy obu wyrostków barkowych. Czy linia sutkowa nie jest równa?"));
         items.add(new Item(R.drawable.kyphosisexam,"Kifoza","Czy głowa i szyja jest wysunięta? Czy łopatki odstają poza kontur pleców?"));
-        items.add(new Item(R.drawable.happy,"Lordoza","Czy zarys brzucha wystaje poza linię klatki piersiowej. Czy kręgosłup jest nienaturalnie wygięty w stronę brzuszną?"));
+        items.add(new Item(R.drawable.lordosisexam,"Lordoza","Czy zarys brzucha wystaje poza linię klatki piersiowej. Czy kręgosłup jest nienaturalnie wygięty w stronę brzuszną?"));
         items.add(new Item(R.drawable.flatexamin,"Plaskie","Sprawdź czy zarys klatki piersiowej jest płaski."));
         items.add(new Item(R.drawable.scoliosisexamin,"Okrągło-wkęsłe","Czy łopatki odstają poza kontur pleców? Sprawdź czy zarys brzucha wystaje poza linię klatki piersiowej."));
 
