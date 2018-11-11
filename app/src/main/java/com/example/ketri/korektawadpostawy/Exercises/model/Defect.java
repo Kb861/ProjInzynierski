@@ -8,6 +8,13 @@ public class Defect {
     private String name;
     private int image;
 
+    public Defect() {
+    }
+
+    public Defect(String name) {
+        this.name = name;
+    }
+
     public Defect(String name, int image) {
         this.name = name;
         this.image = image;

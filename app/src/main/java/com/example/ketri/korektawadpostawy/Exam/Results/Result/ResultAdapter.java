@@ -1,15 +1,5 @@
 package com.example.ketri.korektawadpostawy.Exam.Results.Result;
-
-import android.app.Activity;
-import android.app.Fragment;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,19 +7,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity;
 import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
-import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
-
 import com.example.ketri.korektawadpostawy.Exercises.activities.DefectActivity;
+import com.example.ketri.korektawadpostawy.Exercises.model.Defect;
 import com.example.ketri.korektawadpostawy.R;
-
 import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
+
 
 /**
  * Created by ketri on 09.11.2018.
@@ -52,6 +37,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
     public void onBindViewHolder(ResultAdapter.ViewHolder holder, int position) {
         holder.setName(results.get(position).getDefectName());
         holder.setDesc(results.get(position).getDefectDescrip());
+        holder.setAtt(results.get(position).getAttention());
         holder.btn_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +46,10 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
                 v.getContext().startActivity(intent);
             }
         });
+
+
     }
+
 
     @Override
     public int getItemCount() {return results.size();}
@@ -78,8 +67,9 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
         @BindView(R.id.check)
         ImageView check;
 
-        @BindView(R.id.namedef)
-        TextView namedef;
+        @BindView(R.id.namedefs)
+        TextView namedefs;
+        private ArrayList<Defect> defectsList;
 
         DataBaseHelper myDb;
 
@@ -87,23 +77,11 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
             super(itemView);
             ButterKnife.bind(this, itemView);
             myDb=new DataBaseHelper(itemView.getContext());
+            defectsList =new ArrayList<>();
+
+            defectsList.addAll(myDb.getDefect());
             check.setVisibility(View.INVISIBLE);
-       if(check.getVisibility()==View.INVISIBLE) {
-                namedef.setText(String.valueOf(myDb.getDefect()));
-                if (txt_def.getText().toString().contains("Skolioza")) {
-                    //check.setVisibility(View.VISIBLE);
-                    txt_advice.setText("hello");
-                }
-                txt_def.setText(String.valueOf(myDb.getDefectKif()));
-                if(txt_def.getText().toString().contains("Kifoza")){
-                    check.setVisibility(View.VISIBLE);
-                }
 
-            }else{
-
-                check.setVisibility(View.INVISIBLE);
-
-            }
 
         }
 
@@ -112,6 +90,10 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
         }
         public void setDesc(String desc) {
             txt_advice.setText(desc);
+        }
+
+        public void setAtt(String att) {
+     namedefs.setText(att);
         }
     }
 }
