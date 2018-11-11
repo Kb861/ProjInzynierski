@@ -37,7 +37,6 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
     public void onBindViewHolder(ResultAdapter.ViewHolder holder, int position) {
         holder.setName(results.get(position).getDefectName());
         holder.setDesc(results.get(position).getDefectDescrip());
-        holder.setAtt(results.get(position).getAttention());
         holder.btn_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,10 +45,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
                 v.getContext().startActivity(intent);
             }
         });
-
-
     }
-
 
     @Override
     public int getItemCount() {return results.size();}
@@ -67,22 +63,9 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
         @BindView(R.id.check)
         ImageView check;
 
-        @BindView(R.id.namedefs)
-        TextView namedefs;
-        private ArrayList<Defect> defectsList;
-
-        DataBaseHelper myDb;
-
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-            myDb=new DataBaseHelper(itemView.getContext());
-            defectsList =new ArrayList<>();
-
-            defectsList.addAll(myDb.getDefect());
-            check.setVisibility(View.INVISIBLE);
-
-
         }
 
         public void setName(String name) {
@@ -90,10 +73,6 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
         }
         public void setDesc(String desc) {
             txt_advice.setText(desc);
-        }
-
-        public void setAtt(String att) {
-     namedefs.setText(att);
         }
     }
 }

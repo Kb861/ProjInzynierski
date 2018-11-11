@@ -7,20 +7,11 @@ package com.example.ketri.korektawadpostawy.Exam.Results.Result;
 public class Result {
     private String defectName;
     private String defectDescrip;
-    private String attention;
 
-    public Result(String defectName, String defectDescrip, String attention) {
+
+    public Result(String defectName, String defectDescrip) {
         this.defectName = defectName;
         this.defectDescrip = defectDescrip;
-        this.attention = attention;
-    }
-
-    public String getAttention() {
-        return attention;
-    }
-
-    public void setAttention(String attention) {
-        this.attention = attention;
     }
 
     public String getDefectName() {

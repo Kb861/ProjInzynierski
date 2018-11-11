@@ -71,7 +71,7 @@ public class Adapter  extends PagerAdapter {
         txv_questionExam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ResultActivity.class);
+                Intent intent = new Intent(context, ExaminationActivity.class);
                 intent.putExtra("nameCardView", items.get(position).getCardName());
                 context.startActivity(intent);
             }

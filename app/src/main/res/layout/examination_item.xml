@@ -44,7 +44,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:text="  Mam dysproporcję  "
-            android:background="@drawable/roundbackground"
+
             android:textSize="19sp"
             android:id="@+id/txv_questionExam"/>
     </RelativeLayout>

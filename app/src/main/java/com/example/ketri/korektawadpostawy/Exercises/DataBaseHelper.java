@@ -75,45 +75,22 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return sum;
     }
-    public List<Defect> getDefect() {
+    public List<Defect> getListDefect() {
         List<Defect> defectList = new ArrayList<Defect>();
-        String countQuery = "SELECT " + COL_5 + " as defect FROM " + TABLE_NAME+ " WHERE " + COL_5 + " IS NOT NULL";
+        String countQuery = "SELECT " + COL_5 + " as defect FROM " + TABLE_NAME + " WHERE " + COL_5 + " IS NOT NULL";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
         try {
             while (cursor.moveToNext()) {
                 Defect defects = new Defect();
-                //String defects = cursor.getString(cursor.getColumnIndex("defect"));
                 defects.setName(cursor.getString(cursor.getColumnIndex("defect")));
                 defectList.add(defects);
             }
         } finally {
             cursor.close();
         }
-
-
-        //String defect = cursor.getString(cursor.getColumnIndex("defect"));
-
         return defectList;
     }
-//    public String getDefect() {
-//        String countQuery = "SELECT " + COL_5 + " as defect FROM " + TABLE_NAME + " WHERE " + COL_5 + " LIKE 'Skolioza'";
-//        SQLiteDatabase db = this.getReadableDatabase();
-//        Cursor cursor = db.rawQuery(countQuery, null);
-//        cursor.moveToFirst();
-//        String defect = cursor.getString(cursor.getColumnIndex("defect"));
-//        cursor.close();
-//        return defect;
-//    }
-//    public String getDefectKif() {
-//        String countQuery = "SELECT " + COL_5 + " as defect FROM " + TABLE_NAME + " WHERE " + COL_5 + " LIKE 'Kifoza'";
-//        SQLiteDatabase db = this.getReadableDatabase();
-//        Cursor cursor = db.rawQuery(countQuery, null);
-//        cursor.moveToFirst();
-//        String defect = cursor.getString(cursor.getColumnIndex("defect"));
-//        cursor.close();
-//        return defect;
-//    }
 
     public DataPoint[] getPointsDateTab() throws ParseException {
 
