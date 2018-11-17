@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
+
+import com.example.ketri.korektawadpostawy.BackArrowToHome;
 import com.example.ketri.korektawadpostawy.Exam.Results.Result.Result;
 import com.example.ketri.korektawadpostawy.Exam.Results.Result.ResultAdapter;
 import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
@@ -15,7 +18,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity implements BackArrowToHome {
 
     @BindView(R.id.recyclerExam)
     RecyclerView recycler;
@@ -30,11 +33,6 @@ public class ResultActivity extends AppCompatActivity {
         myDb=new DataBaseHelper(this);
 
         ArrayList<Result> results =new ArrayList<>();
-//        results.add(new Result("Skolioza", "Prawdopodobnie posiadasz skoliozę. Skonsultuj się z lekarzem."));
-//        results.add(new Result("Kifoza", "Prawdopodobnie posiadasz kifozę. Skonsultuj się z lekarzem."));
-//        results.add(new Result("Lordoza", "Prawdopodobnie posiadasz lordozę. Skonsultuj się z lekarzem."));
-//        results.add(new Result("Plecy płaskie", "Prawdopodobnie posiadasz plecy płaskie. Skonsultuj się z lekarzem."));
-//        results.add(new Result("Plecy okrągło-wklęsłe", "Prawdopodobnie posiadasz plecy okrągło-wklęsłe. Skonsultuj się z lekarzem."));
         results.add(new Result("Skolioza", null));
         results.add(new Result("Kifoza", null));
         results.add(new Result("Lordoza", null));
@@ -45,7 +43,7 @@ public class ResultActivity extends AppCompatActivity {
 
         ResultAdapter resultAdapter = new ResultAdapter(results);
         recycler.setAdapter(resultAdapter);
-
+        SupportActionBarBack();
         myDb=new DataBaseHelper(this);
         defectsList =new ArrayList<>();
 
@@ -64,5 +62,21 @@ public class ResultActivity extends AppCompatActivity {
                 results.set(4, (new Result("Plecy okrągło-wklęsłe", "Prawdopodobnie posiadasz plecy okrągło-wklęsłe. Skonsultuj się z lekarzem.")));}
         }
 
+    }
+
+    @Override
+    public void SupportActionBarBack() {
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == android.R.id.home)
+        {
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

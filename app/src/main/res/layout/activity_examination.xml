@@ -3,8 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/Match"
+    android:id="@+id/root"
     tools:context="com.example.ketri.korektawadpostawy.Exam.Examination.ExaminationActivity">
-
+<Button
+    android:id="@+id/btn_info"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_alignParentRight="true"
+    android:background="@drawable/ic_info"/>
     <android.support.v4.view.ViewPager
     android:id="@+id/ExamViewPager"
     android:foregroundGravity="center"

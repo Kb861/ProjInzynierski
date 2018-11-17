@@ -121,9 +121,7 @@ public class DefectActivity extends AppCompatActivity {
                     }
                 }
                 setRecyclerViewAdapter(lstEX);
-
             }
-
         }, new Response.ErrorListener() {
 
             @Override

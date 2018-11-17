@@ -8,14 +8,14 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.ketri.korektawadpostawy.Exercises.activities.DefectActivity;
+import com.example.ketri.korektawadpostawy.BackArrowToHome;
 import com.example.ketri.korektawadpostawy.Home.adapter.SliderAdapter;
 import com.example.ketri.korektawadpostawy.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class InfoActivity extends AppCompatActivity {
+public class InfoActivity extends AppCompatActivity implements BackArrowToHome {
 
     @BindView(R.id.slideViewPager)
     ViewPager slideViewPager;
@@ -37,6 +37,7 @@ public class InfoActivity extends AppCompatActivity {
         slideViewPager.addOnPageChangeListener(viewListener);
         SupportActionBarBack();
     }
+
     public void SupportActionBarBack() {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -73,7 +74,6 @@ public class InfoActivity extends AppCompatActivity {
 
         @Override
         public void onPageScrollStateChanged(int i) {
-
         }
     };
 

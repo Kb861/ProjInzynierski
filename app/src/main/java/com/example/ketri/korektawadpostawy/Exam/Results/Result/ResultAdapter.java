@@ -67,7 +67,6 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
-
         public void setName(String name) {
             txt_def.setText(name);
         }
