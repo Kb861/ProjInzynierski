@@ -30,7 +30,7 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void run() {
                 try{
-                    sleep(2000);
+                    sleep(1000);
                     Intent intent = new Intent(getActivity(), NotificationActivity.class);
                     startActivity(intent);
                     getActivity().finish();}

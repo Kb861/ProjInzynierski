@@ -6,24 +6,17 @@
     tools:context="com.example.ketri.korektawadpostawy.Notifications.NotificationActivity">
     <TextView
         style="@style/TitleInstructionTxV"
+        android:layout_marginTop="10dp"
         android:text="Wybierz godzinę na wykonywanie ćwiczeń"/>
     <EditText
         android:id="@+id/et_time"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="100dp"
+        style="@style/editTextTime"
+        android:hint="00:00" />
+
+    <ImageView
+        style="@style/ImageViewGreenFrame"
         android:layout_gravity="center"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:hint="00:00"/>
-    <TextView
-        android:id="@+id/h"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hour"/>
-    <TextView
-        android:id="@+id/min"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="min"/>
+        android:layout_marginTop="80dp"
+        android:src="@drawable/ic_bell" />
+
 </LinearLayout>

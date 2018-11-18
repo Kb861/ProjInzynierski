@@ -29,8 +29,8 @@ public class NotificationReceiver extends BroadcastReceiver{
         stackBuilder.addNextIntent(notificationIntent);
         PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
         Notification.Builder builder = new Notification.Builder(context);
-        Notification notification = builder.setContentTitle("Demo App Notification")
-                .setContentText("New Notification From Demo App..")
+        Notification notification = builder.setContentTitle("Przypomnienie")
+                .setContentText("Wykonaj kilka ćwiczeń i ciesz się zdrowym kręgosłupem.")
                 .setTicker("New Message Alert!")
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentIntent(pendingIntent).build();

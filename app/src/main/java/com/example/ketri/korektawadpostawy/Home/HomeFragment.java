@@ -1,9 +1,6 @@
 package com.example.ketri.korektawadpostawy.Home;
 
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,23 +12,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.ketri.korektawadpostawy.Exam.ExamFragment;
 import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
-import com.example.ketri.korektawadpostawy.Exercises.activities.ExerciseActivity;
 import com.example.ketri.korektawadpostawy.Home.activity.InfoActivity;
-import com.example.ketri.korektawadpostawy.NotificationReceiver;
 import com.example.ketri.korektawadpostawy.R;
-
-import java.util.Calendar;
-import java.util.TimeZone;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-import static android.content.Context.ALARM_SERVICE;
 
 
 /**
