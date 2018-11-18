@@ -70,14 +70,13 @@
     <string name="OK">OK</string>
     <string name="work">Ćwicz</string>
     <string name="exam">Zbadaj</string>
-    <string-array name="questions">
-        <item>Ustawienie głowy:</item>
-        <item>Ustawienie barków:</item>
-        <item>Ustawienie i kształt klatki piersiowej:</item>
-        <item>Ustawienie łopatek:</item>
-        <item>Skrzywienie boczne kręgosłupa:</item>
-        <item>Ustawienie brzucha:</item>
-    </string-array>
+    <string name="CheckPosture">Sprawdź i oceń swoją postawę stojąc przed lusterm.</string>
+    <string name="instr1">Stań przodem, następnie bokiem do lustra w postawie swobodnej (nie na baczność) i obserwuj swoją postawę.</string>
+    <string name="instr2">Stojąc przodem do lustra wyznacz linie poziome poprzez połączenie punktów położonych symetrycznie względem siebie, po obu stronach ciała.</string>
+    <string name="instr3">W warunkach prawidłowych linie te są równoległe względem siebie i do podłoża.</string>
     <string name="title_activity_tab_result">TabResultActivity</string>
+    <string name="attention">UWAGA!</string>
+    <string name="examination">Badanie</string>
+
 
 </resources>

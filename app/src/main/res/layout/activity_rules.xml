@@ -1,13 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.ketri.korektawadpostawy.Exam.Instruction.RulesActivity">
-    <ImageView
-        android:layout_width="match_parent"
-        android:src="@drawable/pattern"
-        android:layout_height="wrap_content" />
+    android:background="@color/white"
+    style="@style/Match">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarlayout_id"
+        android:layout_width="match_parent"
+        android:layout_height="304dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        tools:layout_editor_absoluteY="-4dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingtoolbar_id"
+            style="@style/Match"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:title="Title">
+            <LinearLayout style="@style/LinearL_ExA"
+                android:background="@drawable/pattern">
+            </LinearLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        style="@style/Match"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="16dp" >
+
+        <LinearLayout
+            style="@style/LinearLayout">
+            <TextView
+                android:text="@string/CheckPosture"
+                style="@style/TitleInstructionTxV"/>
+
+            <RelativeLayout
+                android:layout_height="420dp"
+                style="@style/RelativeL">
+
+                <TextView
+                    android:id="@+id/instruction1"
+                    android:text="@string/instr1"
+                    style="@style/InstructionDescrip"/>
+
+                <Button
+                    android:id="@+id/btn_goexam"
+                    style="@style/GreenTransparentButton"
+                    android:text="@string/examination"
+                   />
+
+                <TextView
+                    android:id="@+id/instruction2"
+                    android:textColor="@color/darkRed"
+                    android:layout_below="@id/btn_goexam"
+                    android:text="@string/instr2"
+                    style="@style/InstructionDescrip"/>
+
+                <ImageView
+                    android:id="@+id/measure"
+                    android:layout_below="@+id/instruction2"
+                    android:src="@drawable/measure"
+                    style="@style/ImageViewGreenFrame" />
+
+                <TextView
+                    android:id="@+id/attention"
+                    android:layout_alignTop="@+id/instruction3"
+                    android:layout_toStartOf="@+id/btn_goexam"
+                    android:text="@string/attention"
+                    style="@style/InstructionAttentionTxV" />
+
+                <TextView
+                    android:id="@+id/instruction3"
+                    style="@style/InstructionDescrip"
+                    android:layout_alignStart="@+id/btn_goexam"
+                    android:layout_below="@+id/measure"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/instr3"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
+
