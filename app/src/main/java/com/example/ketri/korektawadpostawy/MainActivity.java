@@ -14,10 +14,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import com.example.ketri.korektawadpostawy.AboutApp.AboutFragment;
+import com.example.ketri.korektawadpostawy.Breath.BreathFragment;
 import com.example.ketri.korektawadpostawy.Exam.ExamFragment;
 import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
 import com.example.ketri.korektawadpostawy.Home.HomeFragment;
 import com.example.ketri.korektawadpostawy.Maps.RehabilitationFragment;
+import com.example.ketri.korektawadpostawy.Notifications.NotificationsFragment;
 import com.example.ketri.korektawadpostawy.Statistics.StatisticFragment;
 import com.facebook.stetho.Stetho;
 
@@ -44,13 +46,7 @@ public class MainActivity extends AppCompatActivity
         openFragmentHome();
         navigationView.setCheckedItem(R.id.nav_home);
 
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent notificationIntent = new Intent(this, NotificationReceiver.class);
-        PendingIntent broadcast = PendingIntent.getBroadcast(this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY,7);
-        calendar.set(Calendar.MINUTE,13);
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), broadcast);
+
     }
     private void setRecurringAlarm(Context context) {
 
@@ -110,6 +106,10 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_about) {
             openFragmentAbout();
+        } else if (id == R.id.nav_breath) {
+            openFragmentBreath();
+        } else if (id == R.id.nav_notification) {
+           openFragmentNoti();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -145,6 +145,16 @@ public class MainActivity extends AppCompatActivity
     private void openFragmentAbout() {
         android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.flMain,new AboutFragment());
+        ft.commit();
+    }
+    private void openFragmentBreath() {
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.flMain,new BreathFragment());
+        ft.commit();
+    }
+    private void openFragmentNoti() {
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.flMain,new NotificationsFragment());
         ft.commit();
     }
 }
