@@ -7,10 +7,11 @@
     tools:context="com.example.ketri.korektawadpostawy.Exam.Examination.ExaminationActivity">
 <Button
     android:id="@+id/btn_info"
+    android:layout_marginTop="5dp"
     android:layout_width="50dp"
     android:layout_height="50dp"
     android:layout_alignParentRight="true"
-    android:background="@drawable/ic_info"/>
+    android:background="@drawable/ic_action_name"/>
     <android.support.v4.view.ViewPager
     android:id="@+id/ExamViewPager"
     android:foregroundGravity="center"

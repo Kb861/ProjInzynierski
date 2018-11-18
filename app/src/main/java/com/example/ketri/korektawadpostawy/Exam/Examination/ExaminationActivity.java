@@ -68,7 +68,7 @@ public class ExaminationActivity extends AppCompatActivity {
     @Override
     public void onClick(View v) {
         ToolTip toolTip = new ToolTip.Builder()
-                .withText("Jeżeli posiadasz wadę przedstawioną po prawej stronie, naciśnij przycisk ZAOBSERWOWANO.")
+                .withText("Jeżeli posiadasz wadę przedstawioną po prawej stronie, naciśnij czerwony przycisk.")
                 .withTextSize(50)
                 .withTextColor(Color.BLACK)
                 .withBackgroundColor(Color.TRANSPARENT)
@@ -85,10 +85,10 @@ public class ExaminationActivity extends AppCompatActivity {
 });
         myDb = new DataBaseHelper(this);
         items = new ArrayList<>();
-        items.add(new Item(R.drawable.scoliosisexamin, "Skolioza", "Sprawdź czy linia barkowa, nie łączy obu wyrostków barkowych. Czy linia sutkowa nie jest równa?"));
-        items.add(new Item(R.drawable.kyphosisexam, "Kifoza", "Czy głowa i szyja jest wysunięta? Czy łopatki odstają poza kontur pleców?"));
+        items.add(new Item(R.drawable.scoliosisexamin, "Skolioza", "Sprawdź czy linia barkowa, łączy oba wyrostki barkowe. Czy linia sutkowa jest równa?    "));
+        items.add(new Item(R.drawable.kyphosisexam, "Kifoza", "Czy głowa i szyja jest wysunięta? Czy łopatki odstają poza kontur pleców?     "));
         items.add(new Item(R.drawable.lordosisexam, "Lordoza", "Czy zarys brzucha wystaje poza linię klatki piersiowej. Czy kręgosłup jest nienaturalnie wygięty w stronę brzuszną?"));
-        items.add(new Item(R.drawable.flatexamin, "Plecy płaskie", "Sprawdź czy zarys klatki piersiowej jest płaski."));
+        items.add(new Item(R.drawable.flatexamin, "Plecy płaskie", "Sprawdź czy zarys klatki piersiowej jest płaski.        "));
         items.add(new Item(R.drawable.roundexam, "Plecy okrągło-wkęsłe", "Czy łopatki odstają poza kontur pleców? Sprawdź czy zarys brzucha wystaje poza linię klatki piersiowej."));
 
         adapter = new Adapter(items, this);

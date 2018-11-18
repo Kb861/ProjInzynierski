@@ -59,6 +59,4 @@ dependencies {
     compile 'com.github.xizzhu:simple-tool-tip:0.6.1'
 
 
-
-
 }

@@ -1,6 +1,9 @@
 package com.example.ketri.korektawadpostawy.Exercises.activities;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,7 +25,11 @@ import android.widget.VideoView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
+import com.example.ketri.korektawadpostawy.NotificationReceiver;
 import com.example.ketri.korektawadpostawy.R;
+
+import java.util.Calendar;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

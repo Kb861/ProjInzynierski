@@ -2,16 +2,10 @@ package com.example.ketri.korektawadpostawy.AboutApp;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
-import com.example.ketri.korektawadpostawy.Home.HomeFragment;
-import com.example.ketri.korektawadpostawy.Home.activity.InfoActivity;
 import com.example.ketri.korektawadpostawy.MainActivity;
 import com.example.ketri.korektawadpostawy.R;
-import com.hololo.tutorial.library.PermissionStep;
 import com.hololo.tutorial.library.Step;
 import com.hololo.tutorial.library.TutorialActivity;
 
@@ -44,8 +38,6 @@ public class AboutAppActivity extends TutorialActivity {
                 .setBackgroundColor(Color.parseColor("#FFCDD2"))
                 .setDrawable(R.drawable.happy)
                 .build());
-
-
     }
     @Override
     public void finishTutorial() {

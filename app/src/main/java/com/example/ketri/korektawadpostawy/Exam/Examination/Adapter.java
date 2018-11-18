@@ -67,7 +67,7 @@ public class Adapter  extends PagerAdapter {
         View view=layoutInflater.inflate(R.layout.examination_item,container,false);
         ButterKnife.bind(this,view);
         img_posture.setImageResource(items.get(position).getBackground());
-       txv_questionExam.setText(items.get(position).getCardName());
+       //txv_questionExam.setText(items.get(position).getCardName());
         txv_questionExam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
