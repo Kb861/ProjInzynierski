@@ -60,7 +60,7 @@
         <activity android:name=".Exam.Results.ResultActivity" />
         <activity android:name=".Exam.Instruction.RulesActivity" />
 
-        <receiver android:name=".NotificationReceiver"></receiver>
+        <receiver android:name=".Notifications.NotificationReceiver"></receiver>
 
         <activity android:name=".Notifications.NotificationActivity"></activity>
     </application>

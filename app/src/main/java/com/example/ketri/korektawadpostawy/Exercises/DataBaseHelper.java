@@ -102,7 +102,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             cursor.moveToNext();
             String temp = cursor.getString(cursor.getColumnIndex("Date"));
             SimpleDateFormat sdfIn = new SimpleDateFormat("yyyy-MM-dd",Locale.GERMAN);
-            SimpleDateFormat sdfOut = new SimpleDateFormat("dd.MM",Locale.GERMAN);
+            SimpleDateFormat sdfOut = new SimpleDateFormat("MM.dd",Locale.GERMAN);
             Date date = sdfIn.parse(temp);
             dp[i] = new DataPoint(Double.parseDouble(sdfOut.format(date)), cursor.getDouble(cursor.getColumnIndex("Points")));
         }

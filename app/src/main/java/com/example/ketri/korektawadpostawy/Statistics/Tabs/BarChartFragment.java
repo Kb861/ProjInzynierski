@@ -59,13 +59,17 @@ public class BarChartFragment extends Fragment {
             e.printStackTrace();
         }
         graph.addSeries(series);
-        series.setTitle("Wykres czas punkty");
         series.setColor(Color.GREEN);
         series.setTitle("punkty");
         graph.getLegendRenderer().setVisible(true);
         graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
         graph.getGridLabelRenderer().setNumHorizontalLabels(5);
         graph.getGridLabelRenderer().setNumVerticalLabels(5);
+
+        graph.getViewport().setScrollable(true);
+        graph.getViewport().setScrollableY(true);
+        graph.getViewport().setScalable(true);
+        graph.getViewport().setScalableY(true);
 
 
 

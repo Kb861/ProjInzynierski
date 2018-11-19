@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/LinearLayout"
-    android:background="@drawable/pool"
+    android:background="@drawable/water"
     android:id="@+id/transitions_container"
     tools:context="com.example.ketri.korektawadpostawy.Maps.RehabilitationFragment">
 
@@ -13,9 +13,11 @@
         android:textColor="@color/white"/>
     <Button
         android:id="@+id/btnInf"
-        style="@style/ButtonStyle"
-        android:layout_margin="20dp"
-        android:text="      Informacje      " />
+        style="@style/ButtonStyleWhiteFrame"
+        android:layout_marginTop="20sp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/inf" />
     <TextView
         style="@style/txvHome"
         android:textSize="20dp"
@@ -29,12 +31,12 @@
 
         <Button
             android:id="@+id/btnSearch"
-            style="@style/ButtonStyle"
-            android:text="Szukaj" />
+            style="@style/ButtonStyleWhiteFrame"
+            android:text="@string/search" />
 
         <ImageView
             style="@style/Wrap"
-            android:src="@drawable/swim" />
+            android:src="@drawable/drop" />
     </LinearLayout>
 
 </LinearLayout>

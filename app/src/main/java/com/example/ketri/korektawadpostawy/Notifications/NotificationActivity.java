@@ -14,7 +14,6 @@ import android.widget.TimePicker;
 
 import com.example.ketri.korektawadpostawy.BackArrowToHome;
 import com.example.ketri.korektawadpostawy.MainActivity;
-import com.example.ketri.korektawadpostawy.NotificationReceiver;
 import com.example.ketri.korektawadpostawy.R;
 import java.util.Calendar;
 import butterknife.BindView;

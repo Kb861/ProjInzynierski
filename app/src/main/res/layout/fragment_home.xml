@@ -8,35 +8,54 @@
         android:id="@+id/l1"
         style="@style/MainL1">
         <TextView
+            android:layout_marginTop="90dp"
            style="@style/txvSTART"/>
         <TextView
+            android:layout_marginTop="30dp"
            style="@style/TextViewMain"
             android:text="@string/mainText"/>
-        <RelativeLayout
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
-            <Button
-                android:id="@+id/start"
-                android:text="@string/work"
-                android:drawableStart="@drawable/ic_accessibility_black_24dp"
-                style="@style/ButtonStyle" />
-            <Button
-                android:id="@+id/exam"
-                style="@style/ButtonStyle"
-                android:text="@string/exam"
-                android:drawableStart="@drawable/ic_search_black_24dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"/>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
-            <Button
-                android:id="@+id/timer"
-                style="@style/ButtonStyle"
-                android:layout_alignParentBottom="true"
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btn_informationApp"
+                        android:text="@string/aboutApp"
+                        android:layout_margin="8dp"
+                        style="@style/ButtonStyleWhiteFrame" />
+                    <Button
+                        android:id="@+id/exam"
+                        style="@style/ButtonStyleWhiteFrame"
+                        android:text="@string/exam"
+                        android:layout_margin="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"/>
+                    <Button
+                        android:id="@+id/start"
+                        android:text="@string/work"
+                        android:layout_margin="8dp"
+                        style="@style/ButtonStyleWhiteFrame" />
+                    <Button
+                        android:id="@+id/btn_notif"
+                        style="@style/ButtonStyleWhiteFrame"
+                        android:text="@string/planer"
+                        android:layout_margin="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"/>
+                </LinearLayout>
+            </HorizontalScrollView>
 
-                android:layout_centerHorizontal="true"
-                android:text="timer" />
-        </RelativeLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -45,8 +64,10 @@
         style="@style/MainL2">
         <Button
             android:id="@+id/btnMain"
-            style="@style/ButtonStyle"
-            android:text="@string/INFO" />
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            style="@style/ButtonStyleWhiteFrame"
+            android:text="@string/inf" />
         <TextView
            style="@style/txvInfo"/>
     </LinearLayout>

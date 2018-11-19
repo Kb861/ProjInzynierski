@@ -20,10 +20,6 @@
             android:id="@+id/nav_sport"
             android:icon="@drawable/ic_pool_black_24dp"
             android:title="Rehabilitacja wodna" />
-        <item
-            android:id="@+id/nav_breath"
-            android:icon="@drawable/ic_timer_black_24dp"
-            android:title="Oddech" />
     </group>
     <item android:title="Harmonogram">
         <menu>
@@ -31,7 +27,6 @@
                 android:id="@+id/nav_notification"
                 android:icon="@drawable/ic_notifications_black_24dp"
                 android:title="Powiadomienia" />
-
         </menu>
     </item>
 

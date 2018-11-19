@@ -1,10 +1,6 @@
 package com.example.ketri.korektawadpostawy;
 
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,8 +9,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
 import com.example.ketri.korektawadpostawy.AboutApp.AboutFragment;
-import com.example.ketri.korektawadpostawy.Breath.BreathFragment;
 import com.example.ketri.korektawadpostawy.Exam.ExamFragment;
 import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
 import com.example.ketri.korektawadpostawy.Home.HomeFragment;
@@ -22,9 +18,6 @@ import com.example.ketri.korektawadpostawy.Maps.RehabilitationFragment;
 import com.example.ketri.korektawadpostawy.Notifications.NotificationsFragment;
 import com.example.ketri.korektawadpostawy.Statistics.StatisticFragment;
 import com.facebook.stetho.Stetho;
-
-import java.util.Calendar;
-import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,25 +41,6 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-    private void setRecurringAlarm(Context context) {
-
-        // we know mobiletuts updates at right around 1130 GMT.
-        // let's grab new stuff at around 11:45 GMT, inexactly
-        Calendar updateTime = Calendar.getInstance();
-        updateTime.setTimeZone(TimeZone.getTimeZone("GMT"));
-        updateTime.set(Calendar.HOUR_OF_DAY, 20);
-        updateTime.set(Calendar.MINUTE, 51);
-
-        Intent downloader = new Intent(context, NotificationReceiver.class);
-        PendingIntent recurringDownload = PendingIntent.getBroadcast(context,
-                0, downloader, PendingIntent.FLAG_CANCEL_CURRENT);
-        AlarmManager alarms = (AlarmManager)getApplicationContext().getSystemService(
-                Context.ALARM_SERVICE);
-        alarms.setInexactRepeating(AlarmManager.RTC_WAKEUP,
-                updateTime.getTimeInMillis(),
-                AlarmManager.INTERVAL_DAY, recurringDownload);
-    }
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -106,8 +80,6 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_about) {
             openFragmentAbout();
-        } else if (id == R.id.nav_breath) {
-            openFragmentBreath();
         } else if (id == R.id.nav_notification) {
            openFragmentNoti();
         }
@@ -145,11 +117,6 @@ public class MainActivity extends AppCompatActivity
     private void openFragmentAbout() {
         android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.flMain,new AboutFragment());
-        ft.commit();
-    }
-    private void openFragmentBreath() {
-        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.flMain,new BreathFragment());
         ft.commit();
     }
     private void openFragmentNoti() {

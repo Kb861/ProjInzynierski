@@ -13,9 +13,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.ketri.korektawadpostawy.AboutApp.AboutAppActivity;
 import com.example.ketri.korektawadpostawy.Exam.ExamFragment;
 import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
 import com.example.ketri.korektawadpostawy.Home.activity.InfoActivity;
+import com.example.ketri.korektawadpostawy.Notifications.NotificationActivity;
 import com.example.ketri.korektawadpostawy.R;
 
 import butterknife.BindView;
@@ -42,11 +44,32 @@ public class HomeFragment extends Fragment {
     @BindView(R.id.exam)
     Button exam;
 
+    @BindView(R.id.btn_informationApp)
+    Button btn_informationApp;
+
+    @BindView(R.id.btn_notif)
+    Button btn_notif;
+
     Animation uptodown, downtoup;
 
     @OnClick(R.id.btnMain)
     void onClick(View view) {
         Intent intent = new Intent(getActivity(), InfoActivity.class);
+        Bundle bundle = new Bundle();
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+    @OnClick(R.id.btn_informationApp)
+    void onClickAboutApp(View view) {
+        Intent intent = new Intent(getActivity(), AboutAppActivity.class);
+        Bundle bundle = new Bundle();
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.btn_notif)
+    void onClickNotification(View view) {
+        Intent intent = new Intent(getActivity(), NotificationActivity.class);
         Bundle bundle = new Bundle();
         intent.putExtras(bundle);
         startActivity(intent);

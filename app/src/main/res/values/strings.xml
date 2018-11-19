@@ -77,6 +77,10 @@
     <string name="title_activity_tab_result">TabResultActivity</string>
     <string name="attention">UWAGA!</string>
     <string name="examination">Badanie</string>
+    <string name="search">SZUKAJ</string>
+    <string name="inf">Informacje</string>
+    <string name="aboutApp">O aplikacji</string>
+    <string name="planer">Planer</string>
 
 
 </resources>

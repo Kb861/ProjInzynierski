@@ -79,6 +79,7 @@
                     android:layout_alignStart="@+id/btn_goexam"
                     android:layout_below="@+id/measure"
                     android:layout_marginTop="15dp"
+                    android:textAlignment="textStart"
                     android:text="@string/instr3"
                     android:textColor="@color/gray"
                     android:textSize="13sp" />

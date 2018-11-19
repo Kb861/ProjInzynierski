@@ -1,4 +1,4 @@
-package com.example.ketri.korektawadpostawy;
+package com.example.ketri.korektawadpostawy.Notifications;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.os.Build;
 
 import com.example.ketri.korektawadpostawy.Exercises.activities.DefectActivity;
+import com.example.ketri.korektawadpostawy.MainActivity;
+import com.example.ketri.korektawadpostawy.R;
 
 import static android.app.NotificationManager.IMPORTANCE_DEFAULT;
 
