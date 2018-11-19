@@ -9,12 +9,14 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ketri.korektawadpostawy.BackArrowToHome;
 import com.example.ketri.korektawadpostawy.Exam.Item;
 import com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity;
 import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
@@ -32,7 +34,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ExaminationActivity extends AppCompatActivity {
+public class ExaminationActivity extends AppCompatActivity implements BackArrowToHome{
     @BindView(R.id.ExamViewPager)
     ViewPager viewPager;
 
@@ -64,6 +66,7 @@ public class ExaminationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_examination);
         ButterKnife.bind(this);
+        SupportActionBarBack();
         findViewById(R.id.btn_info).setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -169,6 +172,20 @@ public class ExaminationActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.Data_Inserted, Toast.LENGTH_LONG).show();
         else
             Toast.makeText(this, R.string.Data_not_Inserted, Toast.LENGTH_LONG).show();
+    }
+    @Override
+    public void SupportActionBarBack() {
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == android.R.id.home)
+        {
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

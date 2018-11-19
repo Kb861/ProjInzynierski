@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 
 import com.example.ketri.korektawadpostawy.BackArrowToHome;
+import com.example.ketri.korektawadpostawy.MainActivity;
 import com.example.ketri.korektawadpostawy.NotificationReceiver;
 import com.example.ketri.korektawadpostawy.R;
 import java.util.Calendar;
@@ -66,6 +67,12 @@ public class NotificationActivity extends AppCompatActivity implements BackArrow
         if(id == android.R.id.home)
         {
             this.finish();
+            Intent intent = new Intent(this, MainActivity.class);
+            Bundle bundle = new Bundle();
+            intent.putExtras(bundle);
+            startActivity(intent);
+
+
         }
         return super.onOptionsItemSelected(item);
     }

@@ -1,5 +1,6 @@
 package com.example.ketri.korektawadpostawy.Statistics;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.ketri.korektawadpostawy.MainActivity;
 import com.example.ketri.korektawadpostawy.R;
 import com.example.ketri.korektawadpostawy.Statistics.Tabs.PointsFragment;
 import com.example.ketri.korektawadpostawy.Statistics.Tabs.BarChartFragment;
@@ -32,7 +34,7 @@ public class TabStatisticActivity extends AppCompatActivity {
 
     private int[] tabIcons = {
             R.drawable.ic_action_chart,
-            R.drawable.ic_action_points,
+            R.drawable.ic_action_point,
     };
 
     @Override
@@ -97,6 +99,10 @@ public class TabStatisticActivity extends AppCompatActivity {
         if(id == android.R.id.home)
         {
             this.finish();
+            Intent intent = new Intent(this, MainActivity.class);
+            Bundle bundle = new Bundle();
+            intent.putExtras(bundle);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
