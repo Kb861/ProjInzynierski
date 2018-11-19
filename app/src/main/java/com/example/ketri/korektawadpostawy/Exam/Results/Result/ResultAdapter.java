@@ -7,9 +7,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
+
 import com.example.ketri.korektawadpostawy.Exercises.activities.DefectActivity;
-import com.example.ketri.korektawadpostawy.Exercises.model.Defect;
 import com.example.ketri.korektawadpostawy.R;
 import java.util.ArrayList;
 import butterknife.BindView;
@@ -29,7 +28,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
     @Override
     public ResultAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLayoutView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_examination, null);
+                .inflate(R.layout.item_result, null);
         return new ViewHolder(itemLayoutView);
     }
 
