@@ -30,7 +30,6 @@ public class CustomInfoAdapter implements GoogleMap.InfoWindowAdapter {
         if(!title.equals("")){
             tvTitle.setText(title);
         }
-
         String snippet = marker.getSnippet();
         TextView tvSnippet = (TextView) view.findViewById(R.id.snippet);
 
@@ -43,7 +42,6 @@ public class CustomInfoAdapter implements GoogleMap.InfoWindowAdapter {
         rendowWindowText(marker, Window);
         return Window;
     }
-
     @Override
     public View getInfoContents(Marker marker) {
         rendowWindowText(marker, Window);

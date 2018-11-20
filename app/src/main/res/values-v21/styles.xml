@@ -398,6 +398,24 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:cursorVisible">false</item>
     </style>
+    <style name="LogoTextView">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:text">Korekta wad postawy</item>
+        <item name="android:lines">3</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_marginEnd">47dp</item>
+    </style>
+
+
+
+
+
+
 
 
 

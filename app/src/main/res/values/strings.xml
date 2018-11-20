@@ -30,9 +30,7 @@
     <string name="Data_Inserted">Dane wprowadzone</string>
     <string name="Data_not_Inserted">Błąd</string>
     <string name="Data_error">Wprowadź wszystkie dane poprawnie!</string>
-
     <style name="ZAPISZ">ZAPISZ</style>
-
     <string name="see">ZOBACZ</string>
     <string name="congrat">Gratulacje!</string>
     <string name="badge">Otrzymałeś odznakę</string>
@@ -44,7 +42,6 @@
     <string name="data">Dane</string>
     <string name="WaterRehabilitation">Rehabilitacja w wodzie może wpłynąć na poprawę jakości życia u osób z dysfunkcją ruchową. Woda, ze względu na swoje właściwości wpływa na rozluźnienie mięśni.</string>
     <string name="title_activity_maps">Map</string>
-    <string name="title_activity_main2">Main2Activity</string>
     <string-array name="slide_desc">
         <item>Charakteryzuje się odchyleniem od osi anatomicznej kręgosłupa lub jego odcinka w płaszczyźnie czołowej.</item>
         <item>Charakteryzuje się nadmiernym wygięciem jednego odcinka lub całęgo kręgosłupa ku tyłowi.</item>
@@ -81,6 +78,8 @@
     <string name="inf">Informacje</string>
     <string name="aboutApp">O aplikacji</string>
     <string name="planer">Planer</string>
+    <string name="tooltipif">Jeżeli posiadasz wadę przedstawioną po prawej stronie, naciśnij czerwony przycisk.</string>
+    <string name="master">Jesteś mistrzem!</string>
 
 
 </resources>

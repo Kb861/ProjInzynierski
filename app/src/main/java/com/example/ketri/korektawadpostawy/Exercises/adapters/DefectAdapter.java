@@ -56,7 +56,6 @@ public class DefectAdapter extends RecyclerView.Adapter<DefectAdapter.ViewHolder
                 intent.putExtra("KEY", Data.get(position).getName());
                 Context.startActivity(intent);
             }
-
         });
     }
 

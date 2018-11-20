@@ -1,16 +1,14 @@
 package com.example.ketri.korektawadpostawy.Exam.Instruction;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.ketri.korektawadpostawy.BackArrowToHome;
 import com.example.ketri.korektawadpostawy.Exam.Examination.ExaminationActivity;
-import com.example.ketri.korektawadpostawy.Exercises.ExerciseFragment;
-import com.example.ketri.korektawadpostawy.Home.activity.InfoActivity;
 import com.example.ketri.korektawadpostawy.R;
 
 import butterknife.BindView;

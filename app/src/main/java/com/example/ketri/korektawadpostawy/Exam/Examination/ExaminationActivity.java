@@ -1,17 +1,14 @@
 package com.example.ketri.korektawadpostawy.Exam.Examination;
 
 import android.animation.ArgbEvaluator;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.annotation.ColorInt;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,12 +17,9 @@ import com.example.ketri.korektawadpostawy.BackArrowToHome;
 import com.example.ketri.korektawadpostawy.Exam.Item;
 import com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity;
 import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
-import com.example.ketri.korektawadpostawy.Exercises.activities.ExerciseActivity;
-import com.example.ketri.korektawadpostawy.Home.activity.InfoActivity;
 import com.example.ketri.korektawadpostawy.R;
 import com.github.xizzhu.simpletooltip.ToolTip;
 import com.github.xizzhu.simpletooltip.ToolTipView;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +29,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ExaminationActivity extends AppCompatActivity implements BackArrowToHome{
+
     @BindView(R.id.ExamViewPager)
     ViewPager viewPager;
 
@@ -49,9 +44,6 @@ public class ExaminationActivity extends AppCompatActivity implements BackArrowT
 
     @BindView(R.id.btn_gotoresult)
     Button btn_gotoresult;
-
-    Button btn_info;
-
 
     @OnClick(R.id.btn_gotoresult)
     void onClick(View view) {
@@ -71,7 +63,7 @@ public class ExaminationActivity extends AppCompatActivity implements BackArrowT
     @Override
     public void onClick(View v) {
         ToolTip toolTip = new ToolTip.Builder()
-                .withText("Jeżeli posiadasz wadę przedstawioną po prawej stronie, naciśnij czerwony przycisk.")
+                .withText(R.string.tooltipif)
                 .withTextSize(50)
                 .withTextColor(Color.BLACK)
                 .withBackgroundColor(Color.TRANSPARENT)
@@ -125,44 +117,24 @@ public class ExaminationActivity extends AppCompatActivity implements BackArrowT
             }
         });
 
-        Bundle data = getIntent().getExtras();
-        String totext = data.getString("nameCardView");
-        nameCardView.setText(totext);
+        Bundle datafromAdapter = getIntent().getExtras();
+        String textCardview = datafromAdapter.getString("nameCardView");
+        nameCardView.setText(textCardview);
 
         if (nameCardView.getText().toString().contains("Skolioza")) {
-            boolean isInserted = myDb.insertData(0, null, nameCardView.getText().toString());
-            if (isInserted == true)
-                Toast.makeText(this, R.string.Data_Inserted, Toast.LENGTH_LONG).show();
-            else
-                Toast.makeText(this, R.string.Data_not_Inserted, Toast.LENGTH_LONG).show();
+            insertDefect();
         }
         if (nameCardView.getText().toString().contains("Kifoza")) {
-            boolean isInserted = myDb.insertData(0, null, nameCardView.getText().toString());
-            if (isInserted == true)
-                Toast.makeText(this, R.string.Data_Inserted, Toast.LENGTH_LONG).show();
-            else
-                Toast.makeText(this, R.string.Data_not_Inserted, Toast.LENGTH_LONG).show();
+            insertDefect();
         }
         if (nameCardView.getText().toString().contains("Lordoza")) {
-            boolean isInserted = myDb.insertData(0, null, nameCardView.getText().toString());
-            if (isInserted == true)
-                Toast.makeText(this, R.string.Data_Inserted, Toast.LENGTH_LONG).show();
-            else
-                Toast.makeText(this, R.string.Data_not_Inserted, Toast.LENGTH_LONG).show();
+            insertDefect();
         }
         if (nameCardView.getText().toString().contains("Plecy płaskie")) {
-            boolean isInserted = myDb.insertData(0, null, nameCardView.getText().toString());
-            if (isInserted == true)
-                Toast.makeText(this, R.string.Data_Inserted, Toast.LENGTH_LONG).show();
-            else
-                Toast.makeText(this, R.string.Data_not_Inserted, Toast.LENGTH_LONG).show();
+            insertDefect();
         }
         if (nameCardView.getText().toString().contains("Plecy okrągło-wkęsłe")) {
-            boolean isInserted = myDb.insertData(0, null, nameCardView.getText().toString());
-            if (isInserted == true)
-                Toast.makeText(this, R.string.Data_Inserted, Toast.LENGTH_LONG).show();
-            else
-                Toast.makeText(this, R.string.Data_not_Inserted, Toast.LENGTH_LONG).show();
+            insertDefect();
         }
     }
 

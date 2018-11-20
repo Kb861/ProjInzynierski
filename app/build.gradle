@@ -58,5 +58,4 @@ dependencies {
     compile 'com.github.msayan:tutorial-view:v1.0.6'
     compile 'com.github.xizzhu:simple-tool-tip:0.6.1'
 
-
 }

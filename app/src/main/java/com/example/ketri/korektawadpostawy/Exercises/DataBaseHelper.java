@@ -9,7 +9,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.example.ketri.korektawadpostawy.Exercises.model.Defect;
 import com.jjoe64.graphview.series.DataPoint;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -93,7 +92,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     public DataPoint[] getPointsDateTab() throws ParseException {
-
         String countQuery = "SELECT " + COL_3 + " as Points, " + COL_2 + " as Date FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);

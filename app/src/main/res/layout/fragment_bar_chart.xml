@@ -4,15 +4,19 @@
     tools:context="com.example.ketri.korektawadpostawy.Statistics.Tabs.BarChartFragment">
 
     <TextView
-    style="@style/TextViewForUser"
-    android:text="Zaobserwuj swoje postępy"/>
-
+        style="@style/TitleInstructionTxV"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:text="Zaobserwuj swoje postępy w czasie."/>
     <com.jjoe64.graphview.GraphView
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:layout_width="match_parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_height="300dp"
         android:id="@+id/line_graph" />
+
+
+
 
 </LinearLayout>

@@ -1,13 +1,12 @@
 package com.example.ketri.korektawadpostawy.Exercises.activities;
 
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.android.volley.RequestQueue;
@@ -51,8 +50,8 @@ public class DefectActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         recyclerView = findViewById(R.id.recyclerV);
 
-        Bundle data = getIntent().getExtras();
-        String totext = data.getString("KEY");
+        Bundle datafromDefectAdapter = getIntent().getExtras();
+        String totext = datafromDefectAdapter.getString("KEY");
         name.setText(totext);
 
         if(name.getText().toString().contains("Skolioza"))
@@ -115,9 +114,7 @@ public class DefectActivity extends AppCompatActivity {
                         lstEX.add(ex);
                     }
                     catch (JSONException e) {
-
                         e.printStackTrace();
-
                     }
                 }
                 setRecyclerViewAdapter(lstEX);

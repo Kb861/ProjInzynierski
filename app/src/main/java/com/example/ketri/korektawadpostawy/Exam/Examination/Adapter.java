@@ -2,7 +2,6 @@ package com.example.ketri.korektawadpostawy.Exam.Examination;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
@@ -10,15 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.ketri.korektawadpostawy.Exam.Item;
-import com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity;
-import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
-import com.example.ketri.korektawadpostawy.Exercises.activities.DefectActivity;
-import com.example.ketri.korektawadpostawy.Exercises.activities.ExerciseActivity;
 import com.example.ketri.korektawadpostawy.R;
 
 import java.util.List;
@@ -67,7 +60,6 @@ public class Adapter  extends PagerAdapter {
         View view=layoutInflater.inflate(R.layout.examination_item,container,false);
         ButterKnife.bind(this,view);
         img_posture.setImageResource(items.get(position).getBackground());
-       //txv_questionExam.setText(items.get(position).getCardName());
         txv_questionExam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

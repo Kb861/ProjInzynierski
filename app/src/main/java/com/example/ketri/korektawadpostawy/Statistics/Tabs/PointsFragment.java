@@ -55,7 +55,7 @@ public class PointsFragment extends Fragment {
              ShowBox();}
 
          if(point.getText().toString().contains("150")) {
-             consolation.setText("Jesteś mistrzem!");}
+             consolation.setText(R.string.master);}
         String shareText="Posiadam już "+ point.getText()+" punktów!";
              btn_share.setOnClickListener(new View.OnClickListener() {
                  @Override

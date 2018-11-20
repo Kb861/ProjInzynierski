@@ -124,7 +124,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     .build();
             input_search.setOnItemClickListener(autoCompleteClickListener);
         } else {
-           // Toast.makeText(this, R.string.problem, Toast.LENGTH_LONG).show();
         }
         PlaceAutocompleteAdapter = new PlaceAutocompleteAdapter(this, GoogleApiClient, LAT_LNG_BOUNDS, null);
         input_search.setAdapter(PlaceAutocompleteAdapter);
@@ -190,7 +189,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
     }
-
     private void geoLocate() {
         Log.d(TAG, String.valueOf(R.string.geoLocate));
 
@@ -267,10 +265,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Map.setInfoWindowAdapter(new CustomInfoAdapter(MapsActivity.this));
         if(placeInfo!=null) {
         try{
-            String snippet = "Address: " + placeInfo.getAddress() + "\n" +
-                    "Phone Number: " + placeInfo.getPhoneNumber() + "\n" +
-                    "Website: " + placeInfo.getWebsiteUri() + "\n" +
-                    "Price Rating: " + placeInfo.getRating() + "\n";
+            String snippet = "Addres: " + placeInfo.getAddress() + "\n" +
+                    "Telefon: " + placeInfo.getPhoneNumber() + "\n" +
+                    "Strona: " + placeInfo.getWebsiteUri() + "\n" +
+                    "Ocena: " + placeInfo.getRating() + "\n";
 
             MarkerOptions options = new MarkerOptions()
                     .position(latLng)
