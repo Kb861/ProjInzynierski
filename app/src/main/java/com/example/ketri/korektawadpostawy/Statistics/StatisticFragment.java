@@ -1,21 +1,13 @@
 package com.example.ketri.korektawadpostawy.Statistics;
 
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-
-import com.example.ketri.korektawadpostawy.Home.activity.InfoActivity;
 import com.example.ketri.korektawadpostawy.R;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +22,12 @@ public class StatisticFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_statistic, container, false);
         ButterKnife.bind(this, view);
+        threadforLottie();
+        return view;
+    }
+
+    private void threadforLottie() {
+
         Thread myThread = new Thread(){
 
     @Override
@@ -44,6 +42,5 @@ public class StatisticFragment extends Fragment {
         }
     };
         myThread.start();
-        return view;
     }
 }

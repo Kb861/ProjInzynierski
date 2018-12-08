@@ -7,10 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.ketri.korektawadpostawy.R;
-import com.example.ketri.korektawadpostawy.Statistics.TabStatisticActivity;
-
 import butterknife.ButterKnife;
 
 /**
@@ -26,8 +23,12 @@ public class AboutFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about, container, false);
         ButterKnife.bind(this, view);
-        Thread myThread = new Thread(){
+        threadforIntent();
+        return view;
+    }
 
+    private void threadforIntent() {
+        Thread myThread = new Thread(){
             @Override
             public void run() {
                 try{
@@ -40,8 +41,5 @@ public class AboutFragment extends Fragment {
             }
         };
         myThread.start();
-        return view;
     }
-
-
 }

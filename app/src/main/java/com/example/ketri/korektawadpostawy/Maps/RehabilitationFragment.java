@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.ketri.korektawadpostawy.Home.activity.InfoActivity;
 import com.example.ketri.korektawadpostawy.R;
 import com.transitionseverywhere.TransitionManager;
 

@@ -38,9 +38,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         openFragmentHome();
         navigationView.setCheckedItem(R.id.nav_home);
-
-
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

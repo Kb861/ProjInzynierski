@@ -5,35 +5,22 @@
     style="@style/Match"
     android:id="@+id/root"
     tools:context="com.example.ketri.korektawadpostawy.Exam.Examination.ExaminationActivity">
-<Button
+    <Button
     android:id="@+id/btn_info"
-    android:layout_marginTop="5dp"
-    android:layout_width="50dp"
-    android:layout_height="50dp"
-    android:layout_alignParentRight="true"
-    android:background="@drawable/ic_action_name"/>
+    style="@style/ButtonExamInfo"/>
     <android.support.v4.view.ViewPager
     android:id="@+id/ExamViewPager"
     android:foregroundGravity="center"
     android:layout_centerInParent="true"
     android:clipToPadding="false"
     android:overScrollMode="never"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+    style="@style/Match"></android.support.v4.view.ViewPager>
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    style="@style/Wrap"
+        android:textColor="#80000000"
     android:id="@+id/nameCardView"/>
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/btn_gotoresult"
-        android:textColor="#fff"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="60dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/roundbtn"
+        style="@style/ButtonGreenRound"
         android:text="Zobacz wyniki"/>
 </RelativeLayout>

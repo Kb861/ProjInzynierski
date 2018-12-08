@@ -10,8 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ketri.korektawadpostawy.Exam.Item;
+import com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity;
 import com.example.ketri.korektawadpostawy.R;
 
 import java.util.List;

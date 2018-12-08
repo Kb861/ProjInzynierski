@@ -23,6 +23,7 @@ public class NotificationActivity extends AppCompatActivity implements BackArrow
 
     @BindView(R.id.et_time)
     EditText et_time;
+
     int currentHour;
     int currentMinute;
 
@@ -36,7 +37,6 @@ public class NotificationActivity extends AppCompatActivity implements BackArrow
         et_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 currentHour=calendar.get(Calendar.HOUR_OF_DAY);
                 currentMinute=calendar.get(Calendar.MINUTE);
                 TimePickerDialog timePickerDialog = new TimePickerDialog(NotificationActivity.this, new TimePickerDialog.OnTimeSetListener() {
@@ -70,8 +70,6 @@ public class NotificationActivity extends AppCompatActivity implements BackArrow
             Bundle bundle = new Bundle();
             intent.putExtras(bundle);
             startActivity(intent);
-
-
         }
         return super.onOptionsItemSelected(item);
     }

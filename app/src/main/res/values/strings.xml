@@ -42,6 +42,7 @@
     <string name="data">Dane</string>
     <string name="WaterRehabilitation">Rehabilitacja w wodzie może wpłynąć na poprawę jakości życia u osób z dysfunkcją ruchową. Woda, ze względu na swoje właściwości wpływa na rozluźnienie mięśni.</string>
     <string name="title_activity_maps">Map</string>
+
     <string-array name="slide_desc">
         <item>Charakteryzuje się odchyleniem od osi anatomicznej kręgosłupa lub jego odcinka w płaszczyźnie czołowej.</item>
         <item>Charakteryzuje się nadmiernym wygięciem jednego odcinka lub całęgo kręgosłupa ku tyłowi.</item>
@@ -80,6 +81,7 @@
     <string name="planer">Planer</string>
     <string name="tooltipif">Jeżeli posiadasz wadę przedstawioną po prawej stronie, naciśnij czerwony przycisk.</string>
     <string name="master">Jesteś mistrzem!</string>
-
-
+    <string name="result">Wyniki</string>
+    <string name="go">IDŹ</string>
+    <string name="desc_statistic">Zaobserwuj swoje postępy w czasie</string>
 </resources>

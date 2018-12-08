@@ -120,6 +120,7 @@ public class ExaminationActivity extends AppCompatActivity implements BackArrowT
         Bundle datafromAdapter = getIntent().getExtras();
         String textCardview = datafromAdapter.getString("nameCardView");
         nameCardView.setText(textCardview);
+        nameCardView.setVisibility(View.INVISIBLE);
 
         if (nameCardView.getText().toString().contains("Skolioza")) {
             insertDefect();

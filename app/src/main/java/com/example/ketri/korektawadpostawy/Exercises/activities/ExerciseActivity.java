@@ -119,7 +119,7 @@ public class ExerciseActivity extends AppCompatActivity {
             viewAll();
             AddData();
     }
-    public  void AddData() {
+    public void AddData() {
         btn_done.setOnClickListener(
                 new View.OnClickListener() {
                     @Override

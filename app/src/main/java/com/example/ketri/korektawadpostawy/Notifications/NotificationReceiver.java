@@ -9,8 +9,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-
-import com.example.ketri.korektawadpostawy.Exercises.activities.DefectActivity;
 import com.example.ketri.korektawadpostawy.MainActivity;
 import com.example.ketri.korektawadpostawy.R;
 

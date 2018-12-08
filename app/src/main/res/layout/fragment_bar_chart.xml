@@ -7,7 +7,7 @@
         style="@style/TitleInstructionTxV"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:text="Zaobserwuj swoje postępy w czasie."/>
+        android:text="@string/desc_statistic"/>
     <com.jjoe64.graphview.GraphView
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"

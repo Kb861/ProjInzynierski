@@ -2,14 +2,14 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="240dp"
+    android:layout_height="@dimen/cardview_height"
     android:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/img_exam"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="@dimen/cardview_height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,24 +24,15 @@
 
     <TextView
         android:id="@+id/txv_nameCardView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="180dp"
-        android:text="Badanie"
-        android:textColor="@color/white"
-        android:textSize="30dp"
+        android:text="@string/examination"
+        style="@style/TextViewCardView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_go"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="180dp"
-        android:background="@drawable/btn_oval_shape"
-        android:text="IDŹ"
+        style="@style/ButtonCardViewWhite"
+        android:text="@string/go"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

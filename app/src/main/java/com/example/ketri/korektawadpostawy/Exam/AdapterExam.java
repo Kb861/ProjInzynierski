@@ -72,26 +72,38 @@ public class AdapterExam extends RecyclerView.Adapter<AdapterExam.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     if(cardName.getText().toString().equals("Badanie")){
-                        Intent intent = new Intent(itemView.getContext(), ExaminationActivity.class);
-                        Bundle bundle = new Bundle();
-                        intent.putExtras(bundle);
-                        Context context = itemView.getContext();
-                        context.startActivity(intent);
+                        goToExaminationActivity();
                     }
                     if(cardName.getText().toString().equals("Zasady")){
-                        Intent intent = new Intent(itemView.getContext(), RulesActivity.class);
-                        Bundle bundle = new Bundle();
-                        intent.putExtras(bundle);
-                        Context context = itemView.getContext();
-                        context.startActivity(intent);
+                        goToRulesActivity();
                     }
                     if(cardName.getText().toString().equals("Wyniki")){
-                        Intent intent = new Intent(itemView.getContext(), ResultActivity.class);
-                        Bundle bundle = new Bundle();
-                        intent.putExtras(bundle);
-                        Context context = itemView.getContext();
-                        context.startActivity(intent);
+                        goToResultActivity();
                     }
+                }
+
+                private void goToResultActivity() {
+                    Intent intent = new Intent(itemView.getContext(), ResultActivity.class);
+                    Bundle bundle = new Bundle();
+                    intent.putExtras(bundle);
+                    Context context = itemView.getContext();
+                    context.startActivity(intent);
+                }
+
+                private void goToRulesActivity() {
+                    Intent intent = new Intent(itemView.getContext(), RulesActivity.class);
+                    Bundle bundle = new Bundle();
+                    intent.putExtras(bundle);
+                    Context context = itemView.getContext();
+                    context.startActivity(intent);
+                }
+
+                private void goToExaminationActivity() {
+                    Intent intent = new Intent(itemView.getContext(), ExaminationActivity.class);
+                    Bundle bundle = new Bundle();
+                    intent.putExtras(bundle);
+                    Context context = itemView.getContext();
+                    context.startActivity(intent);
                 }
             });
             ButterKnife.bind(this, itemView);

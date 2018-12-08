@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
  */
 
 public class SliderAdapter extends PagerAdapter{
+
     @BindView(R.id.txtHeading)
     TextView txtHeading;
 

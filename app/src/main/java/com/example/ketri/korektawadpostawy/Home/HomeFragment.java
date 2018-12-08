@@ -1,6 +1,5 @@
 package com.example.ketri.korektawadpostawy.Home;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,7 +22,6 @@ import com.example.ketri.korektawadpostawy.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,7 +51,7 @@ public class HomeFragment extends Fragment {
     Animation uptodown, downtoup;
 
     @OnClick(R.id.btnMain)
-    void onClick(View view) {
+    void onClickInfo(View view) {
         Intent intent = new Intent(getActivity(), InfoActivity.class);
         Bundle bundle = new Bundle();
         intent.putExtras(bundle);
@@ -98,7 +96,6 @@ public class HomeFragment extends Fragment {
         l1.setAnimation(uptodown);
         l2.setAnimation(downtoup);
         return view;
-
     }
 
 }

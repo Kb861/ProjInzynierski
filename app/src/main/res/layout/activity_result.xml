@@ -6,7 +6,7 @@
     tools:context="com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity">
     <TextView
         style="@style/Heading"
-        android:text="Obserwacje"/>
+        android:text="@string/result"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerExam"

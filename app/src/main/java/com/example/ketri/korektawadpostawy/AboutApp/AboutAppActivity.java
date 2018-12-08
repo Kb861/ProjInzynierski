@@ -45,7 +45,5 @@ public class AboutAppActivity extends TutorialActivity {
         Bundle bundle = new Bundle();
         intent.putExtras(bundle);
         startActivity(intent);
-
     }
-
 }
