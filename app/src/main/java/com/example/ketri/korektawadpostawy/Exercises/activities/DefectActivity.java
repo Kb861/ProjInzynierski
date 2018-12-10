@@ -56,7 +56,7 @@ public class DefectActivity extends AppCompatActivity {
 
         if(name.getText().toString().contains("Skolioza"))
       {
-         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/9996e15f73af4e95fcf44f00877911825c13d7b0/skoliosis.json";
+         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/3a789720ec42a24e9b0d3330f5e9253afcbdc477/skoliosis.json";
           lstEX=new ArrayList<>();
           jsoncall();
 
@@ -77,7 +77,7 @@ public class DefectActivity extends AppCompatActivity {
         }
         if(name.getText().toString().contains("Plecy płaskie"))
         {
-            URL_JSON = "https://gist.githubusercontent.com/Kb861/055912258d7713697526f2df5310e975/raw/212fc55d379b9046594c3ec62fcc418c482f3109/flat.json";
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/055912258d7713697526f2df5310e975/raw/3f7e96ca7f60fed449214d7e47c71d5574330dc1/flat.json";
             lstEX=new ArrayList<>();
             jsoncall();
 

@@ -1,6 +1,7 @@
 package com.example.ketri.korektawadpostawy.Exercises.activities;
 
 import android.database.Cursor;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -90,6 +91,12 @@ public class ExerciseActivity extends AppCompatActivity {
         String videoPath="android.resource://" + getPackageName() + "/" + id;
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setVolume(0,0);
+            }
+        });
         videoView.start();
         MediaController mediaController = new MediaController(this);
         videoView.setMediaController(mediaController);
