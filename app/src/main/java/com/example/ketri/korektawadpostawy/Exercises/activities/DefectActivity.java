@@ -56,35 +56,35 @@ public class DefectActivity extends AppCompatActivity {
 
         if(name.getText().toString().contains("Skolioza"))
       {
-         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/38ab94ab429db94fdd5b70f4933dbcefcf3f974d/skoliosis.json";
+         URL_JSON = "https://gist.githubusercontent.com/Kb861/64f437511467d024a7e981022bbc0ef6/raw/9996e15f73af4e95fcf44f00877911825c13d7b0/skoliosis.json";
           lstEX=new ArrayList<>();
           jsoncall();
 
       }
         if(name.getText().toString().contains("Kifoza"))
         {
-            URL_JSON = "https://gist.githubusercontent.com/Kb861/88fc23e1e50bf92048cb3004e5e9a473/raw/a9efb8631956ed8b62021c1956d6fb21acd42bf0/kyphosis.json";
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/88fc23e1e50bf92048cb3004e5e9a473/raw/03ebd099cde7dd062f3806075d26181ea1380ab5/kyphosis.json";
             lstEX=new ArrayList<>();
             jsoncall();
 
         }
         if(name.getText().toString().contains("Lordoza"))
         {
-            URL_JSON = "https://gist.githubusercontent.com/Kb861/12be04f9392f48885f325d60dc996afb/raw/832f58f1b8c45a1225657833f6b67007379b3bbf/lordosis.json";
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/12be04f9392f48885f325d60dc996afb/raw/8785c270cefc4c5b44b58b1ecec4c33decce6dd9/lordosis.json";
             lstEX=new ArrayList<>();
             jsoncall();
 
         }
         if(name.getText().toString().contains("Plecy płaskie"))
         {
-            URL_JSON = "https://gist.githubusercontent.com/Kb861/055912258d7713697526f2df5310e975/raw/46b5010c283558a0b37e5807ec90b6d0786889dc/flat.json";
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/055912258d7713697526f2df5310e975/raw/212fc55d379b9046594c3ec62fcc418c482f3109/flat.json";
             lstEX=new ArrayList<>();
             jsoncall();
 
         }
         if(name.getText().toString().contains("Okrągło-wklęsłe"))
         {
-            URL_JSON = "https://gist.githubusercontent.com/Kb861/178543f5895cb31e99f11d273371423a/raw/d370b857201491ef8bcc1953866f5ee28c9c265e/roundbtn.json";
+            URL_JSON = "https://gist.githubusercontent.com/Kb861/178543f5895cb31e99f11d273371423a/raw/07f95daafcaabf8882e1bc126b3fb2a41122cf0a/round.json";
             lstEX=new ArrayList<>();
             jsoncall();
 
