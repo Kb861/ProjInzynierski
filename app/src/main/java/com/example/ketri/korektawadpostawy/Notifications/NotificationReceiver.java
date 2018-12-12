@@ -32,7 +32,7 @@ public class NotificationReceiver extends BroadcastReceiver{
         Notification notification = builder.setContentTitle("Przypomnienie")
                 .setContentText("Wykonaj kilka ćwiczeń i ciesz się zdrowym kręgosłupem.")
                 .setTicker("New Message Alert!")
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.ic_logo)
                 .setContentIntent(pendingIntent).build();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

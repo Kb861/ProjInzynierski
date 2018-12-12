@@ -74,10 +74,6 @@ public class PlaceInfo {
         this.websiteUri = websiteUri;
     }
 
-    public LatLng getLatlng() {
-        return latlng;
-    }
-
     public void setLatlng(LatLng latlng) {
         this.latlng = latlng;
     }
@@ -88,10 +84,6 @@ public class PlaceInfo {
 
     public void setRating(float rating) {
         this.rating = rating;
-    }
-
-    public String getAttributions() {
-        return attributions;
     }
 
     public void setAttributions(String attributions) {

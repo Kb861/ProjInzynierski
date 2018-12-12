@@ -97,5 +97,4 @@ public class HomeFragment extends Fragment {
         l2.setAnimation(downtoup);
         return view;
     }
-
 }

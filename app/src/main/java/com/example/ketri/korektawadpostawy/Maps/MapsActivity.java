@@ -353,7 +353,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Toast.makeText(this, R.string.Mapy_gotowe, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.MapsReady, Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onMapReady: map is ready");
         Map = googleMap;
         if (LocationPermissionsGranted) {
@@ -410,7 +410,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
 
             }
-
         };
     public void SupportActionBarBack() {
         getSupportActionBar().setDisplayShowHomeEnabled(true);

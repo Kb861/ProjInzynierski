@@ -12,7 +12,6 @@ import com.example.ketri.korektawadpostawy.Exercises.DataBaseHelper;
 import com.example.ketri.korektawadpostawy.R;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.LegendRenderer;
-import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 
@@ -48,19 +47,22 @@ public class BarChartFragment extends Fragment {
             e.printStackTrace();
         }
         graph.addSeries(series);
+        graphStyles();
+        return view;
+    }
+
+    private void graphStyles() {
         series.setDrawValuesOnTop(true);
         series.setColor(Color.GRAY);
         series.setTitle("punkty");
         series.getDataWidth();
         graph.getLegendRenderer().setVisible(true);
         graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
-       // graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getActivity()));
-        graph.getGridLabelRenderer().setNumHorizontalLabels(4); // only 4 because of the space
+        graph.getGridLabelRenderer().setNumHorizontalLabels(4);
         graph.getGridLabelRenderer().setNumVerticalLabels(4);
         graph.getViewport().setScrollable(true);
         graph.getViewport().setScrollableY(true);
         graph.getViewport().setScalable(true);
         graph.getViewport().setScalableY(true);
-        return view;
     }
 }

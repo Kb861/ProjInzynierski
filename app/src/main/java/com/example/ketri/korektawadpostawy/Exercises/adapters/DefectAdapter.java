@@ -28,9 +28,9 @@ public class DefectAdapter extends RecyclerView.Adapter<DefectAdapter.ViewHolder
     private Context Context ;
     private List<Defect> Data ;
 
-    public DefectAdapter(Context mContext, List<Defect> mData) {
-        this.Context = mContext;
-        this.Data = mData;
+    public DefectAdapter(Context Context, List<Defect> Data) {
+        this.Context = Context;
+        this.Data = Data;
     }
 
     @Override

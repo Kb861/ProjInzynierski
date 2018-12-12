@@ -1,6 +1,5 @@
 package com.example.ketri.korektawadpostawy.Maps;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -26,12 +25,16 @@ import butterknife.OnClick;
 public class RehabilitationFragment extends Fragment {
     @BindView(R.id.l2)
     LinearLayout l2;
+
     @BindView(R.id.transitions_container)
     LinearLayout transitions_container;
+
     @BindView(R.id.btnInf)
     Button btnInf;
+
     @BindView(R.id.btnSearch)
     Button btnSearch;
+
     @BindView(R.id.txt_rehabilitation)
     TextView txt_rehabilitation;
     boolean visible;
@@ -58,7 +61,6 @@ public class RehabilitationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_rehabilitation, container, false);
         ButterKnife.bind(this, view);
         downtoup = AnimationUtils.loadAnimation(this.getActivity(), R.anim.downtoup);

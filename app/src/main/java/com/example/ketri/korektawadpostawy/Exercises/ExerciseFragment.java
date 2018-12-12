@@ -44,6 +44,7 @@ public class ExerciseFragment extends Fragment {
         lstDefect.add( new Defect("Lordoza", R.drawable.lordosis));
         lstDefect.add( new Defect("Plecy płaskie", R.drawable.flat));
         lstDefect.add( new Defect("Plecy okrągło-wklęsłe", R.drawable.round));
+
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recycler.setLayoutManager(layoutManager);
 
@@ -51,12 +52,10 @@ public class ExerciseFragment extends Fragment {
         recycler.setAdapter(defectAdaper);
 
         return view;
-
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
     }
 }

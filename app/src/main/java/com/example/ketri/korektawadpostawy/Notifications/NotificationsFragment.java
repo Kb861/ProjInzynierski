@@ -1,15 +1,13 @@
 package com.example.ketri.korektawadpostawy.Notifications;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.ketri.korektawadpostawy.R;
-import com.example.ketri.korektawadpostawy.Statistics.TabStatisticActivity;
+
 
 import butterknife.ButterKnife;
 
@@ -25,6 +23,12 @@ public class NotificationsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_notifications, container, false);
         ButterKnife.bind(this, view);
+        goToNotificationActivity();
+        return view;
+
+    }
+
+    private void goToNotificationActivity() {
         Thread myThread = new Thread(){
 
             @Override
@@ -39,8 +43,6 @@ public class NotificationsFragment extends Fragment {
             }
         };
         myThread.start();
-        return view;
-
     }
 
 }

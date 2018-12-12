@@ -67,6 +67,7 @@ public class AdapterExam extends RecyclerView.Adapter<AdapterExam.ViewHolder>{
         public ViewHolder(final View itemView) {
 
             super(itemView);
+            ButterKnife.bind(this, itemView);
             btn_go=(Button)itemView.findViewById(R.id.btn_go);
             btn_go.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -106,7 +107,7 @@ public class AdapterExam extends RecyclerView.Adapter<AdapterExam.ViewHolder>{
                     context.startActivity(intent);
                 }
             });
-            ButterKnife.bind(this, itemView);
+
         }
     }
 }

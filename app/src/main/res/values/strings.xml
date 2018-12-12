@@ -1,21 +1,15 @@
 <resources>
     <string name="app_name">Korekta wad postawy</string>
-    <string name="google_maps_API_key">AIzaSyBk4Hr6Rb_-a0qd_XkWzjbRFF3js-CVD1M</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_settings">Settings</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="bad">Złe</string>
     <string name="good">Dobre</string>
     <string name="great">Świetne</string>
-    <string name="INFO">INFO</string>
     <string name="START">START</string>
     <string name="mainText">JUŻ DZIŚ ZACZNIJ ZMIANĘ NA LEPSZE</string>
     <string name="MapActivity">MapActivity</string>
-    <string name="Mapy_gotowe">Mapy gotowe</string>
+    <string name="MapsReady">Mapy gotowe</string>
     <string name="init">init: initializing</string>
-    <string name="problem">Problem</string>
     <string name="onClick">onClick: clicked gps icon</string>
     <string name="geoLocate">geoLocate: geolocating</string>
     <string name="geoLocate1">geoLocate: IOException: </string>
@@ -24,55 +18,21 @@
     <string name="isServicesOK1">isServicesOK: Google Play Services is working </string>
     <string name="isServicesOK2">isServicesOK: an error occured but we can fix it</string>
     <string name="getDeviceLocation">getDeviceLocation: getting the devices current location</string>
-    <string name="onComplete">onComplete: found location!</string>
-    <string name="onComplete1">onComplete: current location is null!</string>
-    <string name="myLocation">Moja lokalizacja</string>
     <string name="Data_Inserted">Dane wprowadzone</string>
     <string name="Data_not_Inserted">Błąd</string>
     <string name="Data_error">Wprowadź wszystkie dane poprawnie!</string>
-    <style name="ZAPISZ">ZAPISZ</style>
-    <string name="see">ZOBACZ</string>
     <string name="congrat">Gratulacje!</string>
     <string name="badge">Otrzymałeś odznakę</string>
     <string name="yourPoints">Twoje punkty:</string>
     <string name="statistic">Statystyki</string>
-    <string name="date">Data:</string>
-    <string name="points">Punkty:</string>
-    <string name="mood">Nastrój:</string>
-    <string name="data">Dane</string>
     <string name="WaterRehabilitation">Rehabilitacja w wodzie może wpłynąć na poprawę jakości życia u osób z dysfunkcją ruchową. Woda, ze względu na swoje właściwości wpływa na rozluźnienie mięśni.</string>
-    <string name="title_activity_maps">Map</string>
-
-    <string-array name="slide_desc">
-        <item>Charakteryzuje się odchyleniem od osi anatomicznej kręgosłupa lub jego odcinka w płaszczyźnie czołowej.</item>
-        <item>Charakteryzuje się nadmiernym wygięciem jednego odcinka lub całęgo kręgosłupa ku tyłowi.</item>
-        <item>Wada polega na pogłębieniu lordozy lędźwiowej czyli wygięcia ku przodowi w płaszczyźnie strzałkowej.</item>
-        <item>Wada charakteryzuje się spłaszczeniem lub brakiem fizjiologicznych wygięć kręgosłupa.</item>
-        <item>Charakterystyczną cechą tej wady jest zwiękoszona lordoza lędźwiowa i kifoza piersiowa. Zazwyczaj głowa jest pochylona ku przodowi, a klatka piersiowa spłaszczona.</item>
-    </string-array>
-
-    <string-array name="slide_head">
-        <item>SKOLIOZA</item>
-        <item>KIFOZA</item>
-        <item>LORDOZA</item>
-        <item>PLECY PŁASKIE</item>
-        <item>PLECY OKRĄGŁO-WKLĘSŁE</item>
-    </string-array>
-    <string name="title_activity_statistic_tab">StatisticTabActivity</string>
-    <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_tab_statistic">TabStatisticActivity</string>
-
-    <string name="scoliosis">skolioza</string>
-    <string name="kyphosis">kifoza</string>
-    <string name="lordosis">lordoza</string>
-    <string name="OK">OK</string>
     <string name="work">Ćwicz</string>
     <string name="exam">Zbadaj</string>
     <string name="CheckPosture">Sprawdź i oceń swoją postawę stojąc przed lusterm.</string>
     <string name="instr1">Stań przodem, następnie bokiem do lustra w postawie swobodnej (nie na baczność) i obserwuj swoją postawę.</string>
     <string name="instr2">Stojąc przodem do lustra wyznacz linie poziome poprzez połączenie punktów położonych symetrycznie względem siebie, po obu stronach ciała.</string>
     <string name="instr3">W warunkach prawidłowych linie te są równoległe względem siebie i do podłoża.</string>
-    <string name="title_activity_tab_result">TabResultActivity</string>
     <string name="attention">UWAGA!</string>
     <string name="examination">Badanie</string>
     <string name="search">SZUKAJ</string>

@@ -107,20 +107,4 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return dp;
     }
-    public List<String> getPointsList() throws ParseException {
-        String countQuery = "SELECT " + COL_3 + " as Points FROM " + TABLE_NAME;
-        List<String> pointList = new ArrayList<>();
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
-        try {
-            while (cursor.moveToNext()) {
-
-                pointList.add(cursor.getString(cursor.getColumnIndex("Points")));
-            }
-        } finally {
-            cursor.close();
-        }
-        return pointList;
-    }
-
 }

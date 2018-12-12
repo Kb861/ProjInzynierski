@@ -56,19 +56,24 @@ public class PointsFragment extends Fragment {
 
          if(point.getText().toString().contains("150")) {
              consolation.setText(R.string.master);}
-        String shareText="Posiadam już "+ point.getText()+" punktów!";
+        String shareText="Korekta wad postawy: Posiadam już "+ point.getText()+ " punktów!";
              btn_share.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View v) {
-                     shareIntent=new Intent(Intent.ACTION_SEND);
-                     shareIntent.setType("text/pain");
-                     shareIntent.putExtra(Intent.EXTRA_SUBJECT,"korektywadpostawy");
-                     shareIntent.putExtra(Intent.EXTRA_TEXT,shareText);
-                     startActivity(Intent.createChooser(shareIntent,"Udostępnij"));
+                     shareIntent(shareText);
                  }
              });
         return view;
     }
+
+    private void shareIntent(String shareText) {
+        shareIntent=new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/pain");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT,"korektywadpostawy");
+        shareIntent.putExtra(Intent.EXTRA_TEXT,shareText);
+        startActivity(Intent.createChooser(shareIntent,"Udostępnij"));
+    }
+
     public void ShowBox(){
         epicDialog.setContentView(R.layout.dialog_box);
         close=(ImageView) epicDialog.findViewById(R.id.close_box) ;

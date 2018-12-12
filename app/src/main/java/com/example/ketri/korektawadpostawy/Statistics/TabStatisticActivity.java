@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.ketri.korektawadpostawy.BackArrowToHome;
 import com.example.ketri.korektawadpostawy.MainActivity;
 import com.example.ketri.korektawadpostawy.R;
 import com.example.ketri.korektawadpostawy.Statistics.Tabs.PointsFragment;
@@ -22,7 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TabStatisticActivity extends AppCompatActivity {
+public class TabStatisticActivity extends AppCompatActivity implements BackArrowToHome {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 

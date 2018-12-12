@@ -18,15 +18,7 @@ public class Result {
         return defectName;
     }
 
-    public void setDefectName(String defectName) {
-        this.defectName = defectName;
-    }
-
     public String getDefectDescrip() {
         return defectDescrip;
-    }
-
-    public void setDefectDescrip(String defectDescrip) {
-        this.defectDescrip = defectDescrip;
     }
 }

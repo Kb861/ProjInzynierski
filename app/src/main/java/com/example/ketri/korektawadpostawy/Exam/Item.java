@@ -35,15 +35,9 @@ public class Item {
         return cardName;
     }
 
-    public void setCardName(String cardName) {
-        this.cardName = cardName;
-    }
-
     public String getDescrip() {
         return descrip;
     }
 
-    public void setDescrip(String descrip) {
-        this.descrip = descrip;
-    }
+
 }

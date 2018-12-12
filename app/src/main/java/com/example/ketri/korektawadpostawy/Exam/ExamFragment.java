@@ -28,8 +28,8 @@ public class ExamFragment extends Fragment {
 
     @BindView(R.id.recyclerExam)
     RecyclerView recycler;
-
     List<Item> lstExam;
+
     public ExamFragment() {
     }
 
