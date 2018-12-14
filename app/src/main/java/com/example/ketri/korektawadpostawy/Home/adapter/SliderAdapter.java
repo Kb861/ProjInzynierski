@@ -35,6 +35,8 @@ public class SliderAdapter extends PagerAdapter{
 
     public SliderAdapter(Context context) {
         this.context = context;
+        slide_headings= context.getResources().getStringArray(R.array.string_array_defects);
+        slide_desc= context.getResources().getStringArray(R.array.string_array_slide_desc);
     }
 
     public int[] slide_images={
@@ -45,16 +47,8 @@ public class SliderAdapter extends PagerAdapter{
             R.drawable.round
     };
 
-    public String[] slide_headings= context.getResources().getStringArray(R.array.string_array_defects);
-
-
-
-    public String[] slide_desc= context.getResources().getStringArray(R.array.string_array_slide_desc);
-//            "Charakteryzuje się odchyleniem od osi anatomicznej kręgosłupa lub jego odcinka w płaszczyźnie czołowej.",
-//            "Charakteryzuje się nadmiernym wygięciem jednego odcinka lub całęgo kręgosłupa ku tyłowi",
-//            "Wada polega na pogłębieniu lordozy lędźwiowej czyli wygięcia ku przodowi w płaszczyźnie strzałkowej.",
-//            "Wada charakteryzuje się spłaszczeniem lub brakiem fizjiologicznych wygięć kręgosłupa.",
-//            "Charakterystyczną cechą tej wady jest zwiękoszona lordoza lędźwiowa i kifoza piersiowa. Zazwyczaj głowa jest pochylona ku przodowi, a klatka piersiowa spłaszczona."
+    public String[] slide_headings;
+    public String[] slide_desc;
 
     @Override
     public int getCount() {
