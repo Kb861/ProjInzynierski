@@ -48,7 +48,7 @@ public class NotificationActivity extends AppCompatActivity implements BackArrow
                  PendingIntent broadcast = PendingIntent.getBroadcast(NotificationActivity.this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                  calendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
                  calendar.set(Calendar.MINUTE,minutes);
-                 alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), broadcast);
+                 alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,broadcast);
             }
         }, currentHour, currentMinute, false);
         timePickerDialog.show();
