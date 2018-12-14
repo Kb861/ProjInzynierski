@@ -14,27 +14,27 @@ public class AboutAppActivity extends TutorialActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setPrevText("Wróć");
-        setNextText("Dalej");
-        setFinishText("Koniec");
-        setCancelText("Anuluj");
-        addFragment(new Step.Builder().setTitle("Jeżeli posiadasz wadę postawy")
-                .setContent("lub chcesz dbać o swój kręgosłup.")
+        setPrevText(this.getResources().getString(R.string.back));
+        setNextText(this.getResources().getString(R.string.next));
+        setFinishText(this.getResources().getString(R.string.finish));
+        setCancelText(this.getResources().getString(R.string.cancel));
+        addFragment(new Step.Builder().setTitle(this.getResources().getString(R.string.aboutapp1))
+                .setContent(this.getResources().getString(R.string.aboutapp2))
                 .setBackgroundColor(Color.parseColor("#01579B"))
                 .setDrawable(R.drawable.pain)
                 .build());
-        addFragment(new Step.Builder().setTitle("To ta aplikacja jest właśnie dla Ciebie!")
-                .setContent("Poświęć swój czas i ćwicz codziennie")
+        addFragment(new Step.Builder().setTitle(this.getResources().getString(R.string.aboutapp3))
+                .setContent(this.getResources().getString(R.string.aboutapp4))
                 .setBackgroundColor(Color.parseColor("#C62828"))
                 .setDrawable(R.drawable.men)
                 .build());
-        addFragment(new Step.Builder().setTitle("Zbierz trzy odznaki")
-                .setContent("i zostań mistrzem ćwiczeń.")
+        addFragment(new Step.Builder().setTitle(this.getResources().getString(R.string.aboutapp5))
+                .setContent(this.getResources().getString(R.string.aboutapp6))
                 .setBackgroundColor(Color.parseColor("#FFC107"))
                 .setDrawable(R.drawable.badge)
                 .build());
-        addFragment(new Step.Builder().setTitle("Następnie ciesz się zdrowym kręgosłupem.")
-                .setContent("Zacznij już dziś.")
+        addFragment(new Step.Builder().setTitle(this.getResources().getString(R.string.aboutapp7))
+                .setContent(this.getResources().getString(R.string.aboutapp8))
                 .setBackgroundColor(Color.parseColor("#FFCDD2"))
                 .setDrawable(R.drawable.happy)
                 .build());

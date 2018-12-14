@@ -263,10 +263,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Map.setInfoWindowAdapter(new CustomInfoAdapter(MapsActivity.this));
         if(placeInfo!=null) {
         try{
-            String snippet = "Addres: " + placeInfo.getAddress() + "\n" +
-                    "Telefon: " + placeInfo.getPhoneNumber() + "\n" +
-                    "Strona: " + placeInfo.getWebsiteUri() + "\n" +
-                    "Ocena: " + placeInfo.getRating() + "\n";
+            String snippet = this.getResources().getString(R.string.adress)+" "+ placeInfo.getAddress() + "\n" +
+                    this.getResources().getString(R.string.phone)+" "+ placeInfo.getPhoneNumber() + "\n" +
+                    this.getResources().getString(R.string.site)+" "+ placeInfo.getWebsiteUri() + "\n" ;
 
             MarkerOptions options = new MarkerOptions()
                     .position(latLng)
@@ -398,7 +397,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     Place.setAttributions(place.getAttributions().toString());
                     Place.setId(place.getId());
                     Place.setLatlng(place.getLatLng());
-                    Place.setRating(place.getRating());
                     Place.setPhoneNumber(place.getPhoneNumber().toString());
                     Place.setWebsiteUri(place.getWebsiteUri());
                     Log.d(TAG,"onResult:place"+Place.toString());

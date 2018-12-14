@@ -15,18 +15,16 @@ public class PlaceInfo {
     private String id;
     private Uri websiteUri;
     private LatLng latlng;
-    private float rating;
     private String attributions;
 
     public PlaceInfo(String name, String address, String phoneNumber, String id, Uri websiteUri,
-                     LatLng latlng, float rating, String attributions) {
+                     LatLng latlng, String attributions) {
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.id = id;
         this.websiteUri = websiteUri;
         this.latlng = latlng;
-        this.rating = rating;
         this.attributions = attributions;
     }
 
@@ -78,14 +76,6 @@ public class PlaceInfo {
         this.latlng = latlng;
     }
 
-    public float getRating() {
-        return rating;
-    }
-
-    public void setRating(float rating) {
-        this.rating = rating;
-    }
-
     public void setAttributions(String attributions) {
         this.attributions = attributions;
     }
@@ -99,7 +89,6 @@ public class PlaceInfo {
                 ", id='" + id + '\'' +
                 ", websiteUri=" + websiteUri +
                 ", latlng=" + latlng +
-                ", rating=" + rating +
                 ", attributions='" + attributions + '\'' +
                 '}';
     }

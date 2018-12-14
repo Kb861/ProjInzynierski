@@ -18,6 +18,9 @@
     <string name="isServicesOK1">isServicesOK: Google Play Services is working </string>
     <string name="isServicesOK2">isServicesOK: an error occured but we can fix it</string>
     <string name="getDeviceLocation">getDeviceLocation: getting the devices current location</string>
+    <string name="adress">Adres:</string>
+    <string name="phone">Telefon:</string>
+    <string name="site">Strona:</string>
     <string name="Data_Inserted">Dane wprowadzone</string>
     <string name="Data_not_Inserted">Błąd</string>
     <string name="Data_error">Wprowadź wszystkie dane poprawnie!</string>
@@ -44,4 +47,42 @@
     <string name="result">Wyniki</string>
     <string name="go">IDŹ</string>
     <string name="desc_statistic">Zaobserwuj swoje postępy w czasie</string>
+    <string name="sharePoints">punktów!</string>
+    <string name="shareWithFriends">Korekta wad postawy: Posiadam już </string>
+    <string name="back">Wróć</string>
+    <string name="next">Dalej</string>
+    <string name="finish">Koniec</string>
+    <string name="cancel">Anuluj</string>
+
+    <string name="aboutapp1">Jeżeli posiadasz wadę postawy</string>
+    <string name="aboutapp2">lub chcesz dbać o swój kręgosłup.</string>
+    <string name="aboutapp3">To ta aplikacja jest właśnie dla Ciebie!</string>
+    <string name="aboutapp4">Poświęć swój czas i ćwicz codziennie</string>
+    <string name="aboutapp5">Zbierz trzy odznaki</string>
+    <string name="aboutapp6">i zostań mistrzem ćwiczeń.</string>
+    <string name="aboutapp7">Następnie ciesz się zdrowym kręgosłupem.</string>
+    <string name="aboutapp8">Zacznij już dziś.</string>
+
+    <string name="notification">Przypomnienie</string>
+    <string name="notificationDesc">Wykonaj kilka ćwiczeń i ciesz się zdrowym kręgosłupem.</string>
+    <string name="alert">New Message Alert!</string>
+
+    <string-array
+        name="string_array_defects">
+        <item>SKOLIOZA</item>
+        <item>KIFOZA</item>
+        <item>LORDOZA</item>
+        <item>PLECY PŁASKIE</item>
+        <item>PLECY OKRĄGŁO-WKLĘSŁE</item>
+    </string-array>
+
+    <string-array
+        name="string_array_slide_desc">
+        <item>Charakteryzuje się odchyleniem od osi anatomicznej kręgosłupa lub jego odcinka w płaszczyźnie czołowej.</item>
+        <item>Charakteryzuje się nadmiernym wygięciem jednego odcinka lub całęgo kręgosłupa ku tyłowi</item>
+        <item>Wada polega na pogłębieniu lordozy lędźwiowej czyli wygięcia ku przodowi w płaszczyźnie strzałkowej.</item>
+        <item>Wada charakteryzuje się spłaszczeniem lub brakiem fizjiologicznych wygięć kręgosłupa.</item>
+        <item>Charakterystyczną cechą tej wady jest zwiękoszona lordoza lędźwiowa i kifoza piersiowa. Zazwyczaj głowa jest pochylona ku przodowi, a klatka piersiowa spłaszczona.</item>
+    </string-array>
+
 </resources>

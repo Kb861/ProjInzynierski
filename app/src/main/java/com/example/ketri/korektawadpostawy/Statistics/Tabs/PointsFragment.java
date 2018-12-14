@@ -56,7 +56,7 @@ public class PointsFragment extends Fragment {
 
          if(point.getText().toString().contains("150")) {
              consolation.setText(R.string.master);}
-        String shareText="Korekta wad postawy: Posiadam już "+ point.getText()+ " punktów!";
+        String shareText= this.getResources().getString(R.string.shareWithFriends)+" "+ point.getText()+" "+ this.getResources().getString(R.string.sharePoints);
              btn_share.setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View v) {
