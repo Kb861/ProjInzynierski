@@ -1,15 +1,75 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.ketri.korektawadpostawy.HomeFragment">
+    style="@style/LinearLayout"
+    android:background="@drawable/b"
+    tools:context="com.example.ketri.korektawadpostawy.Home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:text="hello home" />
+    <LinearLayout
+        android:id="@+id/l1"
+        style="@style/MainL1">
+        <TextView
+            android:layout_marginTop="90dp"
+           style="@style/txvSTART"/>
+        <TextView
+            android:layout_marginTop="30dp"
+            style="@style/TextViewMain"
+            android:text="@string/mainText"/>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
-</FrameLayout>
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btn_informationApp"
+                        android:text="@string/aboutApp"
+                        android:layout_margin="8dp"
+                        style="@style/ButtonStyleWhiteFrame" />
+                    <Button
+                        android:id="@+id/exam"
+                        style="@style/ButtonStyleWhiteFrame"
+                        android:text="@string/exam"
+                        android:layout_margin="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"/>
+                    <Button
+                        android:id="@+id/start"
+                        android:text="@string/work"
+                        android:layout_margin="8dp"
+                        style="@style/ButtonStyleWhiteFrame" />
+                    <Button
+                        android:id="@+id/btn_notif"
+                        style="@style/ButtonStyleWhiteFrame"
+                        android:text="@string/planer"
+                        android:layout_margin="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l2"
+        style="@style/MainL2">
+        <Button
+            android:id="@+id/btnMain"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            style="@style/ButtonStyleWhiteFrame"
+            android:text="@string/inf" />
+        <TextView
+           style="@style/txvInfo"/>
+    </LinearLayout>
+
+</LinearLayout>

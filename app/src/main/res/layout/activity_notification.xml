@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LinearLayout"
+    tools:context="com.example.ketri.korektawadpostawy.Notifications.NotificationActivity">
+    <TextView
+        style="@style/TitleInstructionTxV"
+        android:layout_marginTop="10dp"
+        android:text="Wybierz godzinę na wykonywanie ćwiczeń"/>
+    <EditText
+        android:id="@+id/et_time"
+        style="@style/editTextTime"
+        android:hint="00:00" />
+
+    <ImageView
+        style="@style/ImageViewGreenFrame"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/ic_bell" />
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LinearLayout"
+    tools:context="com.example.ketri.korektawadpostawy.Statistics.Tabs.PointsFragment">
+
+    <TextView
+        style="@style/TextViewMain"
+        android:text="@string/yourPoints"/>
+
+        <TextView
+            android:id="@+id/point"
+            style="@style/TVpoints"/>
+
+    <TextView
+       style="@style/txvHome"
+        android:id="@+id/txv_consolation"
+        android:textColor="@color/colorPrimary"
+        android:text="Ćwicz dalej!                   Nie poddawaj się!"/>
+
+    <Button
+        android:id="@+id/btn_share"
+        android:layout_margin="20dp"
+        style="@style/ButtonStyle"
+        android:drawableStart="@drawable/ic_share_black_24dp"
+        android:text="Udostępnij"/>
+</LinearLayout>

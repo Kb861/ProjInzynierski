@@ -1,11 +1,88 @@
 <resources>
     <string name="app_name">Korekta wad postawy</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="bad">Złe</string>
+    <string name="good">Dobre</string>
+    <string name="great">Świetne</string>
+    <string name="START">START</string>
+    <string name="mainText">JUŻ DZIŚ ZACZNIJ ZMIANĘ NA LEPSZE</string>
+    <string name="MapActivity">MapActivity</string>
+    <string name="MapsReady">Mapy gotowe</string>
+    <string name="init">init: initializing</string>
+    <string name="onClick">onClick: clicked gps icon</string>
+    <string name="geoLocate">geoLocate: geolocating</string>
+    <string name="geoLocate1">geoLocate: IOException: </string>
+    <string name="geoLocate2">geoLocate: found a location: </string>
+    <string name="isServicesOK">isServicesOK(): checking google services version</string>
+    <string name="isServicesOK1">isServicesOK: Google Play Services is working </string>
+    <string name="isServicesOK2">isServicesOK: an error occured but we can fix it</string>
+    <string name="getDeviceLocation">getDeviceLocation: getting the devices current location</string>
+    <string name="adress">Adres:</string>
+    <string name="phone">Telefon:</string>
+    <string name="site">Strona:</string>
+    <string name="Data_Inserted">Dane wprowadzone</string>
+    <string name="Data_not_Inserted">Błąd</string>
+    <string name="Data_error">Wprowadź wszystkie dane poprawnie!</string>
+    <string name="congrat">Gratulacje!</string>
+    <string name="badge">Otrzymałeś odznakę</string>
+    <string name="yourPoints">Twoje punkty:</string>
+    <string name="statistic">Statystyki</string>
+    <string name="WaterRehabilitation">Rehabilitacja w wodzie może wpłynąć na poprawę jakości życia u osób z dysfunkcją ruchową. Woda, ze względu na swoje właściwości wpływa na rozluźnienie mięśni.</string>
+    <string name="title_activity_tab_statistic">TabStatisticActivity</string>
+    <string name="work">Ćwicz</string>
+    <string name="exam">Zbadaj</string>
+    <string name="CheckPosture">Sprawdź i oceń swoją postawę stojąc przed lusterm.</string>
+    <string name="instr1">Stań przodem, następnie bokiem do lustra w postawie swobodnej (nie na baczność) i obserwuj swoją postawę.</string>
+    <string name="instr2">Stojąc przodem do lustra wyznacz linie poziome poprzez połączenie punktów położonych symetrycznie względem siebie, po obu stronach ciała.</string>
+    <string name="instr3">W warunkach prawidłowych linie te są równoległe względem siebie i do podłoża.</string>
+    <string name="attention">UWAGA!</string>
+    <string name="examination">Badanie</string>
+    <string name="search">SZUKAJ</string>
+    <string name="inf">Informacje</string>
+    <string name="aboutApp">O aplikacji</string>
+    <string name="planer">Planer</string>
+    <string name="tooltipif">Jeżeli posiadasz wadę przedstawioną po prawej stronie, naciśnij czerwony przycisk.</string>
+    <string name="master">Jesteś mistrzem!</string>
+    <string name="result">Wyniki</string>
+    <string name="go">IDŹ</string>
+    <string name="desc_statistic">Zaobserwuj swoje postępy w czasie</string>
+    <string name="sharePoints">punktów!</string>
+    <string name="shareWithFriends">Korekta wad postawy: Posiadam już </string>
+    <string name="back">Wróć</string>
+    <string name="next">Dalej</string>
+    <string name="finish">Koniec</string>
+    <string name="cancel">Anuluj</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="aboutapp1">Jeżeli posiadasz wadę postawy</string>
+    <string name="aboutapp2">lub chcesz dbać o swój kręgosłup.</string>
+    <string name="aboutapp3">To ta aplikacja jest właśnie dla Ciebie!</string>
+    <string name="aboutapp4">Poświęć swój czas i ćwicz codziennie</string>
+    <string name="aboutapp5">Zbierz trzy odznaki</string>
+    <string name="aboutapp6">i zostań mistrzem ćwiczeń.</string>
+    <string name="aboutapp7">Następnie ciesz się zdrowym kręgosłupem.</string>
+    <string name="aboutapp8">Zacznij już dziś.</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notification">Przypomnienie</string>
+    <string name="notificationDesc">Wykonaj kilka ćwiczeń i ciesz się zdrowym kręgosłupem.</string>
+    <string name="alert">New Message Alert!</string>
+
+    <string-array
+        name="string_array_defects">
+        <item>SKOLIOZA</item>
+        <item>KIFOZA</item>
+        <item>LORDOZA</item>
+        <item>PLECY PŁASKIE</item>
+        <item>PLECY OKRĄGŁO-WKLĘSŁE</item>
+    </string-array>
+
+    <string-array
+        name="string_array_slide_desc">
+        <item>Charakteryzuje się odchyleniem od osi anatomicznej kręgosłupa lub jego odcinka w płaszczyźnie czołowej.</item>
+        <item>Charakteryzuje się nadmiernym wygięciem jednego odcinka lub całęgo kręgosłupa ku tyłowi</item>
+        <item>Wada polega na pogłębieniu lordozy lędźwiowej czyli wygięcia ku przodowi w płaszczyźnie strzałkowej.</item>
+        <item>Wada charakteryzuje się spłaszczeniem lub brakiem fizjiologicznych wygięć kręgosłupa.</item>
+        <item>Charakterystyczną cechą tej wady jest zwiękoszona lordoza lędźwiowa i kifoza piersiowa. Zazwyczaj głowa jest pochylona ku przodowi, a klatka piersiowa spłaszczona.</item>
+    </string-array>
+
 </resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LinearL_item"
+    android:id="@+id/container"
+>
+    <ImageView
+        style="@style/ImageViewListEx"
+        android:id="@+id/thumbnail"/>
+    <LinearLayout
+        style="@style/LinearL">
+
+        <TextView
+            android:id="@+id/exercise_name"
+            style="@style/TextViewListEX" />
+
+        <TextView
+            android:id="@+id/categorie"
+            style="@style/Wrap"
+            android:text="Category" />
+
+        <TextView
+            android:id="@+id/rating"
+            style="@style/TextViewRating"/>
+
+    </LinearLayout>
+</LinearLayout>

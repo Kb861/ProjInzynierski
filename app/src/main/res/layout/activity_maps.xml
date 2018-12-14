@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Match"
+    tools:context="com.example.ketri.korektawadpostawy.Maps.MapsActivity">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        style="@style/Match"
+        android:id="@+id/map"
+        tools:context=".MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+    <RelativeLayout
+        style="@style/RelatvieLMaps"
+        android:id="@+id/relLayout1">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/ic_magnify"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_magnify"
+           />
+        <AutoCompleteTextView
+            style="@style/AutoCompleteTXV"
+            android:layout_toRightOf="@+id/ic_magnify"
+            android:id="@+id/input_search"
+          />
+    </RelativeLayout>
+
+    <ImageView
+        style="@style/ImgVMaps"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/relLayout1"
+        android:id="@+id/ic_gps"
+        android:src="@drawable/ic_gps"
+       />
+    <ImageView
+        android:id="@+id/place_info"
+        android:src="@drawable/ic_info"
+        style="@style/ImgVMaps"
+        android:layout_below="@+id/relLayout1"
+      />
+    <ImageView
+        android:id="@+id/place_map"
+        android:src="@drawable/ic_map"
+        style="@style/ImgVMaps"
+        android:layout_below="@+id/place_info"
+        />
+
+</RelativeLayout>

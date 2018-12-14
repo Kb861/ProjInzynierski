@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Match"
+    android:animateLayoutChanges="true"
+    android:background="@color/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.ketri.korektawadpostawy.Statistics.StatisticFragment">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        style="@style/Wrap"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_colorFilter="@color/colorAccent"
+        app:lottie_fileName="animated_graph.json"
+        app:lottie_loop="true"/>
+</FrameLayout>

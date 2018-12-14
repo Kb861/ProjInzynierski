@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LinearLayout"
+    tools:context="com.example.ketri.korektawadpostawy.Exam.Results.ResultActivity">
+    <TextView
+        style="@style/Heading"
+        android:text="@string/result"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerExam"
+        style="@style/Recycler"></android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

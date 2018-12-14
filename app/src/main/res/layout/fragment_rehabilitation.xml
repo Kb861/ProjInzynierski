@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LinearLayout"
+    android:background="@drawable/water"
+    android:id="@+id/transitions_container"
+    tools:context="com.example.ketri.korektawadpostawy.Maps.RehabilitationFragment">
+
+    <TextView
+        style="@style/txvSTART"
+        android:layout_marginTop="20dp"
+        android:text="Rehabilitacja wodna"
+        android:textSize="30dp"
+        android:textColor="@color/white"/>
+    <Button
+        android:id="@+id/btnInf"
+        style="@style/ButtonStyleWhiteFrame"
+        android:layout_marginTop="20sp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/inf" />
+    <TextView
+        style="@style/txvHome"
+        android:textSize="20dp"
+        android:visibility="gone"
+        android:id="@+id/txt_rehabilitation"
+        android:textColor="@color/white"
+        android:text="@string/WaterRehabilitation"/>
+    <LinearLayout
+        android:id="@+id/l2"
+        style="@style/MainL2">
+
+        <Button
+            android:id="@+id/btnSearch"
+            style="@style/ButtonStyleWhiteFrame"
+            android:text="@string/search" />
+
+        <ImageView
+            style="@style/Wrap"
+            android:src="@drawable/drop" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/RelativeLDialogBox">
+
+    <ImageView
+        android:id="@+id/close_box"
+        style="@style/IVclose"/>
+
+    <android.support.v7.widget.CardView
+        style="@style/CardViewDialogBox"
+        app:cardBackgroundColor="@color/gold"
+        app:cardCornerRadius="15dp">
+
+    <LinearLayout
+        style="@style/LinearLayout"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            style="@style/LinearLDialogBox">
+
+            <TextView
+                style="@style/TVDialogBox"
+                android:text="@string/congrat"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_view"
+                style="@style/LottieDialogBox"
+                app:lottie_autoPlay="true"
+                app:lottie_colorFilter="@color/colorAccent"
+                app:lottie_fileName="badge.json"
+                app:lottie_loop="true"/>
+
+            <TextView
+                style="@style/txvHome"
+                android:textColor="@color/transparentWhite"
+                android:layout_gravity="center"
+                android:text="@string/badge"/>
+        </LinearLayout>
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

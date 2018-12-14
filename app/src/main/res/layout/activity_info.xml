@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Match"
+    android:background="@drawable/b"
+    tools:context="com.example.ketri.korektawadpostawy.Home.activity.InfoActivity">
+<android.support.v4.view.ViewPager
+    android:id="@+id/slideViewPager"
+    style="@style/MatchWrap"></android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/InfoLayout"
+        style="@style/LLDots"></LinearLayout>
+</RelativeLayout>
