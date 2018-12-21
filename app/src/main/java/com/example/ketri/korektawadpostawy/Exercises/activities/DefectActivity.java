@@ -78,7 +78,7 @@ public class DefectActivity extends AppCompatActivity {
             lstEX=new ArrayList<>();
             jsoncall();
         }
-        if(name.getText().toString().contains("Okrągło-wklęsłe"))
+        if(name.getText().toString().contains("Plecy okrągło-wklęsłe"))
         {
             URL_JSON = "https://gist.githubusercontent.com/Kb861/178543f5895cb31e99f11d273371423a/raw/07f95daafcaabf8882e1bc126b3fb2a41122cf0a/round.json";
             lstEX=new ArrayList<>();

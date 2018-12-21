@@ -181,9 +181,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == RESULT_OK) {
                 Place placepik = PlacePicker.getPlace(this, data);
-                PendingResult<PlaceBuffer> placeResult = Places.GeoDataApi
-                        .getPlaceById(GoogleApiClient, placepik.getId());
-                placeResult.setResultCallback((ResultCallback<? super PlaceBuffer>) UpdatePlaceDetailsCallback);
+                Task<PlaceBufferResponse> placeResult = GeoDataClient.getPlaceById(placepik.getId());
+                placeResult.addOnCompleteListener(UpdatePlaceDetailsCallback);
             }
         }
     }
